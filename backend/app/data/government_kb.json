@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0",
+  "last_reviewed": "2026-09-24",
+  "scope_note": "Small curated reference for five service categories. Not a directory of Indian government services and not live verification. Only facts quoted from the cited official sources are included.",
+  "entries": [
+    {
+      "id": "uidai_aadhaar",
+      "category": "aadhaar_identity",
+      "service_name": "Aadhaar (UIDAI)",
+      "service_name_ta": "ஆதார் (UIDAI)",
+      "authority": "Unique Identification Authority of India (UIDAI)",
+      "aliases": ["aadhaar", "aadhar", "uidai", "m-aadhaar", "maadhaar", "ஆதார்"],
+      "official_domains": ["uidai.gov.in"],
+      "official_urls": ["https://uidai.gov.in/"],
+      "helplines": [{ "number": "1947", "source_ref": "pib_uidai_2022" }],
+      "facts": [
+        {
+          "id": "uidai_do_not_share_otp",
+          "applies_to_signal": "credential_request",
+          "effect": "contradicts",
+          "statement_en": "UIDAI advises Aadhaar holders not to disclose their Aadhaar OTP to any unauthorized entity and not to share their m-Aadhaar PIN with anyone. A request to share an Aadhaar OTP conflicts with this advice.",
+          "statement_ta": "ஆதார் OTP-ஐ அங்கீகரிக்கப்படாத எவரிடமும் வெளிப்படுத்த வேண்டாம், m-Aadhaar PIN-ஐ யாருடனும் பகிர வேண்டாம் என்று UIDAI அறிவுறுத்துகிறது. ஆதார் OTP-ஐப் பகிரக் கேட்கும் கோரிக்கை இந்த அறிவுரைக்கு முரணானது.",
+          "source_ref": "pib_uidai_2022"
+        }
+      ],
+      "safe_guidance_en": "For Aadhaar queries, use uidai.gov.in (typed yourself) or UIDAI's toll-free helpline 1947.",
+      "safe_guidance_ta": "ஆதார் தொடர்பான கேள்விகளுக்கு, நீங்களே தட்டச்சு செய்த uidai.gov.in அல்லது UIDAI கட்டணமில்லா உதவி எண் 1947-ஐப் பயன்படுத்தவும்.",
+      "sources": [
+        {
+          "id": "pib_uidai_2022",
+          "publisher": "Press Information Bureau (UIDAI release)",
+          "title": "Use Aadhaar confidently, but observe same usage hygiene like Bank account, and Passport: UIDAI",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1887539",
+          "published": "2022-12-30",
+          "retrieved": "2026-09-24",
+          "quotes": [
+            "Aadhaar holders should not disclose Aadhaar OTP to any unauthorized entity and refrain from sharing m-Aahaar PIN with anyone",
+            "Aadhaar holders may contact UIDAI on toll-free helpline 1947 which is available 24x7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pm_kisan",
+      "category": "schemes_benefits",
+      "service_name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+      "service_name_ta": "பிஎம்-கிசான் (பிரதமர் கிசான் சம்மான் நிதி)",
+      "authority": "Government of India (PM-KISAN scheme)",
+      "aliases": ["pm-kisan", "pm kisan", "pmkisan", "kisan samman", "பிஎம் கிசான்", "பிஎம்-கிசான்", "கிசான் சம்மான்"],
+      "official_domains": ["pmkisan.gov.in"],
+      "official_urls": ["https://pmkisan.gov.in/"],
+      "helplines": [],
+      "facts": [
+        {
+          "id": "pm_kisan_installment_amount",
+          "applies_to_claim": "installment_amount",
+          "effect": "compare_amount",
+          "expected_amount_inr": 2000,
+          "statement_en": "The official PM-KISAN site describes income support of ₹6,000 per year paid in three equal instalments, i.e. ₹2,000 per instalment.",
+          "statement_ta": "அதிகாரப்பூர்வ PM-KISAN இணையதளம் ஆண்டுக்கு ₹6,000 மூன்று சம தவணைகளில் (ஒவ்வொரு தவணையும் ₹2,000) வழங்கப்படுவதாகக் கூறுகிறது.",
+          "source_ref": "pmkisan_home"
+        },
+        {
+          "id": "pm_kisan_direct_transfer",
+          "applies_to_signal": "payment_or_fee_request",
+          "effect": "not_covered",
+          "statement_en": "The official PM-KISAN site says funds are transferred directly to beneficiaries' bank accounts. It does not describe paying a fee, or using a message link, to receive an instalment.",
+          "statement_ta": "நிதி பயனாளிகளின் வங்கிக் கணக்குகளுக்கு நேரடியாக மாற்றப்படுவதாக அதிகாரப்பூர்வ PM-KISAN இணையதளம் கூறுகிறது. தவணையைப் பெற கட்டணம் செலுத்துவது அல்லது செய்தியில் உள்ள இணைப்பைப் பயன்படுத்துவது பற்றி அது குறிப்பிடவில்லை.",
+          "source_ref": "pmkisan_home"
+        }
+      ],
+      "safe_guidance_en": "Check PM-KISAN status only on pmkisan.gov.in, typed into the browser yourself.",
+      "safe_guidance_ta": "PM-KISAN நிலையை நீங்களே உலாவியில் தட்டச்சு செய்த pmkisan.gov.in-இல் மட்டும் சரிபார்க்கவும்.",
+      "sources": [
+        {
+          "id": "pmkisan_home",
+          "publisher": "PM-KISAN official website",
+          "title": "PM-Kisan Samman Nidhi — home page",
+          "url": "https://pmkisan.gov.in/",
+          "published": null,
+          "retrieved": "2026-09-24",
+          "quotes": [
+            "an income support of 6,000/- per year in three equal installments",
+            "The fund will be directly transferred to the bank accounts of the beneficiaries."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "income_tax",
+      "category": "income_tax",
+      "service_name": "Income Tax Department",
+      "service_name_ta": "வருமான வரித் துறை",
+      "authority": "Central Board of Direct Taxes, Ministry of Finance",
+      "aliases": ["income tax", "income-tax", "incometax", "it department", "it refund", "tax refund", "itr", "pan card", "வருமான வரி"],
+      "official_domains": ["incometax.gov.in", "incometaxindia.gov.in"],
+      "official_urls": ["https://www.incometax.gov.in/", "https://www.incometaxindia.gov.in/"],
+      "helplines": [],
+      "facts": [
+        {
+          "id": "itd_never_asks_pin_by_email",
+          "applies_to_signal": "credential_request",
+          "effect": "not_covered",
+          "statement_en": "The Income Tax Department states that it never asks for PIN numbers, passwords or similar access information for credit cards, banks or other financial accounts through e-mail. The official statement refers to e-mail; this reference does not cover other channels.",
+          "statement_ta": "கடன் அட்டை, வங்கி அல்லது பிற நிதிக் கணக்குகளுக்கான PIN, கடவுச்சொல் போன்ற அணுகல் தகவல்களை மின்னஞ்சல் மூலம் ஒருபோதும் கேட்பதில்லை என்று வருமான வரித் துறை கூறுகிறது. இந்த அறிக்கை மின்னஞ்சலைப் பற்றியது; பிற வழிகளை இந்தக் குறிப்பு உள்ளடக்கவில்லை.",
+          "source_ref": "cbdt_phishing_2016"
+        }
+      ],
+      "safe_guidance_en": "For tax matters, log in only at incometax.gov.in typed yourself. The Department advises not to click links or open attachments in suspicious messages.",
+      "safe_guidance_ta": "வரி தொடர்பான விஷயங்களுக்கு, நீங்களே தட்டச்சு செய்த incometax.gov.in-இல் மட்டும் உள்நுழையவும். சந்தேகத்திற்குரிய செய்திகளில் உள்ள இணைப்புகளைக் கிளிக் செய்ய வேண்டாம் என்று துறை அறிவுறுத்துகிறது.",
+      "sources": [
+        {
+          "id": "cbdt_phishing_2016",
+          "publisher": "Central Board of Direct Taxes (press release)",
+          "title": "Steps taken by Income Tax Department for safeguarding taxpayers from Phishing email",
+          "url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2020-08/Press-Release-Anti-Phishing-email-05-02-2016.pdf",
+          "published": "2016-02-05",
+          "retrieved": "2026-09-24",
+          "quotes": [
+            "The Income Tax Department NEVER asks for your PIN numbers, passwords or similar access information for credit cards, banks or other financial accounts through e-mail.",
+            "Do not click on any links."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "passport_seva",
+      "category": "passport",
+      "service_name": "Passport Seva (Ministry of External Affairs)",
+      "service_name_ta": "பாஸ்போர்ட் சேவா (வெளியுறவு அமைச்சகம்)",
+      "authority": "Ministry of External Affairs",
+      "aliases": ["passport", "passport seva", "mpassport", "பாஸ்போர்ட்", "கடவுச்சீட்டு"],
+      "official_domains": ["passportindia.gov.in"],
+      "official_urls": ["https://www.passportindia.gov.in/"],
+      "helplines": [],
+      "facts": [],
+      "safe_guidance_en": "Apply or pay for passport services only through passportindia.gov.in or the mPassport Seva app.",
+      "safe_guidance_ta": "பாஸ்போர்ட் சேவைகளுக்கு passportindia.gov.in அல்லது mPassport Seva செயலி மூலம் மட்டுமே விண்ணப்பிக்கவும் அல்லது பணம் செலுத்தவும்.",
+      "sources": [
+        {
+          "id": "pib_passport_2026",
+          "publisher": "Press Information Bureau (MEA release)",
+          "title": "Special Passport Drive for Normal and Tatkaal Applicants at Passport Seva Kendra (PSK) Pune",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2267847",
+          "published": "2026-06-02",
+          "retrieved": "2026-09-24",
+          "quotes": ["passportindia.gov.in ) or mPassport Seva App and submit the application"]
+        },
+        {
+          "id": "pib_passport_2014",
+          "publisher": "Press Information Bureau (MEA release)",
+          "title": "Passport Seva Project",
+          "url": "https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=106324",
+          "published": "2014-07-09",
+          "retrieved": "2026-09-24",
+          "quotes": ["passportindia.gov.in , is web-based and can be accessed by anyone, anytime and anywhere"]
+        }
+      ]
+    },
+    {
+      "id": "cybercrime_reporting",
+      "category": "cybercrime_reporting",
+      "service_name": "National Cyber Crime Reporting Portal & Helpline 1930",
+      "service_name_ta": "தேசிய சைபர் குற்றப் புகார் இணையதளம் & உதவி எண் 1930",
+      "authority": "Ministry of Home Affairs (Indian Cybercrime Coordination Centre)",
+      "aliases": ["cybercrime", "cyber crime", "cyber police", "1930", "சைபர் குற்றம்", "சைபர் கிரைம்"],
+      "official_domains": ["cybercrime.gov.in"],
+      "official_urls": ["https://cybercrime.gov.in/"],
+      "helplines": [{ "number": "1930", "source_ref": "pib_1930_2023" }],
+      "facts": [],
+      "safe_guidance_en": "To report cyber fraud, call the toll-free helpline 1930 or use cybercrime.gov.in.",
+      "safe_guidance_ta": "சைபர் மோசடியைப் புகாரளிக்க, கட்டணமில்லா உதவி எண் 1930-ஐ அழைக்கவும் அல்லது cybercrime.gov.in-ஐப் பயன்படுத்தவும்.",
+      "sources": [
+        {
+          "id": "pib_1930_2023",
+          "publisher": "Press Information Bureau (MHA release)",
+          "title": "Cyber Frauds",
+          "url": "https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=1988272",
+          "published": "2023-12-19",
+          "retrieved": "2026-09-24",
+          "quotes": ["A toll-free Helpline number '1930' ... has been operationalized to get assistance in lodging online cyber incidents"]
+        },
+        {
+          "id": "ncrp_home",
+          "publisher": "National Cyber Crime Reporting Portal",
+          "title": "National Cyber Crime Reporting Portal — home page",
+          "url": "https://cybercrime.gov.in/",
+          "published": null,
+          "retrieved": "2026-09-24",
+          "quotes": []
+        }
+      ]
+    }
+  ]
+}
