@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Tokens from stitch_namma_kavacham_ai_ux_prototype/civic_shield_guard/DESIGN.md */
+@theme {
+  --font-sans: "Noto Sans", "Noto Sans Tamil", "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "Noto Sans Mono", ui-monospace, monospace;
+
+  --color-navy: #0f233d;
+  --color-navy-deep: #000d20;
+  --color-navy-soft: #354763;
+  --color-teal: #0d9488;
+  --color-teal-deep: #006a61;
+  --color-vermilion: #c2410c;
+  --color-amber: #d97706;
+
+  --color-canvas: #f8f9ff;
+  --color-surface-low: #eff4ff;
+  --color-surface: #e6eeff;
+  --color-surface-high: #dce9ff;
+  --color-ink: #0d1c2e;
+  --color-ink-muted: #44474d;
+  --color-line: #e2e8f0;
+  --color-line-strong: #cbd5e1;
+
+  --shadow-card: 0 1px 2px 0 rgba(15, 35, 61, 0.04);
+  --shadow-raised: 0 4px 12px -2px rgba(15, 35, 61, 0.08);
+}
+
+html {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6; /* Tamil conjuncts need ≥1.45 to avoid clipping */
+  -webkit-font-smoothing: antialiased;
+}
+
+:lang(ta) {
+  line-height: 1.7;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
