@@ -1,7 +1,10 @@
-import { ClipboardPaste, Eraser, FileImage, Link2, ShieldCheck, Upload, UserRound, X } from "lucide-react";
-import { useId, useRef, type ReactNode } from "react";
+import { Camera, ClipboardPaste, Eraser, FileImage, Link2, ShieldCheck, Upload, UserRound, X } from "lucide-react";
+import { useId, useRef, useState, type ReactNode } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
-import type { SenderKind } from "../types/analysis";
+import type { OcrLanguage, OcrResult } from "../services/ocr";
+import type { ImageOrigin, SenderKind } from "../types/analysis";
+import { CameraCapture } from "./CameraCapture";
+import { OcrPanel } from "./OcrPanel";
 import { MAX_BODY_CHARS } from "./ReviewConfirm";
 
 export type InputTab = "text" | "upload" | "url";
@@ -13,7 +16,11 @@ export interface FormState {
   url: string;
   file: File | null;
   fileUrl: string | null;
+  imageOrigin: ImageOrigin | null;
   screenshotText: string;
+  ocrLang: OcrLanguage;
+  ocr: OcrResult | null; // raw OCR output, kept to tell unedited OCR text from user-corrected text
+  ocrBusy: boolean;
   showSender: boolean;
   senderValue: string;
   senderKind: SenderKind;
@@ -26,7 +33,11 @@ export const EMPTY_FORM: FormState = {
   url: "",
   file: null,
   fileUrl: null,
+  imageOrigin: null,
   screenshotText: "",
+  ocrLang: "eng+tam",
+  ocr: null,
+  ocrBusy: false,
   showSender: false,
   senderValue: "",
   senderKind: "unknown",
@@ -49,7 +60,8 @@ export function fileProblem(file: File): "size" | "type" | null {
 export function isFormReady(form: FormState): boolean {
   if (form.tab === "text") return form.text.trim().length > 0 && form.text.length <= MAX_BODY_CHARS;
   if (form.tab === "url") return isValidUrlInput(form.url);
-  return form.file !== null;
+  // Only the text is sent, so the upload tab needs confirmed text, not just an image.
+  return form.file !== null && !form.ocrBusy && form.screenshotText.trim().length > 0 && form.screenshotText.length <= MAX_BODY_CHARS;
 }
 
 interface Props {
@@ -64,6 +76,7 @@ export function InputPanel({ form, onChange, onSubmit, fileError, onFileError }:
   const { t } = useLanguage();
   const ids = { text: useId(), url: useId(), shot: useId(), sender: useId(), kind: useId() };
   const fileInput = useRef<HTMLInputElement>(null);
+  const [cameraOpen, setCameraOpen] = useState(false);
   const ready = isFormReady(form);
   const urlTouchedInvalid = form.tab === "url" && form.url.trim() !== "" && !isValidUrlInput(form.url);
 
@@ -73,7 +86,8 @@ export function InputPanel({ form, onChange, onSubmit, fileError, onFileError }:
     { id: "url", label: t.tabUrl, icon: <Link2 className="size-4" aria-hidden /> },
   ];
 
-  function pickFile(file: File | undefined) {
+  // A camera photo goes through the same checks and OCR path as an uploaded screenshot.
+  function pickFile(file: File | undefined, origin: ImageOrigin = "upload") {
     if (!file) return;
     const problem = fileProblem(file);
     if (problem) {
@@ -82,12 +96,13 @@ export function InputPanel({ form, onChange, onSubmit, fileError, onFileError }:
     }
     onFileError(null);
     if (form.fileUrl) URL.revokeObjectURL(form.fileUrl);
-    onChange({ file, fileUrl: URL.createObjectURL(file) });
+    // Text read from a previous image must not carry over as if it came from this one.
+    onChange({ file, fileUrl: URL.createObjectURL(file), imageOrigin: origin, ocr: null, screenshotText: "" });
   }
 
   function removeFile() {
     if (form.fileUrl) URL.revokeObjectURL(form.fileUrl);
-    onChange({ file: null, fileUrl: null });
+    onChange({ file: null, fileUrl: null, imageOrigin: null, ocr: null, screenshotText: "" });
     if (fileInput.current) fileInput.current.value = "";
   }
 
@@ -104,7 +119,11 @@ export function InputPanel({ form, onChange, onSubmit, fileError, onFileError }:
               id={`tab-${tab.id}`}
               aria-selected={active}
               aria-controls={`panel-${tab.id}`}
-              onClick={() => onChange({ tab: tab.id })}
+              onClick={() => {
+                // Leaving the tab unmounts the camera (stopping it); coming back must not restart it unasked.
+                setCameraOpen(false);
+                onChange({ tab: tab.id });
+              }}
               className={`flex min-h-11 flex-col items-center justify-center gap-1 rounded-md px-2 py-2 text-xs font-semibold sm:flex-row sm:text-sm ${
                 active ? "bg-white text-navy shadow-card" : "text-ink-muted hover:text-navy"
               }`}
@@ -178,10 +197,14 @@ export function InputPanel({ form, onChange, onSubmit, fileError, onFileError }:
             <p className="text-xs text-ink-muted">{t.uploadHint}</p>
             {form.file && form.fileUrl ? (
               <div className="mt-3 flex items-start gap-3 rounded-md border border-line p-3">
-                <img src={form.fileUrl} alt="" className="h-28 w-auto max-w-40 rounded border border-line object-cover" />
+                {/* Full-size view in a new tab so the extracted text can be checked against the image. */}
+                <a href={form.fileUrl} target="_blank" rel="noopener noreferrer" aria-label={t.uploadViewFull} className="shrink-0">
+                  <img src={form.fileUrl} alt="" className="h-28 w-auto max-w-40 rounded border border-line object-contain" />
+                </a>
                 <div className="min-w-0 flex-1 text-sm">
                   <p className="flex items-center gap-1.5 truncate font-semibold text-navy">
-                    <FileImage className="size-4 shrink-0" aria-hidden /> {form.file.name}
+                    <FileImage className="size-4 shrink-0" aria-hidden />{" "}
+                    {form.imageOrigin === "camera" ? t.imageOrigins.camera : form.file.name}
                   </p>
                   <p className="text-xs text-ink-muted">{Math.ceil(form.file.size / 1024)} KB</p>
                   <button type="button" onClick={removeFile} className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-red-700">
@@ -189,14 +212,39 @@ export function InputPanel({ form, onChange, onSubmit, fileError, onFileError }:
                   </button>
                 </div>
               </div>
+            ) : cameraOpen ? (
+              <CameraCapture
+                onUsePhoto={(photo) => {
+                  setCameraOpen(false);
+                  pickFile(photo, "camera");
+                }}
+                onCancel={() => setCameraOpen(false)}
+                onUploadInstead={() => {
+                  setCameraOpen(false);
+                  fileInput.current?.click();
+                }}
+              />
             ) : (
-              <label
-                htmlFor={ids.shot}
-                className="mt-3 flex min-h-32 cursor-pointer flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed border-slate-400 bg-canvas p-6 text-center hover:border-navy"
-              >
-                <Upload className="size-6 text-navy-soft" aria-hidden />
-                <span className="font-semibold text-navy">{t.uploadChoose}</span>
-              </label>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <label
+                  htmlFor={ids.shot}
+                  className="flex min-h-32 cursor-pointer flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed border-slate-400 bg-canvas p-6 text-center hover:border-navy"
+                >
+                  <Upload className="size-6 text-navy-soft" aria-hidden />
+                  <span className="font-semibold text-navy">{t.uploadChoose}</span>
+                </label>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onFileError(null);
+                    setCameraOpen(true);
+                  }}
+                  className="flex min-h-32 flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed border-slate-400 bg-canvas p-6 text-center hover:border-navy"
+                >
+                  <Camera className="size-6 text-navy-soft" aria-hidden />
+                  <span className="font-semibold text-navy">{t.cameraOpen}</span>
+                </button>
+              </div>
             )}
             <input
               ref={fileInput}
@@ -212,19 +260,14 @@ export function InputPanel({ form, onChange, onSubmit, fileError, onFileError }:
               </p>
             )}
             {form.file && (
-              <div className="mt-4">
-                <p className="rounded-md border-l-4 border-amber bg-amber-50 p-3 text-sm text-amber-900">{t.ocrUnavailable}</p>
-                <label htmlFor={`${ids.shot}-text`} className="mt-3 block text-sm font-semibold text-navy">
-                  {t.screenshotTextLabel}
-                </label>
-                <textarea
-                  id={`${ids.shot}-text`}
-                  rows={4}
-                  value={form.screenshotText}
-                  onChange={(e) => onChange({ screenshotText: e.target.value })}
-                  className="mt-2 w-full resize-y rounded-md border-[1.5px] border-line-strong bg-surface-low p-3 text-base focus:border-navy focus:outline-none focus:ring-2 focus:ring-teal/30"
-                />
-              </div>
+              <OcrPanel
+                key={form.fileUrl}
+                file={form.file}
+                lang={form.ocrLang}
+                result={form.ocr}
+                text={form.screenshotText}
+                onChange={onChange}
+              />
             )}
           </>
         )}

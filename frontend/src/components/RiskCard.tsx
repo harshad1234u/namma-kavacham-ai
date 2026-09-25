@@ -3,6 +3,7 @@ import { useLanguage } from "../i18n/LanguageContext";
 import { LEVEL_ACTIONS, LEVEL_LABELS } from "../i18n/strings";
 import type { AnalyzeResponse, RiskLevel } from "../types/analysis";
 import { AIExplanation } from "./report/AIExplanation";
+import { AudioReport } from "./report/AudioReport";
 import { EvidenceList } from "./report/EvidenceList";
 import { GovernmentClaimCard } from "./report/GovernmentClaimCard";
 import { MissingDataNotice } from "./report/MissingDataNotice";
@@ -103,6 +104,9 @@ export function RiskCard({ result, onReset }: Props) {
         <p className="mt-4 rounded-md bg-surface-low p-3 text-xs text-navy-soft">{verdictScope}</p>
       </section>
 
+      {/* Keyed by report: a new analysis remounts it, and unmounting cancels any speech. */}
+      <AudioReport key={result.analysis_id} result={result} />
+
       <div className="grid gap-5 lg:grid-cols-12">
         <div className="flex flex-col gap-5 lg:col-span-7">
           <EvidenceList evidence={result.evidence} />
@@ -131,7 +135,8 @@ export function RiskCard({ result, onReset }: Props) {
           <div>
             <p className="font-semibold text-navy">{t.provenance}</p>
             <p className="text-ink-muted">
-              {t.provenanceLabels[result.provenance.content_source]} · {t.unverifiedBadge} · {result.provenance.character_count} {t.characters}
+              {t.provenanceLabels[result.provenance.content_source]}
+              {result.provenance.image_origin && ` · ${t.imageOrigins[result.provenance.image_origin]}`} · {t.unverifiedBadge} · {result.provenance.character_count} {t.characters}
             </p>
           </div>
           <ul className="list-disc pl-5 text-ink-muted sm:col-span-2" data-testid="limitations">

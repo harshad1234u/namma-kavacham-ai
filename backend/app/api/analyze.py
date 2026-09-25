@@ -8,7 +8,7 @@ Raw content lives only in this request's memory and is never logged.
 import time
 import uuid
 
-from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from pydantic import ValidationError
 
 from app.core.config import Settings, get_settings
@@ -66,14 +66,14 @@ def sanitize_errors(exc: ValidationError) -> list[dict]:
 
 
 def _unprocessable(detail: object) -> HTTPException:
-    return HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail=detail)
+    return HTTPException(status_code=422, detail=detail)
 
 
 async def _read_screenshot(upload: UploadFile, settings: Settings) -> bytes:
     data = await upload.read(settings.max_upload_bytes + 1)
     await upload.close()
     if len(data) > settings.max_upload_bytes:
-        raise HTTPException(status.HTTP_413_CONTENT_TOO_LARGE, "Screenshot exceeds the size limit")
+        raise HTTPException(413, "Screenshot exceeds the size limit")
     if not data:
         raise _unprocessable("Screenshot file is empty")
     return data
@@ -113,7 +113,7 @@ async def analyze(
         try:
             ocr_text = extract_text_stub(image, screenshot.content_type)
         except UnsupportedImageError as exc:
-            raise HTTPException(status.HTTP_415_UNSUPPORTED_MEDIA_TYPE, str(exc)) from None
+            raise HTTPException(415, str(exc)) from None
         finally:
             del image
         ocr_attempted = True
@@ -200,7 +200,7 @@ async def analyze(
         )
 
     vt_enabled = settings.virustotal_active
-    limits_en, limits_ta = rc.limitations(bool(primary_url), intel, explanation.generated_by == "gemini")
+    limits_en, limits_ta = rc.limitations(bool(primary_url), intel, explanation.ai_status == "generated")
     ai_attempted = explanation.ai_status in ("generated", "unavailable", "rejected")
     response = AnalyzeResponse(
         analysis_id=analysis_id,
@@ -226,9 +226,12 @@ async def analyze(
         government_claim=government,
         provenance=ProvenanceOut(
             content_source=request.content.source,
+            image_origin=request.content.image_origin,
             user_confirmed=request.content.user_confirmed,
             attachment_received=ocr_attempted,
-            ocr_status="not_available_in_this_build" if ocr_attempted else "not_applicable",
+            # Browser OCR: the text arrives already extracted and no image is received.
+            ocr_status="not_available_in_this_build" if ocr_attempted
+            else "extracted" if request.content.source in ("ocr", "user_corrected_ocr") else "not_applicable",
             character_count=len(body),
         ),
         sender_assessment=rc.sender_assessment(request),
@@ -241,8 +244,9 @@ async def analyze(
         provider_flags=ProviderFlags(
             virustotal_enabled=vt_enabled,
             virustotal_available=intel.available if intel else None,
-            gemini_enabled=settings.gemini_active,
-            gemini_available=explanation.ai_status in ("generated", "rejected") if ai_attempted else None,
+            ai_provider=settings.active_llm_provider,
+            ai_enabled=settings.active_llm_provider != "template",
+            ai_available=explanation.ai_status in ("generated", "rejected") if ai_attempted else None,
         ),
     )
 
@@ -251,6 +255,7 @@ async def analyze(
         extra={
             "analysis_id": analysis_id,
             "content_source": request.content.source,
+            "image_origin": request.content.image_origin,
             "char_count": len(body),
             "url_count": len(normalized_urls),
             "rule_hits": len(rule_hits),

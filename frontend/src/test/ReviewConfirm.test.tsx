@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from "vitest";
 import { editedSource, ReviewConfirm, type Draft } from "../components/ReviewConfirm";
 import { LanguageProvider } from "../i18n/LanguageContext";
 
-const draft: Draft = { body: "Pay Rs 50 fee", source: "pasted_text", screenshot: null, screenshotUrl: null, senderMasked: null };
+const draft: Draft = { body: "Pay Rs 50 fee", source: "pasted_text", screenshotUrl: null, imageOrigin: null, senderMasked: null };
 
 function setup(overrides: Partial<Draft> = {}) {
   const handlers = { onBack: vi.fn(), onCancel: vi.fn(), onConfirm: vi.fn() };

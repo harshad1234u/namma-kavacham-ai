@@ -102,6 +102,49 @@ describe("GovernmentClaimCard", () => {
     expect(screen.getByText("அதிகாரப்பூர்வ டொமைன் அல்ல.")).toBeInTheDocument();
     expect(screen.getByText(/தொகுக்கப்பட்ட நிலையான தரவுத்தொகுப்பைப்/)).toBeInTheDocument();
   });
+
+  it("labels a supported claim cautiously, never as simply 'Verified'", async () => {
+    renderCard(makeResponse({ government_claim: { ...partialGov, claim_status: "supported_by_curated_kb" } }));
+    const status = screen.getByTestId("gov-status");
+    expect(status).toHaveTextContent("Matches official reference — message not confirmed");
+    expect(status).not.toHaveTextContent(/^verified$/i);
+    await userEvent.click(screen.getByRole("button", { name: "தமிழ்" }));
+    expect(status).toHaveTextContent(/செய்தி உறுதிசெய்யப்படவில்லை/);
+  });
+
+  it("shows curated guidance and official sites, in Tamil too", async () => {
+    renderCard(
+      makeResponse({
+        government_claim: { ...partialGov, safe_guidance_en: ["Use pmkisan.gov.in."], safe_guidance_ta: ["pmkisan.gov.in-ஐப் பயன்படுத்தவும்."] },
+      }),
+    );
+    expect(screen.getByTestId("gov-guidance")).toHaveTextContent("Use pmkisan.gov.in.");
+    const link = within(screen.getByTestId("gov-official-sites")).getByRole("link");
+    expect(link).toHaveAttribute("href", "https://pmkisan.gov.in/");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    await userEvent.click(screen.getByRole("button", { name: "தமிழ்" }));
+    expect(screen.getByTestId("gov-guidance")).toHaveTextContent("pmkisan.gov.in-ஐப் பயன்படுத்தவும்.");
+  });
+
+  it("shows no guidance or official site without a curated match, and drops non-government URLs", () => {
+    const { unmount } = render(
+      <LanguageProvider>
+        <RiskCard
+          result={makeResponse({
+            government_claim: { ...partialGov, matched_kb_entries: [], safe_guidance_en: ["Should not appear"] },
+          })}
+          onReset={vi.fn()}
+        />
+      </LanguageProvider>,
+    );
+    expect(screen.queryByTestId("gov-guidance")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("gov-official-sites")).not.toBeInTheDocument();
+    unmount();
+
+    const lookalike = { ...partialGov.sources[0], official_url: "https://pmkisan.gov.in.payment-desk.cc/" };
+    renderCard(makeResponse({ government_claim: { ...partialGov, sources: [lookalike] } }));
+    expect(screen.queryByTestId("gov-official-sites")).not.toBeInTheDocument();
+  });
 });
 
 describe("AIExplanation", () => {

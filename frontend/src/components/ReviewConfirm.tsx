@@ -1,21 +1,21 @@
 import { ArrowLeft, ArrowRight, FileImage, Lock, PencilLine, ShieldAlert } from "lucide-react";
 import { useId, useState } from "react";
 import { useLanguage } from "../i18n/LanguageContext";
-import type { ContentSource } from "../types/analysis";
+import type { ContentSource, ImageOrigin } from "../types/analysis";
 
 export const MAX_BODY_CHARS = 8000;
 
 export interface Draft {
   body: string;
   source: ContentSource;
-  screenshot: File | null;
-  screenshotUrl: string | null;
+  screenshotUrl: string | null; // local preview only; the image is never sent
+  imageOrigin: ImageOrigin | null;
   senderMasked: string | null;
 }
 
 interface Props {
   draft: Draft;
-  onBack: (body: string) => void;
+  onBack: (body: string, source: ContentSource) => void;
   onCancel: () => void;
   onConfirm: (body: string, source: ContentSource) => void;
 }
@@ -29,12 +29,15 @@ export function ReviewConfirm({ draft, onBack, onCancel, onConfirm }: Props) {
   const { t } = useLanguage();
   const [body, setBody] = useState(draft.body);
   const [consent, setConsent] = useState(false);
+  const [replaced, setReplaced] = useState(false);
   const textId = useId();
   const consentId = useId();
 
   const edited = body !== draft.body;
-  const source = editedSource(draft.source, edited);
-  const hasContent = body.trim().length > 0 || draft.screenshot !== null;
+  const isOcr = draft.source === "ocr" || draft.source === "user_corrected_ocr";
+  // Emptying OCR text and typing new text makes it the user's own entry, not corrected OCR.
+  const source: ContentSource = isOcr && replaced ? "manual_entry" : editedSource(draft.source, edited);
+  const hasContent = body.trim().length > 0;
   const overLimit = body.length > MAX_BODY_CHARS;
   const canSubmit = consent && hasContent && !overLimit;
 
@@ -47,6 +50,11 @@ export function ReviewConfirm({ draft, onBack, onCancel, onConfirm }: Props) {
         <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-800 ring-1 ring-amber-200">
           {t.unverifiedBadge}
         </span>
+        {draft.imageOrigin && (
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-surface px-3 py-1 text-xs font-semibold text-navy-soft">
+            {t.imageOrigins[draft.imageOrigin]}
+          </span>
+        )}
         {edited && (
           <span className="inline-flex items-center gap-1.5 rounded-full bg-surface px-3 py-1 text-xs font-semibold text-navy-soft">
             <PencilLine className="size-3.5" aria-hidden /> {t.editedBadge}
@@ -66,7 +74,8 @@ export function ReviewConfirm({ draft, onBack, onCancel, onConfirm }: Props) {
             <p className="flex items-center gap-1.5 font-semibold text-navy">
               <FileImage className="size-4" aria-hidden /> {t.screenshotAttached}
             </p>
-            <p className="mt-1 text-ink-muted">{t.ocrUnavailable}</p>
+            <p className="mt-1 text-ink-muted">{t.ocrReviewNote}</p>
+            {isOcr && <p className="mt-1 text-ink-muted">{t.ocrDone}</p>}
           </div>
         </div>
       )}
@@ -84,7 +93,10 @@ export function ReviewConfirm({ draft, onBack, onCancel, onConfirm }: Props) {
         <textarea
           id={textId}
           value={body}
-          onChange={(e) => setBody(e.target.value)}
+          onChange={(e) => {
+            setBody(e.target.value);
+            if (e.target.value === "") setReplaced(true);
+          }}
           rows={6}
           aria-describedby={`${textId}-count`}
           className="mt-2 w-full resize-y rounded-md border-[1.5px] border-line-strong bg-surface-low p-3 text-base focus:border-navy focus:outline-none focus:ring-2 focus:ring-teal/30"
@@ -122,7 +134,7 @@ export function ReviewConfirm({ draft, onBack, onCancel, onConfirm }: Props) {
       <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:items-center">
         <button
           type="button"
-          onClick={() => onBack(body)}
+          onClick={() => onBack(body, source)}
           className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-surface-high px-5 font-semibold text-navy hover:bg-surface"
         >
           <ArrowLeft className="size-4" aria-hidden /> {t.back}

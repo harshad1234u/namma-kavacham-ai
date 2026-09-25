@@ -27,10 +27,9 @@ function detailText(detail: unknown): string {
   return "";
 }
 
-export async function submitAnalysis(request: AnalyzeRequest, screenshot?: File | null): Promise<AnalyzeResponse> {
+export async function submitAnalysis(request: AnalyzeRequest): Promise<AnalyzeResponse> {
   const form = new FormData();
   form.append("payload", JSON.stringify(request));
-  if (screenshot) form.append("screenshot", screenshot, screenshot.name);
 
   const controller = new AbortController();
   const timer = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);

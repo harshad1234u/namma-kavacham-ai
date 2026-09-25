@@ -22,10 +22,27 @@ const OUTCOME_ICON: Record<FindingOutcome, ReactNode> = {
   ambiguous: <CircleHelp className="mt-0.5 size-4 shrink-0 text-amber-700" aria-hidden />,
 };
 
+// Mirrors the KB loader's rule (https on a .gov.in / .nic.in domain), so nothing else is ever shown as official.
+function isOfficialUrl(url: string | null): url is string {
+  try {
+    const u = new URL(url ?? "");
+    return u.protocol === "https:" && /\.(gov|nic)\.in$/.test(u.hostname);
+  } catch {
+    return false;
+  }
+}
+
 export function GovernmentClaimCard({ gov }: { gov: GovernmentClaimResult }) {
   const { lang, t } = useLanguage();
   const limitations = lang === "ta" && gov.limitations_ta?.length ? gov.limitations_ta : gov.limitations;
   const disclosure = lang === "ta" && gov.disclosure_ta ? gov.disclosure_ta : gov.disclosure;
+  // Guidance and official sites exist only for claims matched to a curated KB entry.
+  const matchedIds = gov.matched_kb_entries ?? [];
+  const matched = matchedIds.length > 0;
+  const guidance = !matched ? [] : (lang === "ta" && gov.safe_guidance_ta?.length ? gov.safe_guidance_ta : gov.safe_guidance_en) ?? [];
+  const officialUrls = !matched
+    ? []
+    : [...new Set(gov.sources.filter((s) => matchedIds.includes(s.kb_entry_id)).map((s) => s.official_url))].filter(isOfficialUrl);
 
   return (
     <Section id="gov" icon={<Landmark className="size-5" aria-hidden />} title={t.govTitle}>
@@ -83,6 +100,32 @@ export function GovernmentClaimCard({ gov }: { gov: GovernmentClaimResult }) {
           {l}
         </p>
       ))}
+
+      {guidance.length > 0 && (
+        <div className="mt-4" data-testid="gov-guidance">
+          <p className="text-sm font-semibold text-navy">{t.govGuidanceTitle}</p>
+          <ul className="mt-1 list-disc pl-5 text-sm">
+            {guidance.map((g) => (
+              <li key={g}>{g}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {officialUrls.length > 0 && (
+        <div className="mt-3" data-testid="gov-official-sites">
+          <p className="text-sm font-semibold text-navy">{t.officialSitesTitle}</p>
+          <ul className="mt-1 flex flex-col gap-1 text-sm">
+            {officialUrls.map((url) => (
+              <li key={url}>
+                <a href={url} target="_blank" rel="noopener noreferrer" className="break-all font-mono text-navy underline">
+                  {url}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {gov.sources.length > 0 && (
         <details className="mt-3 text-xs text-ink-muted">

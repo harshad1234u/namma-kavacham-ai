@@ -170,3 +170,32 @@ def test_logs_do_not_contain_raw_content(client, caplog):
 def test_openapi_documents_endpoint(client):
     spec = client.get("/openapi.json").json()
     assert "/v1/analyze" in spec["paths"]
+
+
+def test_camera_image_origin_is_echoed_and_does_not_change_risk(client):
+    def analyse(**content):
+        payload = json.loads(make_payload(SCAM_AADHAAR_OTP))
+        payload["content"].update(content)
+        return post(client, json.dumps(payload))
+
+    base = analyse(source="ocr").json()
+    for source in ("ocr", "user_corrected_ocr", "manual_entry"):
+        d = analyse(source=source, image_origin="camera").json()
+        assert d["provenance"]["content_source"] == source
+        assert d["provenance"]["image_origin"] == "camera"
+        assert (d["risk"]["level"], d["risk"]["score"]) == (base["risk"]["level"], base["risk"]["score"])
+        assert d["evidence"] == base["evidence"]
+    assert base["provenance"]["image_origin"] is None
+    # Browser OCR text arrives already extracted; no image is received.
+    assert base["provenance"]["ocr_status"] == "extracted"
+    assert base["provenance"]["attachment_received"] is False
+
+
+def test_image_origin_rejected_for_non_image_sources(client):
+    for source in ("pasted_text", "url_input"):
+        payload = json.loads(make_payload(SCAM_AADHAAR_OTP, source=source))
+        payload["content"]["image_origin"] = "camera"
+        assert post(client, json.dumps(payload)).status_code == 422
+    payload = json.loads(make_payload(SCAM_AADHAAR_OTP, source="ocr"))
+    payload["content"]["image_origin"] = "satellite"
+    assert post(client, json.dumps(payload)).status_code == 422

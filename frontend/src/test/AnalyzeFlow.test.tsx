@@ -102,28 +102,6 @@ describe("Analyze flow", () => {
     expect(payload.content.source).toBe("url_input");
   });
 
-  it("uploads a screenshot with attachment metadata and rejects bad files", async () => {
-    fetchMock.mockResolvedValueOnce(new Response(JSON.stringify(makeResponse()), { status: 200 }));
-    renderAnalyze();
-    await userEvent.click(screen.getByRole("tab", { name: /upload screenshot/i }));
-    const fileInput = document.querySelector('input[type="file"]') as HTMLInputElement;
-
-    await userEvent.upload(fileInput, new File(["gif"], "x.gif", { type: "image/gif" }), { applyAccept: false });
-    expect(screen.getByRole("alert")).toHaveTextContent(/only png, jpeg, or webp/i);
-
-    await userEvent.upload(fileInput, new File([new Uint8Array([137, 80, 78, 71])], "sms.png", { type: "image/png" }));
-    expect(screen.getByText(/automatic text extraction is not available/i)).toBeInTheDocument();
-    await userEvent.click(screen.getByRole("button", { name: /review & check risk/i }));
-    await userEvent.click(screen.getByRole("checkbox"));
-    await userEvent.click(screen.getByRole("button", { name: /confirm & analyze/i }));
-
-    const form = fetchMock.mock.calls[0][1].body as FormData;
-    const payload = JSON.parse(form.get("payload") as string);
-    expect(payload.content.source).toBe("ocr");
-    expect(payload.attachment).toMatchObject({ type: "screenshot", provenance: "user_upload", original_filename: "sms.png" });
-    expect(form.get("screenshot")).toBeInstanceOf(File);
-  });
-
   it("validates URL input shape", () => {
     expect(isValidUrlInput("example.in/page")).toBe(true);
     expect(isValidUrlInput("two words.com")).toBe(false);

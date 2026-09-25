@@ -32,10 +32,12 @@ _ACTION_TEXT = {
     "install_remote_access_app": ("install a remote-access app", "தொலை அணுகல் செயலியை நிறுவுவது"),
     "send_documents_or_bank_details": ("send documents or bank details", "ஆவணங்கள் அல்லது வங்கி விவரங்களை அனுப்புவது"),
     "call_number_in_message": ("call a number given in the message", "செய்தியில் உள்ள எண்ணை அழைப்பது"),
+    "apply_through_chat_app": ("apply through WhatsApp or Telegram", "வாட்ஸ்அப் அல்லது டெலிகிராம் மூலம் விண்ணப்பிப்பது"),
 }
 _ACTION_SIGNAL = {
     "share_otp_pin_or_password": "credential_request",
     "pay_money_or_fee": "payment_or_fee_request",
+    "apply_through_chat_app": "unofficial_channel_application",
 }
 
 LIMITATIONS = {
