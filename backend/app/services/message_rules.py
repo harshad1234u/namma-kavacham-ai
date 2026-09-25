@@ -17,7 +17,12 @@ _EXCERPT_RADIUS = 40
 _NEGATION_BEFORE = re.compile(
     r"(never|don'?t|do not|doesn'?t|does not|won'?t|will not|not|no one|nobody|avoid|beware)\W+(\w+\W+){0,4}$"
 )
-_NEGATION_AFTER_TA = re.compile(r"^\S*\s*(\S+\s+){0,2}(வேண்டாம்|கூடாது|மாட்டோம்|மாட்டார்கள்|கேட்காது|கேட்பதில்லை)")
+# The -ாதீர்கள் / -ாதீங்க / -ாதே forms are negative imperatives glued to the matched verb ("சொல்லாதீங்க" =
+# "don't tell"). They are anchored with ^, so they only count directly after the verb, never later in the
+# sentence ("பகிருங்கள், யாரிடமும் சொல்லாதீர்கள்" stays a scam request).
+_NEGATION_AFTER_TA = re.compile(
+    r"^\S*\s*(\S+\s+){0,2}(வேண்டாம்|கூடாது|மாட்டோம்|மாட்டார்கள்|கேட்காது|கேட்பதில்லை)|^(ாதீர்கள்|ாதீங்க|ாதீர்|ாதே)"
+)
 # Tanglish "don't do it" must directly follow the matched verb ("share pannatheenga"); a looser
 # window would also swallow the classic scam line "OTP share pannunga, yaarukkum sollatheenga".
 _NEGATION_AFTER_TANGLISH = re.compile(
@@ -90,7 +95,7 @@ _CREDENTIAL_PATTERNS = _c(
     r"\b(share|send|tell|enter|provide|forward|give|confirm|type|reply with|submit|read out)\b[^.!?\n]{0,40}"
     r"\b(otp|one[- ]time password|upi pin|m-?pin|atm pin|pin|password|passcode|cvv|verification code)\b",
     r"\b(otp|upi pin|m-?pin|password|cvv|verification code)\b[^.!?\n]{0,30}\b(share|send|tell|forward|reply|sollunga|anuppunga|kudunga)\b",
-    r"(otp|ஓடிபி|ஒடிபி|கடவுச்சொல்|பின் எண்|யுபிஐ பின்)[^.!?\n]{0,30}(பகிர|அனுப்ப|சொல்ல|தெரிவி|கொடு|பதிவிடு)",
+    r"(otp|ஓடிபி|ஒடிபி|கடவுச்சொல்|பின் எண்|யுபிஐ பின்)[^.!?\n]{0,30}?(பகிர|அனுப்ப|சொல்ல|தெரிவி|கொடு|பதிவிடு)",
     r"\botp\b[^.!?\n]{0,15}\b(share pannunga|sollunga|anuppunga|kodunga|sollu|anuppu)\b",
 )
 
@@ -117,15 +122,16 @@ _FEE_PATTERNS = _c(
     r"\b(to|for)\s+(activate|release|unblock|unfreeze|receive|claim|process|restore|avoid)",
     _UPI_ID,
     # "ரூ.100" contains a period, so the amount is matched explicitly before the sentence-bounded gap.
-    r"(கட்டணம்|செயலாக்கக் கட்டணம்|பதிவுக் கட்டணம்)\s*(ரூ\.?\s?\d[\d,]*)?[^.!?\n]{0,30}(செலுத்த|கட்ட|அனுப்ப)",
+    r"(கட்டணம்|செயலாக்கக் கட்டணம்|பதிவுக் கட்டணம்)\s*(ரூ\.?\s?\d[\d,]*)?[^.!?\n]{0,30}?(செலுத்த|கட்ட|அனுப்ப)",
 )
 _PAY_PATTERNS = _c(
     r"\b(pay|payment|transfer|deposit|remit|send money)\b[^.!?\n]{0,40}(₹|\brs\.?\s?\d|\binr\b|\brupees\b|\bamount\b|\bbill\b)",
     r"(₹|\brs\.?\s?)\s?\d[\d,]*[^.!?\n]{0,30}\b(pay|transfer|deposit)\b",
     r"\b(immediately|urgently|now|today)\s+(pay|make (the )?payment|transfer)\b",
     r"\b(pay|make (the )?payment)\s+(immediately|urgently|now|today|at once)\b",
-    r"(பணம்|தொகை|₹|ரூ\.?\s?\d[\d,]*)[^.!?\n]{0,30}(செலுத்த|அனுப்ப|கட்ட)",
+    r"(பணம்|தொகை|₹|ரூ\.?\s?\d[\d,]*)[^.!?\n]{0,30}?(செலுத்த|அனுப்ப|கட்ட)",
     r"\b(pay pannunga|panam anuppunga|kattunga)\b",
+    r"\b(fee|fees|charge|amount|rupees|rs)\b[^.!?\n]{0,30}\b(anuppunga|kattunga|pay pannunga)\b",
 )
 
 
@@ -193,7 +199,7 @@ _APK_PATTERNS = _c(
     r"\.(apk|xapk|apks)\b",
     r"\b(download|install|update|open)\b[^.!?\n]{0,30}\b(app|application|apk|software)\b[^.!?\n]{0,30}"
     r"\b(link|below|given|from|at|http|www)\b",
-    r"(செயலியை|ஆப்|அப்ளிகேஷன்)[^.!?\n]{0,20}(பதிவிறக்க|நிறுவ|இன்ஸ்டால்|டவுன்லோட்)",
+    r"(செயலியை|ஆப்|அப்ளிகேஷன்)[^.!?\n]{0,20}?(பதிவிறக்க|நிறுவ|இன்ஸ்டால்|டவுன்லோட்)",
     r"\b(apk|app)\b[^.!?\n]{0,15}\b(install pannunga|download pannunga)\b",
 )
 
@@ -244,7 +250,7 @@ _IMPERSONATION_MEDIUM = _c(
     r"\b(scheme|subsidy|benefit|installment|instalment|refund|dbt|pension|scholarship)\b[^.!?\n]{0,40}"
     r"\b(pending|on hold|approved|credited|release|blocked|stuck)\b",
     r"\b(update|verify|link|complete)\b[^.!?\n]{0,20}" + _SERVICE,
-    r"(திட்டம்|மானியம்|உதவித்தொகை|நிலுவை|தவணை|ஓய்வூதியம்)[^.!?\n]{0,30}(நிறுத்த|நிலுவையில்|வெளியிட|தடைப்பட்)",
+    r"(திட்டம்|மானியம்|உதவித்தொகை|நிலுவை|தவணை|ஓய்வூதியம்)[^.!?\n]{0,30}?(நிறுத்த|நிலுவையில்|வெளியிட|தடைப்பட்)",
 )
 
 
@@ -269,7 +275,7 @@ def rule_government_impersonation(text: str) -> RuleHit | None:
 _DOCUMENT_PATTERNS = _c(
     r"\b(send|share|upload|provide|submit|whatsapp)\b[^.!?\n]{0,30}\b(aadhaar|aadhar|pan|bank details|account number|"
     r"ifsc|debit card|credit card|card number|card details|passbook|selfie|photo of)\b",
-    r"(ஆதார்|பான்|வங்கி விவரங்கள்|கணக்கு எண்|அட்டை விவரங்கள்)[^.!?\n]{0,25}(அனுப்ப|பகிர|பதிவேற்ற)",
+    r"(ஆதார்|பான்|வங்கி விவரங்கள்|கணக்கு எண்|அட்டை விவரங்கள்)[^.!?\n]{0,25}?(அனுப்ப|பகிர|பதிவேற்ற)",
 )
 
 
@@ -290,6 +296,8 @@ def rule_sensitive_documents(text: str) -> RuleHit | None:
 _CALLBACK_PATTERNS = _c(
     r"\b(call|contact|whatsapp|dial|ring)\b[^.!?\n]{0,30}(\+?91[\s-]?)?[6-9]\d{4}[\s-]?[\dx]{5}",
     r"(அழைக்க|தொடர்பு கொள்ள|அழையுங்கள்)[^.!?\n]{0,30}(\+?91[\s-]?)?[6-9]\d{4}[\s-]?[\dx]{5}",
+    # Tamil / Tanglish word order puts the verb after the number: "9876543210 அழைக்கவும்".
+    r"(\+?91[\s-]?)?[6-9]\d{4}[\s-]?[\dx]{5}[^.!?\n]{0,20}?(அழைக்க|தொடர்பு கொள்ள|அழையுங்கள்|\bcall pannunga\b)",
 )
 
 
@@ -364,8 +372,8 @@ _CHANNEL_PATTERNS = _c(
     rf"\b{_CHAT}\b[^.!?\n]{{0,30}}\b({_APPLY}|apply pannunga|register pannunga)\b",
     r"\bjoin\b[^.!?\n]{0,20}\b(whatsapp|telegram)\s+(group|channel)\b[^.!?\n]{0,40}"
     r"\b(scheme|yojana|subsidy|benefit|scholarship|pension|loan|job|recruitment)\b",
-    r"(வாட்ஸ்அப்|வாட்ஸ்ஆப்|டெலிகிராம்)[^.!?\n]{0,30}(விண்ணப்ப|பதிவு செய்)",
-    r"(விண்ணப்ப|பதிவு செய்)[^.!?\n]{0,30}(வாட்ஸ்அப்|வாட்ஸ்ஆப்|டெலிகிராம்)",
+    r"(வாட்ஸ்அப்|வாட்ஸ்ஆப்|டெலிகிராம்)[^.!?\n]{0,30}?(விண்ணப்ப|பதிவு செய்)",
+    r"(விண்ணப்ப|பதிவு செய்)[^.!?\n]{0,30}?(வாட்ஸ்அப்|வாட்ஸ்ஆப்|டெலிகிராம்)",
 )
 
 

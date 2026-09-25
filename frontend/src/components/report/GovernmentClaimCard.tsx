@@ -118,7 +118,7 @@ export function GovernmentClaimCard({ gov }: { gov: GovernmentClaimResult }) {
           <ul className="mt-1 flex flex-col gap-1 text-sm">
             {officialUrls.map((url) => (
               <li key={url}>
-                <a href={url} target="_blank" rel="noopener noreferrer" className="break-all font-mono text-navy underline">
+                <a href={url} target="_blank" rel="noopener noreferrer" className="inline-block break-all py-1 font-mono text-navy underline">
                   {url}
                 </a>
               </li>

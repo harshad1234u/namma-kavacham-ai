@@ -108,3 +108,27 @@ describe("Analyze flow", () => {
     expect(isValidUrlInput("nodot")).toBe(false);
   });
 });
+
+describe("Analyze flow: malformed or failed responses", () => {
+  async function submitWith(response: Response) {
+    fetchMock.mockResolvedValueOnce(response);
+    renderAnalyze();
+    await typeAndReview("hello");
+    await userEvent.click(screen.getByRole("checkbox"));
+    await userEvent.click(screen.getByRole("button", { name: /confirm & analyze/i }));
+  }
+
+  it.each([
+    ["a 200 with an empty object", () => new Response("{}", { status: 200 })],
+    ["a 200 missing the risk block", () => new Response(JSON.stringify({ ...makeResponse(), risk: undefined }), { status: 200 })],
+    ["a 200 that is not JSON", () => new Response("<html>gateway</html>", { status: 200 })],
+    ["HTTP 429", () => new Response(JSON.stringify({ error: "rate_limited" }), { status: 429 })],
+    ["HTTP 500", () => new Response(JSON.stringify({ error: "internal_error", detail: "Analysis failed" }), { status: 500 })],
+  ])("shows a recoverable error state, never a blank page, for %s", async (_name, make) => {
+    await submitWith(make());
+    const alert = await screen.findByRole("alert");
+    expect(alert).toHaveTextContent(/not a safe verdict/i);
+    expect(screen.queryByTestId("risk-level")).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /try again/i })).toBeInTheDocument();
+  });
+});

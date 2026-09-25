@@ -174,7 +174,19 @@ describe("ProviderStatus and missing data", () => {
     renderCard(makeResponse({ explanation: { en: "x", ta: "y", generated_by: "template", ai_status: "unavailable", note: null } }));
     const panel = screen.getByTestId("provider-status");
     expect(within(panel).getByText(/link reputation/i).nextSibling).toHaveTextContent("Unavailable");
-    expect(within(panel).getByText(/AI explanation \(Gemini\)/).nextSibling).toHaveTextContent(/unavailable/i);
+    // The fixture's configured provider is "template", so no provider name is shown.
+    expect(within(panel).getByText("AI explanation").nextSibling).toHaveTextContent(/unavailable/i);
+  });
+
+  it.each([
+    ["groq", "AI explanation (Groq)"],
+    ["gemini", "AI explanation (Gemini)"],
+  ] as const)("names the configured AI provider (%s), never a hardcoded one", (provider, label) => {
+    const base = makeResponse();
+    renderCard(makeResponse({ provider_flags: { ...base.provider_flags, ai_provider: provider, ai_enabled: true } }));
+    const panel = screen.getByTestId("provider-status");
+    expect(within(panel).getByText(label)).toBeInTheDocument();
+    expect(within(panel).queryByText(provider === "groq" ? /Gemini/ : /Groq/)).not.toBeInTheDocument();
   });
 
   it("renders Phase 2 missing-data codes in both languages", async () => {
