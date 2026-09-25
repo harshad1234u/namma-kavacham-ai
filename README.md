@@ -17,7 +17,9 @@ Scope and design decisions live in [docs/](docs/). The UI follows the Stitch ref
 | Bilingual deterministic message rules, URL/domain heuristics | Built |
 | VirusTotal URL lookup (behind `VIRUSTOTAL_ENABLED`) | Built, verified live |
 | Risk engine (LOW/MEDIUM/HIGH/CRITICAL + evidence) | Built |
-| Curated government KB (5 categories, cited official sources) | Built — `backend/app/data/government_kb.json` |
+| Curated government KB (7 services in 5 categories, cited official sources) | Built — `backend/app/data/government_kb.json`; coverage and not-covered list in [docs/government-kb-coverage.md](docs/government-kb-coverage.md) |
+| Scheme-scam indicators: payment to a UPI ID in an official context, applying via WhatsApp/Telegram, fee for a "free" benefit | Built (Phase 5), medium-confidence indicators |
+| Tamil wording review | Draft in [docs/tamil-review.md](docs/tamil-review.md) — all rows pending native review, none applied |
 | Government claim detection + KB comparison (6 statuses) | Built |
 | Groq EN/TA explanation (`openai/gpt-oss-20b`, strict JSON schema, one bounded retry) with validation + template fallback | Built, mock-tested (`LLM_PROVIDER=groq`, `GROQ_ENABLED`, `GROQ_API_KEY`) |
 | Gemini explanation | Kept, off by default (`LLM_PROVIDER=gemini`, `GEMINI_ENABLED`) |
@@ -59,8 +61,8 @@ The frontend calls the backend on the same host at port 8000, so a phone on the 
 ## Tests
 
 ```bash
-cd backend && .venv/Scripts/python -m pytest -q     # 194 tests, no network needed
-cd frontend && npm test                              # 30 tests
+cd backend && .venv/Scripts/python -m pytest -q     # 265 tests, no network needed
+cd frontend && npm test                              # 136 tests
 ```
 
 ## Deploy to Render
@@ -93,6 +95,20 @@ is configured; without AI provider quota (or with `LLM_PROVIDER=template`), repo
   ("block aagidum nu varra SMS…") can still score MEDIUM — the English rules share this limitation.
 - **Groq free-tier quota (30 RPM, 8k tokens/min, 1k requests/day for gpt-oss-20b).** When the quota is exhausted (HTTP 429) every report falls back to the
   template explanation. The risk result is unaffected; use a key with quota for live demos.
-- **Curated KB is static.** Five categories; anything else is `not_found_in_curated_kb`, never "safe".
+- **Curated KB is static.** Seven services; a named service outside it is `not_found_in_curated_kb`, never "safe".
+  Tamil Nadu's Magalir Urimai Thogai is not covered (see [docs/government-kb-coverage.md](docs/government-kb-coverage.md)).
+- **Tamil wording has not been reviewed by a native speaker.** See [docs/tamil-review.md](docs/tamil-review.md).
+  Its suggestions are documentation only; none are applied in the app.
+- **PM-JAY and NSP entries (Phase 5).** No helpline is listed for either, because none was confirmed from a
+  fetched official page. `pmjay.gov.in` is listed as official on the strength of a PIB release; the site itself
+  did not respond when checked. The Tamil names of both schemes are translations, not verified official names.
+- **UPI indicator is context-based.** It cannot tell a personal UPI ID from a merchant or government one; it
+  fires only when the message also has a government, benefit or fee context. The older payment rule still
+  treats any UPI ID as a payment request, including a friend's.
+- **Negation is window-based.** An advisory with more than four words between "never"/"do not" and the example
+  (for example "never pay to any UPI ID like abc@ybl") can still be flagged.
+- **No manual device testing yet.** Android Chrome, iOS Safari, Firefox, local Tamil voices, camera capture,
+  real screenshot OCR, mixed Tamil-English input, keyboard and screen-reader use, and the 390px layout have not
+  been tested by hand.
 - Uploads over 1 MB are spooled by the multipart parser to an OS temp file that is deleted when the
   request ends; the app itself never stores or logs images.

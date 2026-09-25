@@ -7,7 +7,8 @@ from pydantic import ValidationError
 from app.services.government.kb import KB_PATH, REQUIRED_CATEGORIES, load_kb, parse_kb
 
 RAW = json.loads(KB_PATH.read_text(encoding="utf-8"))
-OFFICIAL_SOURCE_HOSTS = ("pib.gov.in", "incometax.gov.in", "pmkisan.gov.in", "cybercrime.gov.in", "uidai.gov.in")
+OFFICIAL_SOURCE_HOSTS = ("pib.gov.in", "incometax.gov.in", "pmkisan.gov.in", "cybercrime.gov.in", "uidai.gov.in",
+                         "scholarships.gov.in")
 
 
 def test_kb_loads_and_covers_all_five_categories():
@@ -44,7 +45,7 @@ def _mutated(fn) -> str:
 @pytest.mark.parametrize(
     "mutation",
     [
-        lambda d: d["entries"].pop(),  # drops a required category
+        lambda d: d.update(entries=[x for x in d["entries"] if x["category"] != "passport"]),  # drops a required category
         lambda d: d["entries"][0]["facts"][0].update(source_ref="missing_source"),
         lambda d: d["entries"][0].update(official_domains=["uidai-help.com"]),
         lambda d: d["entries"][0].update(official_urls=["http://uidai.gov.in/"]),

@@ -36,7 +36,7 @@ _CONDITIONAL_STEPS: list[tuple[set[str], tuple[str, str]]] = [
          "எந்த OTP, PIN, UPI PIN, கடவுச்சொல் அல்லது சரிபார்ப்புக் குறியீட்டையும் பகிர வேண்டாம்."),
     ),
     (
-        {"payment_or_fee_request"},
+        {"payment_or_fee_request", "personal_upi_payment", "fee_for_free_benefit"},
         ("Do not pay any fee or transfer money based on this message.",
          "இந்தச் செய்தியின் அடிப்படையில் எந்தக் கட்டணமும் செலுத்தவோ பணம் அனுப்பவோ வேண்டாம்."),
     ),
@@ -51,6 +51,13 @@ _CONDITIONAL_STEPS: list[tuple[set[str], tuple[str, str]]] = [
         {"sensitive_document_request"},
         ("Do not send identity documents, card details, or bank details in reply.",
          "பதிலாக அடையாள ஆவணங்கள், அட்டை அல்லது வங்கி விவரங்களை அனுப்ப வேண்டாம்."),
+    ),
+    (
+        {"unofficial_channel_application"},
+        ("Do not apply or send documents through WhatsApp or Telegram; apply only on the official website "
+         "or at a government office.",
+         "வாட்ஸ்அப் அல்லது டெலிகிராம் மூலம் விண்ணப்பிக்கவோ ஆவணங்களை அனுப்பவோ வேண்டாம்; அதிகாரப்பூர்வ இணையதளத்திலோ "
+         "அரசு அலுவலகத்திலோ மட்டுமே விண்ணப்பிக்கவும்."),
     ),
     (
         {"unverified_callback_number"},

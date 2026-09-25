@@ -109,21 +109,22 @@ def rule_credential_request(text: str) -> RuleHit | None:
 
 
 # ---- rule: payment / fee request ----
-_UPI_ID = r"\b[\w.-]{2,}@(upi|ybl|okaxis|oksbi|okhdfcbank|okicici|paytm|ibl|axl|apl|fbl|kotak|icici|sbi)\b"
+_UPI_ID = r"\b[\w.-]{2,}@(upi|ybl|okaxis|oksbi|okhdfcbank|okicici|paytm|ibl|axl|apl|fbl|kotak|icici|sbi)\b(?!\.[a-z])"  # not an email such as x@sbi.co.in
 _FEE_PATTERNS = _c(
     r"\b(processing|activation|registration|verification|release|unfreeze|unblock|service|convenience|"
     r"clearance|handling|kyc|refund|reactivation|approval)\s+(fee|fees|charge|charges|amount)\b",
     r"\b(pay|transfer|deposit|send)\b[^.!?\n]{0,40}(₹|\brs\.?\s?\d|\binr\b|\brupees\b)[^.!?\n]{0,40}"
     r"\b(to|for)\s+(activate|release|unblock|unfreeze|receive|claim|process|restore|avoid)",
     _UPI_ID,
-    r"(கட்டணம்|செயலாக்கக் கட்டணம்|பதிவுக் கட்டணம்)[^.!?\n]{0,30}(செலுத்த|கட்ட|அனுப்ப)",
+    # "ரூ.100" contains a period, so the amount is matched explicitly before the sentence-bounded gap.
+    r"(கட்டணம்|செயலாக்கக் கட்டணம்|பதிவுக் கட்டணம்)\s*(ரூ\.?\s?\d[\d,]*)?[^.!?\n]{0,30}(செலுத்த|கட்ட|அனுப்ப)",
 )
 _PAY_PATTERNS = _c(
     r"\b(pay|payment|transfer|deposit|remit|send money)\b[^.!?\n]{0,40}(₹|\brs\.?\s?\d|\binr\b|\brupees\b|\bamount\b|\bbill\b)",
     r"(₹|\brs\.?\s?)\s?\d[\d,]*[^.!?\n]{0,30}\b(pay|transfer|deposit)\b",
     r"\b(immediately|urgently|now|today)\s+(pay|make (the )?payment|transfer)\b",
     r"\b(pay|make (the )?payment)\s+(immediately|urgently|now|today|at once)\b",
-    r"(பணம்|தொகை|₹)[^.!?\n]{0,30}(செலுத்த|அனுப்ப|கட்ட)",
+    r"(பணம்|தொகை|₹|ரூ\.?\s?\d[\d,]*)[^.!?\n]{0,30}(செலுத்த|அனுப்ப|கட்ட)",
     r"\b(pay pannunga|panam anuppunga|kattunga)\b",
 )
 
@@ -305,6 +306,117 @@ def rule_callback_number(text: str) -> RuleHit | None:
     )
 
 
+# Stricter negation for the scheme rules below: also rejects "no registration fee",
+# "applications are not accepted on WhatsApp" and Tamil "...ஏற்கப்படாது".
+_NEGATION_IN_SPAN = re.compile(r"n't\b|\b(not|never|no)\b")
+_NO_BEFORE = re.compile(r"\b(no|zero|nil|without)\s+(\w+\s+){0,2}$")
+_NEGATION_AFTER_TA_SUFFIX = re.compile(r"^[^.!?\n]{0,25}(படாது|இல்லை|வேண்டாம்|கூடாது|மாட்டோம்)")
+
+
+def _first_clean(patterns: list[re.Pattern[str]], text: str) -> re.Match[str] | None:
+    for pattern in patterns:
+        for m in pattern.finditer(text):
+            if (_is_negated(text, m) or _NEGATION_IN_SPAN.search(m.group(0))
+                    or _NO_BEFORE.search(text[max(0, m.start() - 30): m.start()])
+                    or _NEGATION_AFTER_TA_SUFFIX.search(text[m.end():])):
+                continue
+            return m
+    return None
+
+
+# ---- rule: payment to a UPI ID / mobile number, in a government, benefit or fee context ----
+# A UPI ID alone is ordinary between friends, so this rule needs an official-sounding context.
+_UPI_PAYMENT_PATTERNS = _c(
+    _UPI_ID,
+    r"\b(gpay|google pay|phonepe|phone pe|paytm|upi)\b[^.!?\n]{0,25}(\+?91[\s-]?)?[6-9]\d{4}[\s-]?\d{5}",
+    r"(\+?91[\s-]?)?[6-9]\d{4}[\s-]?\d{5}[^.!?\n]{0,20}\b(gpay|google pay|phonepe|phone pe|paytm)\b",
+    r"(ஜிபே|போன்பே|கூகுள் பே)[^.!?\n]{0,25}[6-9]\d{4}[\s-]?\d{5}",
+)
+_OFFICIAL_CONTEXT = re.compile(
+    r"\b(govt|government|sarkar|sarkari|scheme|yojana|subsidy|benefit|scholarship|pension|ration|registration|"
+    r"processing|activation|fee|fees|charges?|penalty|fine|kyc|refund|installment|instalment|department|ministry|"
+    r"official|officer|pm[- ]?kisan|aadhaar|aadhar|electricity|eb bill)\b"
+    r"|(அரசு|திட்ட|மானிய|கட்டண|உதவித்தொகை|ஓய்வூதிய|அபராத)"
+)
+
+
+def rule_personal_upi_payment(text: str) -> RuleHit | None:
+    match = _first_clean(_UPI_PAYMENT_PATTERNS, text)
+    if not match or not _OFFICIAL_CONTEXT.search(re.sub(_UPI_ID, " ", text)):
+        return None
+    return RuleHit(
+        "MSG-UPI-01", "personal_upi_payment", "medium", _excerpt(text, match),
+        "The message asks you to pay to a UPI ID or to a mobile number on a payment app. The money goes to "
+        "whoever owns that ID, which may be a private person; nothing in the message shows it belongs to a "
+        "government office. Pay any government fee only through the official website or app you open yourself.",
+        "செய்தி ஒரு UPI ஐடிக்கோ, பணம் செலுத்தும் செயலியில் உள்ள கைபேசி எண்ணுக்கோ பணம் அனுப்பச் சொல்கிறது. அந்தப் "
+        "பணம் அந்த ஐடியின் உரிமையாளருக்கே செல்லும்; அவர் ஒரு தனிநபராகவும் இருக்கலாம். அது அரசு அலுவலகத்துடையது "
+        "என்பதற்கு செய்தியில் எந்த ஆதாரமும் இல்லை. அரசுக் கட்டணத்தை நீங்களே திறக்கும் அதிகாரப்பூர்வ இணையதளம் அல்லது "
+        "செயலி மூலம் மட்டுமே செலுத்தவும்.",
+    )
+
+
+# ---- rule: apply / register through WhatsApp or Telegram ----
+_CHAT = r"(whatsapp|whats app|telegram|wa\.me|t\.me|chat\.whatsapp\.com)"
+_APPLY = r"(apply|applications?|register|registration|enrol|enroll|enrolment|enrollment|submit)"
+_CHANNEL_PATTERNS = _c(
+    rf"\b{_APPLY}\b[^.!?\n]{{0,40}}\b{_CHAT}",
+    rf"\b{_CHAT}\b[^.!?\n]{{0,30}}\b({_APPLY}|apply pannunga|register pannunga)\b",
+    r"\bjoin\b[^.!?\n]{0,20}\b(whatsapp|telegram)\s+(group|channel)\b[^.!?\n]{0,40}"
+    r"\b(scheme|yojana|subsidy|benefit|scholarship|pension|loan|job|recruitment)\b",
+    r"(வாட்ஸ்அப்|வாட்ஸ்ஆப்|டெலிகிராம்)[^.!?\n]{0,30}(விண்ணப்ப|பதிவு செய்)",
+    r"(விண்ணப்ப|பதிவு செய்)[^.!?\n]{0,30}(வாட்ஸ்அப்|வாட்ஸ்ஆப்|டெலிகிராம்)",
+)
+
+
+def rule_unofficial_channel(text: str) -> RuleHit | None:
+    match = _first_clean(_CHANNEL_PATTERNS, text)
+    if not match:
+        return None
+    return RuleHit(
+        "MSG-CHAN-01", "unofficial_channel_application", "medium", _excerpt(text, match),
+        "The message asks you to apply or register through WhatsApp or Telegram. Anyone can open a chat "
+        "account under a government name. Check how to apply on the official website you open yourself.",
+        "செய்தி வாட்ஸ்அப் அல்லது டெலிகிராம் மூலம் விண்ணப்பிக்கவோ பதிவு செய்யவோ சொல்கிறது. அரசின் பெயரில் யார் "
+        "வேண்டுமானாலும் அரட்டைக் கணக்கைத் தொடங்கலாம். விண்ணப்பிக்கும் முறையை நீங்களே திறக்கும் அதிகாரப்பூர்வ "
+        "இணையதளத்தில் சரிபார்க்கவும்.",
+    )
+
+
+# ---- rule: a fee demanded for a benefit described as free ----
+_BENEFIT = (r"(scheme|yojana|benefit|subsidy|laptop|tablet|smartphone|mobile|phone|cycle|bicycle|scooter|scooty|gas|"
+            r"cylinder|lpg|ration|house|housing|scholarship|pension|loan|treatment|insurance|solar|pump|"
+            r"sewing machine|recharge|electricity|training|coaching|kit|seeds|tractor|money|cash)")
+_FREE_PATTERNS = _c(
+    rf"\bfree( of cost| of charge)?\s+(\w+\s+){{0,2}}{_BENEFIT}",
+    rf"\b{_BENEFIT}s?\b[^.!?\n]{{0,25}}\b(for free|free of cost|free of charge|at no cost|is free|are free)\b",
+    r"இலவச",
+    r"\b(ilavasa\w*|freeya)\b",
+)
+_FREE_FEE_PAYMENT = _FEE_PATTERNS + _PAY_PATTERNS + _c(
+    r"\b(fee|fees|charge|charges)\b[^.!?\n]{0,20}(₹|\brs\.?\s?\d|\binr\b|\brupees\b)",
+    r"(₹|\brs\.?\s?)\s?\d[\d,]*(/-)?\s+(\w+\s+)?(fee|fees|charge|charges)\b",
+    r"\b(fees?|charges?|amount)\s+(kattunga|pay pannunga|anuppunga|kattanum)\b",
+)
+
+
+def rule_fee_for_free_benefit(text: str) -> RuleHit | None:
+    if not _first_clean(_FREE_PATTERNS, text):
+        return None
+    match = _first_clean(_FREE_FEE_PAYMENT, text)
+    if not match:
+        return None
+    return RuleHit(
+        "MSG-FREEFEE-01", "fee_for_free_benefit", "medium", _excerpt(text, match),
+        "The message calls a benefit free but asks you to pay a fee or charge to receive it. Asking for money "
+        "to release a 'free' benefit is a common scam pattern. Confirm on the official website whether any fee "
+        "applies.",
+        "செய்தி ஒரு நலத்திட்டத்தை இலவசம் என்று கூறி, அதைப் பெறக் கட்டணம் செலுத்தச் சொல்கிறது. 'இலவச' நலத்திட்டத்தை "
+        "வழங்கப் பணம் கேட்பது பொதுவான மோசடி முறை. ஏதேனும் கட்டணம் உண்டா என்பதை அதிகாரப்பூர்வ இணையதளத்தில் "
+        "உறுதிசெய்யவும்.",
+    )
+
+
 RULES: tuple[Callable[[str], RuleHit | None], ...] = (
     rule_credential_request,
     rule_payment_request,
@@ -314,6 +426,9 @@ RULES: tuple[Callable[[str], RuleHit | None], ...] = (
     rule_government_impersonation,
     rule_sensitive_documents,
     rule_callback_number,
+    rule_personal_upi_payment,
+    rule_unofficial_channel,
+    rule_fee_for_free_benefit,
 )
 
 

@@ -222,6 +222,8 @@ const en = {
     ambiguous: "Ambiguous",
   },
   sourcesTitle: "Official sources used",
+  govGuidanceTitle: "What to do next",
+  officialSitesTitle: "Official website (from the curated reference)",
   published: "published",
   providerStatusTitle: "Check status",
   vtRow: "Link reputation (VirusTotal)",
@@ -237,6 +239,7 @@ const en = {
     install_remote_access_app: "install a remote-access app",
     send_documents_or_bank_details: "send documents or bank details",
     call_number_in_message: "call a number in the message",
+    apply_through_chat_app: "apply through WhatsApp or Telegram",
     open_link: "open a link",
   } as Record<string, string>,
 };
@@ -471,6 +474,8 @@ const ta: Strings = {
     ambiguous: "தெளிவற்றது",
   },
   sourcesTitle: "பயன்படுத்தப்பட்ட அதிகாரப்பூர்வ ஆதாரங்கள்",
+  govGuidanceTitle: "அடுத்து என்ன செய்யலாம்",
+  officialSitesTitle: "அதிகாரப்பூர்வ இணையதளம் (தொகுக்கப்பட்ட குறிப்பிலிருந்து)",
   published: "வெளியீடு",
   providerStatusTitle: "சோதனை நிலை",
   vtRow: "இணைப்பு நம்பகத்தன்மை (VirusTotal)",
@@ -486,6 +491,7 @@ const ta: Strings = {
     install_remote_access_app: "தொலை அணுகல் செயலியை நிறுவ",
     send_documents_or_bank_details: "ஆவணங்கள் அல்லது வங்கி விவரங்களை அனுப்ப",
     call_number_in_message: "செய்தியில் உள்ள எண்ணை அழைக்க",
+    apply_through_chat_app: "வாட்ஸ்அப் அல்லது டெலிகிராம் மூலம் விண்ணப்பிக்க",
     open_link: "இணைப்பைத் திறக்க",
   } as Record<string, string>,
 };
@@ -540,7 +546,7 @@ export const VT_STATUS_LABELS: Record<Language, Record<ThreatIntelStatus | "disa
 
 export const GOV_STATUS_LABELS: Record<Language, Record<GovernmentClaimStatus, string>> = {
   en: {
-    supported_by_curated_kb: "Consistent with curated reference",
+    supported_by_curated_kb: "Matches official reference — message not confirmed",
     partially_supported_by_curated_kb: "Partially consistent with curated reference",
     contradicted_by_curated_kb: "Contradicted by curated reference",
     not_found_in_curated_kb: "Not found in curated reference",
@@ -548,7 +554,7 @@ export const GOV_STATUS_LABELS: Record<Language, Record<GovernmentClaimStatus, s
     unable_to_assess: "Government claim detected — not compared",
   },
   ta: {
-    supported_by_curated_kb: "தொகுக்கப்பட்ட குறிப்புடன் ஒத்துப்போகிறது",
+    supported_by_curated_kb: "அதிகாரப்பூர்வ குறிப்புடன் பொருந்துகிறது — செய்தி உறுதிசெய்யப்படவில்லை",
     partially_supported_by_curated_kb: "தொகுக்கப்பட்ட குறிப்புடன் பகுதியளவு ஒத்துப்போகிறது",
     contradicted_by_curated_kb: "தொகுக்கப்பட்ட குறிப்புக்கு முரணானது",
     not_found_in_curated_kb: "தொகுக்கப்பட்ட குறிப்பில் இல்லை",

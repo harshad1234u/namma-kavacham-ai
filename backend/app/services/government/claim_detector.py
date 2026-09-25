@@ -20,6 +20,8 @@ _UNCOVERED_SERVICES: dict[str, tuple[str, ...]] = {
     "Driving licence / vehicle (Parivahan)": ("driving licence", "driving license", "parivahan", "e-challan", "traffic challan", "rto"),
     "Telecom / SIM (DoT, TRAI)": ("trai", "department of telecom", "sim will be blocked", "sim card block"),
     "LPG / gas subsidy": ("lpg subsidy", "gas subsidy", "gas connection"),
+    # Official scheme site failed TLS validation on 2026-09-25; see docs/government-kb-coverage.md.
+    "Kalaignar Magalir Urimai Thogai (Tamil Nadu)": ("magalir urimai", "urimai thogai", "kmut", "மகளிர் உரிமை"),
     "Law enforcement (CBI / police / customs)": ("cbi", "narcotics", "customs", "digital arrest", "police case", "crime branch"),
 }
 
@@ -53,6 +55,9 @@ _SIGNAL_ACTIONS = {
     "remote_access_app_request": "install_remote_access_app",
     "sensitive_document_request": "send_documents_or_bank_details",
     "unverified_callback_number": "call_number_in_message",
+    "personal_upi_payment": "pay_money_or_fee",
+    "fee_for_free_benefit": "pay_money_or_fee",
+    "unofficial_channel_application": "apply_through_chat_app",
 }
 
 
@@ -93,7 +98,7 @@ def _claim_type(text: str) -> str:
 
 
 def _requested_actions(rule_signals: set[str], has_url: bool) -> list[str]:
-    actions = [action for signal, action in _SIGNAL_ACTIONS.items() if signal in rule_signals]
+    actions = list(dict.fromkeys(action for signal, action in _SIGNAL_ACTIONS.items() if signal in rule_signals))
     if has_url:
         actions.append("open_link")
     return actions

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "last_reviewed": "2026-09-24",
-  "scope_note": "Small curated reference for five service categories. Not a directory of Indian government services and not live verification. Only facts quoted from the cited official sources are included.",
+  "last_reviewed": "2026-09-25",
+  "scope_note": "Small curated reference: seven services across five categories. Not a directory of Indian government services and not live verification. Only facts quoted from the cited official sources are included.",
   "entries": [
     {
       "id": "uidai_aadhaar",
@@ -188,6 +188,119 @@
           "published": null,
           "retrieved": "2026-09-24",
           "quotes": []
+        }
+      ]
+    },
+    {
+      "id": "ab_pmjay",
+      "category": "schemes_benefits",
+      "service_name": "Ayushman Bharat PM-JAY (Pradhan Mantri Jan Arogya Yojana)",
+      "service_name_ta": "ஆயுஷ்மான் பாரத் PM-JAY (பிரதமர் ஜன் ஆரோக்ய யோஜனா)",
+      "authority": "National Health Authority (NHA), Government of India",
+      "aliases": ["ayushman bharat", "ayushman card", "pm-jay", "pmjay", "pm jay", "ab-pmjay", "jan arogya", "ஆயுஷ்மான் பாரத்", "ஆயுஷ்மான் அட்டை"],
+      "official_domains": ["pmjay.gov.in", "nha.gov.in"],
+      "official_urls": ["https://pmjay.gov.in/", "https://nha.gov.in/PM-JAY"],
+      "helplines": [],
+      "facts": [
+        {
+          "id": "pmjay_cashless_no_message_fee",
+          "applies_to_signal": "payment_or_fee_request",
+          "effect": "not_covered",
+          "statement_en": "A Government of India (PIB) release says eligible PM-JAY beneficiaries can avail of cashless and paperless hospitalisation services at empanelled hospitals. It does not describe paying a fee through a link, UPI ID or phone number in a message to receive this cover.",
+          "statement_ta": "தகுதியுள்ள PM-JAY பயனாளிகள் பட்டியலிடப்பட்ட மருத்துவமனைகளில் பணமில்லா, காகிதமில்லா மருத்துவமனைச் சேவைகளைப் பெறலாம் என்று இந்திய அரசின் (PIB) அறிக்கை கூறுகிறது. இந்தக் காப்பீட்டைப் பெறச் செய்தியில் உள்ள இணைப்பு, UPI ஐடி அல்லது தொலைபேசி எண்ணுக்குக் கட்டணம் செலுத்துவது பற்றி அது குறிப்பிடவில்லை.",
+          "source_ref": "pib_pmjay_cards_2024"
+        },
+        {
+          "id": "pmjay_card_creation_route",
+          "applies_to_signal": "unofficial_channel_application",
+          "effect": "not_covered",
+          "statement_en": "A Government of India (PIB) release says eligible beneficiaries can create their Ayushman card themselves using the Ayushman App, or at the nearest CSC or empanelled hospital. It does not describe applying through WhatsApp or Telegram.",
+          "statement_ta": "தகுதியுள்ள பயனாளிகள் ஆயுஷ்மான் செயலி மூலம் தாங்களே ஆயுஷ்மான் அட்டையை உருவாக்கலாம், அல்லது அருகிலுள்ள பொது சேவை மையம் (CSC) அல்லது பட்டியலிடப்பட்ட மருத்துவமனையில் உருவாக்கலாம் என்று இந்திய அரசின் (PIB) அறிக்கை கூறுகிறது. வாட்ஸ்அப் அல்லது டெலிகிராம் மூலம் விண்ணப்பிப்பது பற்றி அது குறிப்பிடவில்லை.",
+          "source_ref": "pib_pmjay_cards_2024"
+        }
+      ],
+      "safe_guidance_en": "Check PM-JAY eligibility and Ayushman card details only on pmjay.gov.in or nha.gov.in, typed into the browser yourself, or at the nearest CSC or empanelled hospital.",
+      "safe_guidance_ta": "PM-JAY தகுதி, ஆயுஷ்மான் அட்டை விவரங்களை நீங்களே உலாவியில் தட்டச்சு செய்த pmjay.gov.in அல்லது nha.gov.in-இல் மட்டும், அல்லது அருகிலுள்ள பொது சேவை மையம் (CSC) அல்லது பட்டியலிடப்பட்ட மருத்துவமனையில் சரிபார்க்கவும்.",
+      "sources": [
+        {
+          "id": "pib_pmjay_cards_2024",
+          "publisher": "Press Information Bureau (Ministry of Health and Family Welfare release)",
+          "title": "Update on Ayushman Bharat Cards",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2040860",
+          "published": "2024-08-02",
+          "retrieved": "2026-09-25",
+          "quotes": [
+            "Eligible beneficiaries can either create the card themselves using Ayushman App or visit the nearest CSC or empanelled hospital to create their Ayushman card.",
+            "AB-PMJAY aims to provide health cover of Rs. 5 lakhs per family per year for secondary and tertiary care hospitalization",
+            "Eligible beneficiaries can avail of cashless and paperless healthcare services related to hospitalization across more than 29,000 empanelled hospitals in the country."
+          ]
+        },
+        {
+          "id": "pib_pmjay_dashboard_2022",
+          "publisher": "Press Information Bureau (Ministry of Health and Family Welfare release)",
+          "title": "Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PM-JAY) Public Dashboard gets revamped with new features",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1831575",
+          "published": "2022-06-06",
+          "retrieved": "2026-09-25",
+          "quotes": ["The all-new dynamic public dashboard can be accessed at Ayushman Bharat PM-JAY official website (https://pmjay.gov.in)"]
+        },
+        {
+          "id": "pib_pmjay_backgrounder_2025",
+          "publisher": "Press Information Bureau (PIB Backgrounder)",
+          "title": "Towards Universal Healthcare: Ayushman Bharat Pradhan Mantri-Jan Arogya Yojana",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2185049",
+          "published": "2025-11-01",
+          "retrieved": "2026-09-25",
+          "quotes": [
+            "The scheme provides cashless treatment across empanelled government-funded and private hospitals.",
+            "About Pradhan Mantri Jan Arogya Yojana (PM-JAY): https://nha.gov.in/PM-JAY"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "national_scholarship_portal",
+      "category": "schemes_benefits",
+      "service_name": "National Scholarship Portal (NSP)",
+      "service_name_ta": "தேசிய கல்வி உதவித்தொகை இணையதளம் (NSP)",
+      "authority": "Government of India (National Scholarship Portal)",
+      "aliases": ["national scholarship portal", "scholarships.gov.in", "nsp portal", "nsp scholarship", "தேசிய கல்வி உதவித்தொகை"],
+      "official_domains": ["scholarships.gov.in"],
+      "official_urls": ["https://scholarships.gov.in/"],
+      "helplines": [],
+      "facts": [
+        {
+          "id": "nsp_csc_charge",
+          "applies_to_signal": "payment_or_fee_request",
+          "effect": "not_covered",
+          "statement_en": "The official National Scholarship Portal says its services are also available at Common Service Centres (CSCs), where the total charge for the whole application activity per candidate is fixed at Rs 30. It does not describe paying a fee through a link, UPI ID or phone number in a message.",
+          "statement_ta": "NSP சேவைகள் பொது சேவை மையங்களிலும் (CSC) கிடைக்கின்றன என்றும், அங்கு ஒரு விண்ணப்பதாரருக்கான முழு விண்ணப்பப் பணிக்கான மொத்தக் கட்டணம் ரூ.30 என நிர்ணயிக்கப்பட்டுள்ளது என்றும் அதிகாரப்பூர்வ தேசிய கல்வி உதவித்தொகை இணையதளம் கூறுகிறது. செய்தியில் உள்ள இணைப்பு, UPI ஐடி அல்லது தொலைபேசி எண்ணுக்குக் கட்டணம் செலுத்துவது பற்றி அது குறிப்பிடவில்லை.",
+          "source_ref": "nsp_home"
+        },
+        {
+          "id": "nsp_application_route",
+          "applies_to_signal": "unofficial_channel_application",
+          "effect": "not_covered",
+          "statement_en": "The official National Scholarship Portal says students can use scholarship services on the portal or by visiting a nearby Common Service Centre (CSC). It does not describe applying through WhatsApp or Telegram.",
+          "statement_ta": "மாணவர்கள் கல்வி உதவித்தொகைச் சேவைகளை இணையதளத்திலோ அருகிலுள்ள பொது சேவை மையத்திலோ (CSC) பெறலாம் என்று அதிகாரப்பூர்வ தேசிய கல்வி உதவித்தொகை இணையதளம் கூறுகிறது. வாட்ஸ்அப் அல்லது டெலிகிராம் மூலம் விண்ணப்பிப்பது பற்றி அது குறிப்பிடவில்லை.",
+          "source_ref": "nsp_home"
+        }
+      ],
+      "safe_guidance_en": "Apply for or check scholarships only on scholarships.gov.in, typed into the browser yourself, or at a Common Service Centre (CSC).",
+      "safe_guidance_ta": "கல்வி உதவித்தொகைக்கு நீங்களே உலாவியில் தட்டச்சு செய்த scholarships.gov.in-இல் மட்டும், அல்லது பொது சேவை மையத்தில் (CSC) விண்ணப்பிக்கவும் அல்லது சரிபார்க்கவும்.",
+      "sources": [
+        {
+          "id": "nsp_home",
+          "publisher": "National Scholarship Portal (official website)",
+          "title": "NSP: National Scholarship Portal — home page",
+          "url": "https://scholarships.gov.in/",
+          "published": null,
+          "retrieved": "2026-09-25",
+          "quotes": [
+            "NSP services are now available at Common Service Centres (CSCs).",
+            "Students can avail the scholarship related services by visiting the nearby CSCs.",
+            "The total charges for the entire activity per candidate (including generation of Reference number, biometric -authentication, generation of One-Time Registration (OTR) number, and filing of complete application form of the candidate) is fixed at Rs 30.00 (inclusive of all applicable taxes, etc.)"
+          ]
         }
       ]
     }
