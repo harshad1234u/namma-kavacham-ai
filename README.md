@@ -99,8 +99,8 @@ fetched; the image itself stays on the device.
 ## Tests
 
 ```bash
-cd backend && .venv/Scripts/python -m pytest -q     # 265 tests, no network needed
-cd frontend && npm test                              # 136 tests
+cd backend && .venv/Scripts/python -m pytest -q     # 284 tests, no network needed
+cd frontend && npm test                              # 143 tests
 cd frontend && npm run typecheck                     # TypeScript, no emit
 cd frontend && npm run build                         # production build to frontend/dist
 ```
@@ -126,7 +126,8 @@ site (`frontend`, SPA rewrite `/*` → `/index.html`). No secret is stored in th
      (exactly one origin, no trailing slash or path).
    - Static site → `VITE_API_BASE_URL` = the API URL, e.g. `https://namma-kavacham-api.onrender.com`.
 4. Redeploy **both** services. `VITE_API_BASE_URL` is read at build time, so the site must be rebuilt.
-5. Check `https://<api>/healthz` returns `{"status":"ok",...}`, then run a sample check from the site.
+5. Check `https://<api>/healthz` returns `{"status":"ok",...}` with `"ai_provider":"groq"` (or `"template"` if no
+   key is set), then run a sample check from the site.
 
 To use Gemini instead of Groq, set `LLM_PROVIDER=gemini`, `GEMINI_ENABLED=true` and add `GEMINI_API_KEY` in the
 dashboard (it is not part of the Blueprint).
@@ -148,7 +149,8 @@ This repository has not been verified against a live Render deployment as part o
   Tamil voice; otherwise the app says so. Online (remote) voices are deliberately not used.
 - **Tanglish coverage is pattern-based.** Threats are detected only when a service word (account, SIM,
   EB, Aadhaar…) precedes the verb (`block aagidum`). An advisory that quotes a scam phrase
-  ("block aagidum nu varra SMS…") can still score MEDIUM — the English rules share this limitation.
+  ("block aagidum nu varra SMS…") can still score MEDIUM, and an English warning that quotes a full scam line
+  ("scammers send 'your account will be blocked today, share OTP'") scored HIGH in validation.
 - **Groq free-tier quota** (at the time of Phase 4: 30 RPM, 8k tokens/min, 1k requests/day for gpt-oss-20b;
   check current limits in the Groq console). When the quota is exhausted (HTTP 429) every report falls back to
   the template explanation. The risk result is unaffected; use a key with quota for live demos.
@@ -167,7 +169,5 @@ This repository has not been verified against a live Render deployment as part o
 - **No manual device testing yet.** Android Chrome, iOS Safari, Firefox, local Tamil voices, camera capture,
   real screenshot OCR, mixed Tamil-English input, keyboard and screen-reader use, and the 390px layout have not
   been tested by hand.
-- **Provider labels.** The report's check-status panel labels the AI row "AI explanation (Gemini)" and
-  `/healthz` reports only `gemini_configured`, even when Groq is the configured provider.
 - If a client does upload a screenshot file to the API, uploads over 1 MB are spooled by the multipart parser to
   an OS temp file that is deleted when the request ends; the app itself never stores or logs images.
