@@ -8,7 +8,7 @@ Raw content lives only in this request's memory and is never logged.
 import time
 import uuid
 
-from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
+from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from pydantic import ValidationError
 
 from app.core.config import Settings, get_settings
@@ -66,14 +66,14 @@ def sanitize_errors(exc: ValidationError) -> list[dict]:
 
 
 def _unprocessable(detail: object) -> HTTPException:
-    return HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail=detail)
+    return HTTPException(status_code=422, detail=detail)
 
 
 async def _read_screenshot(upload: UploadFile, settings: Settings) -> bytes:
     data = await upload.read(settings.max_upload_bytes + 1)
     await upload.close()
     if len(data) > settings.max_upload_bytes:
-        raise HTTPException(status.HTTP_413_CONTENT_TOO_LARGE, "Screenshot exceeds the size limit")
+        raise HTTPException(413, "Screenshot exceeds the size limit")
     if not data:
         raise _unprocessable("Screenshot file is empty")
     return data
@@ -113,7 +113,7 @@ async def analyze(
         try:
             ocr_text = extract_text_stub(image, screenshot.content_type)
         except UnsupportedImageError as exc:
-            raise HTTPException(status.HTTP_415_UNSUPPORTED_MEDIA_TYPE, str(exc)) from None
+            raise HTTPException(415, str(exc)) from None
         finally:
             del image
         ocr_attempted = True
