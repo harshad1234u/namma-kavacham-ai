@@ -38,6 +38,8 @@ function ThreatIntelPanel({ result, enabled }: { result: ThreatIntelResult; enab
   );
 }
 
+const PROVIDER_NAMES = { groq: "Groq", gemini: "Gemini" } as const;
+
 function StatusRow({ label, value, tone }: { label: string; value: string; tone: "ok" | "warn" | "muted" }) {
   const style = { ok: "bg-slate-100 text-slate-800", warn: "bg-amber-50 text-amber-900 ring-1 ring-amber-200", muted: "bg-surface text-ink-muted" }[tone];
   return (
@@ -60,6 +62,8 @@ export function ProviderStatus({ result }: { result: AnalyzeResponse }) {
         ? { value: t.statusOn, tone: "ok" as const }
         : { value: t.statusUnavailable, tone: "warn" as const };
   const aiStatus = explanation.ai_status ?? "disabled";
+  // Named from the configured provider, so the row never claims a provider that is not in use.
+  const aiLabel = flags.ai_provider === "template" ? t.aiRow : `${t.aiRow} (${PROVIDER_NAMES[flags.ai_provider]})`;
   const ai =
     aiStatus === "generated"
       ? { value: t.statusOn, tone: "ok" as const }
@@ -70,7 +74,7 @@ export function ProviderStatus({ result }: { result: AnalyzeResponse }) {
       <div className="flex flex-col gap-2 rounded-md border border-line p-3" data-testid="provider-status">
         <p className="text-xs font-semibold uppercase tracking-wide text-navy-soft">{t.providerStatusTitle}</p>
         <StatusRow label={t.vtRow} {...vt} />
-        <StatusRow label={t.aiRow} {...ai} />
+        <StatusRow label={aiLabel} {...ai} />
       </div>
       {hasUrl ? (
         <div className="mt-4 flex flex-col gap-3">

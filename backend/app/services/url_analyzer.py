@@ -26,7 +26,7 @@ _URL_RE = re.compile(
       | (?<![@\w.-])                                   # bare domain, not part of an email
         (?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+
         (?:""" + _COMMON_TLDS + r""")
-        (?![a-z0-9-])
+        (?![a-z0-9@-])                                 # not the name part of a UPI ID (laptop.gov@ybl)
         (?::\d{2,5})?
         (?:/[^\s<>"'`]*)?
     )
@@ -288,7 +288,8 @@ def run_domain_checks(n: NormalizedUrl) -> list[DomainCheckHit]:
             "இணைப்புப் பாதை உள்நுழைவு, சரிபார்ப்பு அல்லது கட்டணத்தைக் குறிப்பிடுகிறது.",
             rule_id="URL-PATH-01"))
 
-    if n.scheme == "http" and not n.is_ip_host:
+    # Only an explicit http:// is evidence; a bare "pmkisan.gov.in" says nothing about the scheme.
+    if n.scheme == "http" and not n.is_ip_host and re.match(r"(?:http|hxxp)://", n.raw, re.IGNORECASE):
         hits.append(DomainCheckHit(
             "no_https", "low",
             "The link does not use a secure (https) connection.",

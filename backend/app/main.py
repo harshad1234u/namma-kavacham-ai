@@ -78,7 +78,14 @@ async def unhandled_handler(_: Request, exc: Exception) -> JSONResponse:
 
 @app.get("/healthz", tags=["meta"])
 async def healthz() -> dict:
-    return {"status": "ok", "virustotal_enabled": settings.virustotal_active, "gemini_configured": settings.gemini_configured}
+    # ai_provider is the explainer actually in use ("groq", "gemini" or "template"); no key material is exposed.
+    # gemini_configured is kept for existing clients.
+    return {
+        "status": "ok",
+        "virustotal_enabled": settings.virustotal_active,
+        "ai_provider": settings.active_llm_provider,
+        "gemini_configured": settings.gemini_configured,
+    }
 
 
 app.include_router(analyze_router)

@@ -158,7 +158,7 @@ export function InputPanel({ form, onChange, onSubmit, fileError, onFileError }:
             <button
               type="button"
               onClick={() => onChange({ text: "", pasted: false })}
-              className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-ink-muted hover:text-navy"
+              className="mt-1 inline-flex min-h-6 items-center gap-1 text-xs font-semibold text-ink-muted hover:text-navy"
             >
               <Eraser className="size-3.5" aria-hidden /> {t.clear}
             </button>

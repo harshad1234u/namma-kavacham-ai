@@ -62,7 +62,9 @@ export function RiskCard({ result, onReset }: Props) {
     ta && result.sender_assessment.warnings_ta?.length ? result.sender_assessment.warnings_ta : result.sender_assessment.warnings;
 
   return (
-    <div className="flex flex-col gap-5" aria-live="polite">
+    // overflow-wrap:anywhere lets long hostnames in explanations and findings break, so narrow screens never
+    // scroll sideways (seen at 320px in Tamil); normal words still wrap at spaces.
+    <div className="flex flex-col gap-5 [overflow-wrap:anywhere]" aria-live="polite">
       <div className={`flex flex-col gap-3 rounded-lg p-4 text-white sm:flex-row sm:items-center sm:p-5 ${insufficient ? "bg-slate-600" : style.banner}`}>
         <Ban className="size-8 shrink-0" aria-hidden />
         <div className="flex-1">

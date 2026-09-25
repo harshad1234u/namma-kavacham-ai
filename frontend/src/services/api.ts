@@ -27,6 +27,27 @@ function detailText(detail: unknown): string {
   return "";
 }
 
+// Shape check for the fields the report reads unconditionally; not a full schema validation.
+function isAnalyzeResponse(data: unknown): data is AnalyzeResponse {
+  const d = data as Partial<AnalyzeResponse> | null;
+  return (
+    !!d &&
+    typeof d === "object" &&
+    typeof d.risk?.level === "string" &&
+    typeof d.risk.score === "number" &&
+    typeof d.risk.assessment_status === "string" &&
+    Array.isArray(d.evidence) &&
+    Array.isArray(d.safe_next_steps) &&
+    Array.isArray(d.missing_metadata) &&
+    Array.isArray(d.limitations) &&
+    typeof d.explanation?.en === "string" &&
+    typeof d.government_claim?.claim_status === "string" &&
+    Array.isArray(d.url_intelligence?.extracted_urls) &&
+    typeof d.provider_flags === "object" &&
+    d.provider_flags !== null
+  );
+}
+
 export async function submitAnalysis(request: AnalyzeRequest): Promise<AnalyzeResponse> {
   const form = new FormData();
   form.append("payload", JSON.stringify(request));
@@ -43,7 +64,12 @@ export async function submitAnalysis(request: AnalyzeRequest): Promise<AnalyzeRe
     window.clearTimeout(timer);
   }
 
-  if (response.ok) return (await response.json()) as AnalyzeResponse;
+  if (response.ok) {
+    const data: unknown = await response.json().catch(() => null);
+    // A proxy page or a partial body would otherwise crash the report and blank the screen.
+    if (!isAnalyzeResponse(data)) throw new ApiError("server", "The analysis service returned an unexpected response.");
+    return data;
+  }
 
   const body = (await response.json().catch(() => ({}))) as { detail?: unknown };
   const detail = detailText(body.detail);
