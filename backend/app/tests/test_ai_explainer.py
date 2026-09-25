@@ -151,12 +151,25 @@ def test_tamil_negative_verb_suffix_is_not_a_safety_claim():
     assert "safety_claim_ta" not in validate_ai_text(GOOD_EN, ta, ctx())
     assert "safety_claim_ta" in validate_ai_text(GOOD_EN, "இந்தச் செய்தி CRITICAL ஆனால் இணைப்பு பாதுகாப்பானது, தொடரலாம். "
                                                           "அனுப்புநரின் அடையாளம் தெரியும்.", ctx())
+    # "the link is safe (no https)" — observed live from Groq; the parenthetical negation must not count.
+    assert "safety_claim_ta" in validate_ai_text(GOOD_EN, "இந்தச் செய்தி CRITICAL. இணைப்பு பாதுகாப்பானது (https இல்லை). "
+                                                          "அனுப்புநரின் அடையாளம் சரிபார்க்கப்படவில்லை.", ctx())
+    # "there is no secure (https) link" — observed live from Groq; still acceptable.
+    ta_ok = "இந்தச் செய்தி CRITICAL. இணைப்பில் பாதுகாப்பான (https) இணைப்பு இல்லை. அனுப்புநரின் அடையாளம் சரிபார்க்கப்படவில்லை."
+    assert "safety_claim_ta" not in validate_ai_text(GOOD_EN, ta_ok, ctx())
 
 
 def test_build_explainer_respects_flag_and_key():
-    assert isinstance(build_explainer(settings_for_test(gemini_api_key="")), TemplateExplainer)
-    assert isinstance(build_explainer(settings_for_test(gemini_api_key="k", gemini_enabled=False)), TemplateExplainer)
-    assert isinstance(build_explainer(settings_for_test(gemini_api_key="k")), GeminiExplainer)
+    on = {"llm_provider": "gemini", "gemini_enabled": True}
+    assert isinstance(build_explainer(settings_for_test(**on, gemini_api_key="")), TemplateExplainer)
+    assert isinstance(build_explainer(settings_for_test(**on | {"gemini_enabled": False}, gemini_api_key="k")),
+                      TemplateExplainer)
+    assert isinstance(build_explainer(settings_for_test(gemini_api_key="k", gemini_enabled=True)), TemplateExplainer)
+    assert isinstance(build_explainer(settings_for_test(**on, gemini_api_key="k")), GeminiExplainer)
+
+
+def test_default_settings_use_template():
+    assert isinstance(build_explainer(settings_for_test()), TemplateExplainer)
 
 
 async def test_template_explainer_is_bilingual():

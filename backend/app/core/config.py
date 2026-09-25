@@ -16,8 +16,14 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
+    # Which explainer runs: "groq", "gemini", or "template". The chosen provider must also be enabled and keyed.
+    llm_provider: str = "template"
+    groq_enabled: bool = False
+    groq_api_key: SecretStr = SecretStr("")
+    groq_text_model: str = "openai/gpt-oss-20b"
+    groq_timeout_seconds: float = 20.0
     gemini_api_key: SecretStr = SecretStr("")
-    gemini_enabled: bool = True
+    gemini_enabled: bool = False
     gemini_model: str = "gemini-2.5-flash"
     gemini_timeout_seconds: float = 12.0
     virustotal_enabled: bool = False
@@ -51,6 +57,19 @@ class Settings(BaseSettings):
     @property
     def gemini_active(self) -> bool:
         return self.gemini_enabled and self.gemini_configured
+
+    @property
+    def groq_active(self) -> bool:
+        return self.groq_enabled and bool(self.groq_api_key.get_secret_value()) and bool(self.groq_text_model.strip())
+
+    @property
+    def active_llm_provider(self) -> str:
+        provider = self.llm_provider.strip().lower()
+        if provider == "groq" and self.groq_active:
+            return "groq"
+        if provider == "gemini" and self.gemini_active:
+            return "gemini"
+        return "template"
 
 
 @lru_cache

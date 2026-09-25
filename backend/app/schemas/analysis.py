@@ -9,6 +9,9 @@ SCHEMA_VERSION = "1.0"
 HARD_MAX_BODY_CHARS = 20_000
 
 ContentSource = Literal["pasted_text", "manual_entry", "ocr", "user_corrected_ocr", "url_input"]
+# Where the image behind screenshot text came from. The image itself is never sent; OCR runs on the device.
+ImageOrigin = Literal["upload", "camera"]
+_IMAGE_SOURCES = ("ocr", "user_corrected_ocr", "manual_entry")
 Confidence = Literal["low", "medium", "high"]
 RiskLevel = Literal["LOW", "MEDIUM", "HIGH", "CRITICAL"]
 
@@ -26,6 +29,17 @@ class ContentIn(_Strict):
     user_confirmed: Literal[True] = Field(
         description="Must be true: the user reviewed this exact content and chose to submit it."
     )
+    image_origin: ImageOrigin | None = Field(
+        default=None,
+        description="Set when the text relates to an image the user uploaded or photographed. With source "
+        "`manual_entry` it means the user replaced the OCR text with their own.",
+    )
+
+    @model_validator(mode="after")
+    def _image_origin_needs_image_source(self) -> "ContentIn":
+        if self.image_origin is not None and self.source not in _IMAGE_SOURCES:
+            raise ValueError(f"content.image_origin is only allowed with source {', '.join(_IMAGE_SOURCES)}")
+        return self
 
 
 class SenderIn(_Strict):
@@ -120,6 +134,7 @@ class UrlIntelligenceOut(BaseModel):
 
 class ProvenanceOut(BaseModel):
     content_source: ContentSource
+    image_origin: ImageOrigin | None = None
     verification_status: Literal["unverified"] = "unverified"
     user_confirmed: bool
     attachment_received: bool
@@ -140,7 +155,7 @@ class SenderAssessmentOut(BaseModel):
 class ExplanationOut(BaseModel):
     en: str
     ta: str
-    generated_by: Literal["gemini", "template"]
+    generated_by: Literal["groq", "gemini", "template"]
     ai_status: Literal["generated", "disabled", "unavailable", "rejected"] = Field(
         default="disabled",
         description="`generated`: AI explanation passed validation. Otherwise the template explanation is shown.",
@@ -153,8 +168,9 @@ class ExplanationOut(BaseModel):
 class ProviderFlags(BaseModel):
     virustotal_enabled: bool
     virustotal_available: bool | None = Field(description="None when no URL was checked")
-    gemini_enabled: bool
-    gemini_available: bool | None = Field(description="None when no explanation call was attempted")
+    ai_provider: Literal["groq", "gemini", "template"] = Field(description="Explainer selected by configuration")
+    ai_enabled: bool
+    ai_available: bool | None = Field(description="None when no explanation call was attempted")
 
 
 class AnalyzeResponse(BaseModel):

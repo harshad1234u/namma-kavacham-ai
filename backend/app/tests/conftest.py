@@ -65,7 +65,7 @@ class FakeProvider:
 
 
 def settings_for_test(**overrides) -> Settings:
-    base = {"virustotal_enabled": False, "virustotal_api_key": "", "gemini_api_key": ""}
+    base = {"virustotal_enabled": False, "virustotal_api_key": "", "gemini_api_key": "", "groq_api_key": ""}
     base.update(overrides)
     return Settings(_env_file=None, **base)
 

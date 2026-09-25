@@ -20,24 +20,26 @@ export function maskSender(value: string): string {
 
 export function draftFromForm(form: FormState): Draft {
   const sender = form.showSender && form.senderValue.trim() ? maskSender(form.senderValue.trim()) : null;
-  const base = { screenshot: null, screenshotUrl: null, senderMasked: sender };
+  const base = { screenshotUrl: null, imageOrigin: null, senderMasked: sender };
   if (form.tab === "url") return { ...base, body: form.url.trim(), source: "url_input" };
   if (form.tab === "upload") {
-    return {
-      ...base,
-      body: form.screenshotText,
-      source: form.screenshotText.trim() ? "manual_entry" : "ocr",
-      screenshot: form.file,
-      screenshotUrl: form.fileUrl,
-    };
+    const ocrText = form.ocr?.text ?? "";
+    const source: ContentSource = !ocrText ? "manual_entry" : form.screenshotText === ocrText ? "ocr" : "user_corrected_ocr";
+    return { ...base, body: form.screenshotText, source, screenshotUrl: form.fileUrl, imageOrigin: form.imageOrigin };
   }
   return { ...base, body: form.text, source: form.pasted ? "pasted_text" : "manual_entry" };
 }
 
-export function buildRequest(form: FormState, body: string, source: ContentSource, hasScreenshot: boolean): AnalyzeRequest {
+// The screenshot itself is never sent: OCR runs in the browser and only the confirmed text leaves the device.
+export function buildRequest(form: FormState, body: string, source: ContentSource): AnalyzeRequest {
   const request: AnalyzeRequest = {
     schema_version: "1.0",
-    content: { body, source, user_confirmed: true },
+    content: {
+      body,
+      source,
+      user_confirmed: true,
+      ...(form.tab === "upload" && form.file && form.imageOrigin ? { image_origin: form.imageOrigin } : {}),
+    },
     language_preference: "both",
     privacy: { upload_confirmed: true, retention_preference: "delete_after_analysis" },
   };
@@ -47,14 +49,6 @@ export function buildRequest(form: FormState, body: string, source: ContentSourc
       kind: form.senderKind,
       provenance: "user_entered",
       verification_status: "unverified",
-    };
-  }
-  if (hasScreenshot && form.file) {
-    request.attachment = {
-      type: "screenshot",
-      provenance: "user_upload",
-      original_filename: form.file.name.slice(0, 255),
-      declared_mime_type: form.file.type,
     };
   }
   return request;
@@ -133,8 +127,7 @@ export function Analyze() {
     setPhase("analyzing");
     setError(null);
     try {
-      const hasScreenshot = form.tab === "upload" && form.file !== null;
-      const response = await submitAnalysis(buildRequest(form, body, source, hasScreenshot), hasScreenshot ? form.file : null);
+      const response = await submitAnalysis(buildRequest(form, body, source));
       setResult(response);
       setPhase("result");
     } catch (err) {
@@ -166,8 +159,15 @@ export function Analyze() {
       {phase === "review" && draft && (
         <ReviewConfirm
           draft={draft}
-          onBack={(body) => {
-            setForm((f) => (f.tab === "text" ? { ...f, text: body } : f.tab === "url" ? { ...f, url: body } : { ...f, screenshotText: body }));
+          onBack={(body, source) => {
+            setForm((f) =>
+              f.tab === "text"
+                ? { ...f, text: body }
+                : f.tab === "url"
+                  ? { ...f, url: body }
+                  : // Text replaced during review is no longer OCR output.
+                    { ...f, screenshotText: body, ...(source === "manual_entry" ? { ocr: null } : {}) },
+            );
             setPhase("input");
           }}
           onCancel={reset}

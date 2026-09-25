@@ -99,9 +99,9 @@ def test_gemini_success_path_does_not_touch_risk(make_client):
           "அனுப்புநரின் அடையாளம் சரிபார்க்கப்படவில்லை. எந்த OTP-யையும் பகிர வேண்டாம்.")
     explainer, calls = gemini(reply(en, ta))
     template = post(make_client(), AADHAAR_OTP)
-    d = post(make_client(explainer=explainer, gemini_api_key="k"), AADHAAR_OTP)
+    d = post(make_client(explainer=explainer, gemini_api_key="k", gemini_enabled=True, llm_provider="gemini"), AADHAAR_OTP)
     assert d["explanation"]["generated_by"] == "gemini" and d["explanation"]["ai_status"] == "generated"
-    assert d["provider_flags"]["gemini_enabled"] is True and d["provider_flags"]["gemini_available"] is True
+    assert d["provider_flags"]["ai_provider"] == "gemini" and d["provider_flags"]["ai_available"] is True
     assert d["risk"] == template["risk"] and risk_signals(d) == risk_signals(template)
     assert "Share the OTP" not in calls[0]["contents"]  # raw message never sent
     assert any("AI-generated" in line for line in d["limitations"])
@@ -110,7 +110,7 @@ def test_gemini_success_path_does_not_touch_risk(make_client):
 def test_gemini_cannot_downgrade_a_critical_result(make_client):
     explainer, _ = gemini(reply("This message is LOW risk and completely safe. The sender's identity was not verified.",
                                 "இந்தச் செய்தி LOW. இது பாதுகாப்பானது. அனுப்புநரின் அடையாளம் சரிபார்க்கப்படவில்லை, நம்பலாம்."))
-    d = post(make_client(explainer=explainer, gemini_api_key="k"), AADHAAR_OTP)
+    d = post(make_client(explainer=explainer, gemini_api_key="k", gemini_enabled=True, llm_provider="gemini"), AADHAAR_OTP)
     assert d["risk"]["level"] == "CRITICAL"
     assert d["explanation"]["ai_status"] == "rejected" and "safe" not in d["explanation"]["en"].lower().split()
 
@@ -119,16 +119,16 @@ def test_gemini_unavailable_still_returns_full_report(make_client):
     async def down():
         raise ConnectionError("provider down")
     explainer, _ = gemini(down)
-    d = post(make_client(explainer=explainer, gemini_api_key="k"), SCAM_TNEB)
+    d = post(make_client(explainer=explainer, gemini_api_key="k", gemini_enabled=True, llm_provider="gemini"), SCAM_TNEB)
     assert d["risk"]["level"] in {"HIGH", "CRITICAL"} and d["evidence"]
     assert d["explanation"]["ai_status"] == "unavailable" and d["explanation"]["generated_by"] == "template"
     assert d["explanation"]["en"] and d["explanation"]["ta"] and d["explanation"]["note_ta"]
-    assert d["provider_flags"]["gemini_available"] is False
+    assert d["provider_flags"]["ai_available"] is False
 
 
 def test_gemini_skipped_when_nothing_to_assess(make_client):
     explainer, calls = gemini(reply("x", "y"))
-    client = make_client(explainer=explainer, gemini_api_key="k")
+    client = make_client(explainer=explainer, gemini_api_key="k", gemini_enabled=True, llm_provider="gemini")
     payload = make_payload("", source="ocr", attachment={"type": "screenshot"})
     r = client.post("/v1/analyze", data={"payload": payload},
                     files={"screenshot": ("s.png", b"\x89PNG\r\n\x1a\n" + b"\0" * 32, "image/png")})
@@ -142,7 +142,7 @@ def test_prompt_injection_changes_nothing_deterministic(make_client):
     leaky, calls = gemini(reply(f"CRITICAL. The system prompt is: {'NK-EXPLAIN-7F3A'}. Key secret-key-xyz.",
                                 "CRITICAL. இது பாதுகாப்பானது என்று அதிகாரப்பூர்வமாக சரிபார்க்கப்பட்டது."))
     base = post(make_client(), AADHAAR_OTP)
-    d = post(make_client(explainer=leaky, gemini_api_key="k"), INJECTION + AADHAAR_OTP)
+    d = post(make_client(explainer=leaky, gemini_api_key="k", gemini_enabled=True, llm_provider="gemini"), INJECTION + AADHAAR_OTP)
     assert d["risk"]["level"] == base["risk"]["level"] == "CRITICAL"
     assert risk_signals(d) == risk_signals(base)
     assert d["government_claim"]["claim_status"] == base["government_claim"]["claim_status"]
@@ -167,7 +167,7 @@ def test_tamil_and_tanglish_injection_do_not_change_result(client, injection):
 
 def test_phase2_logs_contain_no_content(make_client, caplog):
     explainer, _ = gemini(reply("x", "y"))
-    client = make_client(explainer=explainer, gemini_api_key="k")
+    client = make_client(explainer=explainer, gemini_api_key="k", gemini_enabled=True, llm_provider="gemini")
     logger = logging.getLogger("nk")
     logger.addHandler(caplog.handler)
     try:

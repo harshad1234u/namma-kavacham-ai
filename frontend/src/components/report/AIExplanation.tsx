@@ -5,7 +5,7 @@ import { Section } from "./Section";
 
 export function AIExplanation({ explanation }: { explanation: AnalyzeResponse["explanation"] }) {
   const { lang, t } = useLanguage();
-  const status = explanation.ai_status ?? (explanation.generated_by === "gemini" ? "generated" : "disabled");
+  const status = explanation.ai_status ?? (explanation.generated_by !== "template" ? "generated" : "disabled");
   const generated = status === "generated";
   const text = lang === "ta" ? explanation.ta : explanation.en;
   const note = lang === "ta" && explanation.note_ta ? explanation.note_ta : explanation.note;

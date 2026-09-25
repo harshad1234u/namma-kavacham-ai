@@ -1,6 +1,8 @@
 // Mirrors backend/app/schemas/analysis.py. Keep in sync with /openapi.json.
 
 export type ContentSource = "pasted_text" | "manual_entry" | "ocr" | "user_corrected_ocr" | "url_input";
+// Where the image behind screenshot text came from. The image itself is never sent.
+export type ImageOrigin = "upload" | "camera";
 export type Confidence = "low" | "medium" | "high";
 export type RiskLevel = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL";
 export type Language = "en" | "ta";
@@ -10,7 +12,7 @@ export type SenderKind = "phone_number" | "alphanumeric_sender_id" | "display_na
 
 export interface AnalyzeRequest {
   schema_version: "1.0";
-  content: { body: string; source: ContentSource; user_confirmed: true };
+  content: { body: string; source: ContentSource; user_confirmed: true; image_origin?: ImageOrigin | null };
   sender?: {
     value: string | null;
     kind: SenderKind;
@@ -150,6 +152,7 @@ export interface AnalyzeResponse {
   government_claim: GovernmentClaimResult;
   provenance: {
     content_source: ContentSource;
+    image_origin: ImageOrigin | null;
     verification_status: "unverified";
     user_confirmed: boolean;
     attachment_received: boolean;
@@ -173,7 +176,7 @@ export interface AnalyzeResponse {
   explanation: {
     en: string;
     ta: string;
-    generated_by: "gemini" | "template";
+    generated_by: "groq" | "gemini" | "template";
     ai_status?: AiStatus;
     model?: string | null;
     note: string | null;
@@ -182,7 +185,8 @@ export interface AnalyzeResponse {
   provider_flags: {
     virustotal_enabled: boolean;
     virustotal_available: boolean | null;
-    gemini_enabled: boolean;
-    gemini_available: boolean | null;
+    ai_provider: "groq" | "gemini" | "template";
+    ai_enabled: boolean;
+    ai_available: boolean | null;
   };
 }

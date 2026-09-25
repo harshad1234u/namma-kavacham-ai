@@ -63,6 +63,7 @@ export function makeResponse(overrides: Partial<AnalyzeResponse> = {}): AnalyzeR
     },
     provenance: {
       content_source: "pasted_text",
+      image_origin: null,
       verification_status: "unverified",
       user_confirmed: true,
       attachment_received: false,
@@ -82,7 +83,7 @@ export function makeResponse(overrides: Partial<AnalyzeResponse> = {}): AnalyzeR
     safe_next_steps: ["Do not share any OTP."],
     safe_next_steps_ta: ["எந்த OTP-யையும் பகிர வேண்டாம்."],
     explanation: { en: "Strong scam indicators were detected.", ta: "வலுவான மோசடிக் குறிகள் கண்டறியப்பட்டன.", generated_by: "template", note: null },
-    provider_flags: { virustotal_enabled: true, virustotal_available: false, gemini_enabled: false, gemini_available: null },
+    provider_flags: { virustotal_enabled: true, virustotal_available: false, ai_provider: "template", ai_enabled: false, ai_available: null },
     ...overrides,
   };
 }
