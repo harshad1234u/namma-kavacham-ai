@@ -138,6 +138,11 @@ the static site; if the build fails on Node, set `NODE_VERSION` (20.19+ or 22.12
 
 This repository has not been verified against a live Render deployment as part of Phase 5.
 
+**Frontend on Vercel instead:** import the repo with Root Directory `frontend` and the Vite preset (default
+build settings), and set `VITE_API_BASE_URL` to the backend URL. [frontend/vercel.json](frontend/vercel.json)
+rewrites every route to `index.html` so that opening or refreshing `/analyze` works. Add the Vercel URL to the
+backend's `CORS_ALLOWED_ORIGINS`.
+
 ## Known limitations
 
 - **Screenshot OCR is best-effort.** Tesseract can misread small fonts, stylised sender chips, numbers and
