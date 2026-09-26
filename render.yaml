@@ -28,6 +28,21 @@ services:
         value: "false"
       - key: VIRUSTOTAL_API_KEY
         sync: false
+      # CivicInsight scheme + development AI (NVIDIA NIM). Off until AI_ENABLED=true and a key is set;
+      # everything has a deterministic fallback. Check connectivity with: python scripts/check_nim.py
+      - key: AI_ENABLED
+        value: "false"
+      - key: NVIDIA_NIM_BASE_URL
+        value: https://integrate.api.nvidia.com/v1
+      - key: NVIDIA_NIM_API_KEY
+        sync: false
+      # Optional separate key for the embedding model (falls back to NVIDIA_NIM_API_KEY).
+      - key: NVIDIA_NIM_EMBEDDING_API_KEY
+        sync: false
+      - key: NVIDIA_NIM_SARVAM_MODEL
+        value: sarvamai/sarvam-m
+      - key: NVIDIA_NIM_EMBEDDING_MODEL
+        value: nvidia/nemotron-3-embed-1b
 
   - type: web
     name: namma-kavacham-web

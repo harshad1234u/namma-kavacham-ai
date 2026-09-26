@@ -1,0 +1,153 @@
+{
+ "states_and_uts": {
+  "source": {
+   "type": "official",
+   "name": "DBT Bharat (dbtbharat.gov.in) State/UT list",
+   "url": "https://dbtbharat.gov.in/",
+   "last_updated": "2026-09-26"
+  },
+  "names": [
+   "ANDAMAN AND NICOBAR ISLANDS",
+   "ANDHRA PRADESH",
+   "ARUNACHAL PRADESH",
+   "ASSAM",
+   "BIHAR",
+   "CHANDIGARH",
+   "CHHATTISGARH",
+   "DELHI",
+   "GOA",
+   "GUJARAT",
+   "HARYANA",
+   "HIMACHAL PRADESH",
+   "JAMMU AND KASHMIR",
+   "JHARKHAND",
+   "KARNATAKA",
+   "KERALA",
+   "LADAKH",
+   "LAKSHADWEEP",
+   "MADHYA PRADESH",
+   "MAHARASHTRA",
+   "MANIPUR",
+   "MEGHALAYA",
+   "MIZORAM",
+   "NAGALAND",
+   "ODISHA",
+   "PUDUCHERRY",
+   "PUNJAB",
+   "RAJASTHAN",
+   "SIKKIM",
+   "TAMIL NADU",
+   "TELANGANA",
+   "THE DADRA AND NAGAR HAVELI AND DAMAN AND DIU",
+   "TRIPURA",
+   "UTTAR PRADESH",
+   "UTTARAKHAND",
+   "WEST BENGAL"
+  ]
+ },
+ "source": {
+  "type": "demo",
+  "name": "CivicInsight demonstration dataset (synthetic)",
+  "last_updated": "2026-09-26",
+  "scope": "4 districts, 12 fictional localities",
+  "note": "Synthetic figures for demonstration only. Not census, government or official statistics."
+ },
+ "areas": [
+  {
+   "area_id": "tiruchirappalli-a",
+   "state": "TAMIL NADU",
+   "district": "Tiruchirappalli",
+   "area": "Demo Area A",
+   "lat": 10.84,
+   "lng": 78.66
+  },
+  {
+   "area_id": "tiruchirappalli-b",
+   "state": "TAMIL NADU",
+   "district": "Tiruchirappalli",
+   "area": "Demo Area B",
+   "lat": 10.74,
+   "lng": 78.75
+  },
+  {
+   "area_id": "tiruchirappalli-c",
+   "state": "TAMIL NADU",
+   "district": "Tiruchirappalli",
+   "area": "Demo Area C",
+   "lat": 10.82,
+   "lng": 78.77
+  },
+  {
+   "area_id": "madurai-a",
+   "state": "TAMIL NADU",
+   "district": "Madurai",
+   "area": "Demo Area A",
+   "lat": 9.98,
+   "lng": 78.08
+  },
+  {
+   "area_id": "madurai-b",
+   "state": "TAMIL NADU",
+   "district": "Madurai",
+   "area": "Demo Area B",
+   "lat": 9.88,
+   "lng": 78.17
+  },
+  {
+   "area_id": "madurai-c",
+   "state": "TAMIL NADU",
+   "district": "Madurai",
+   "area": "Demo Area C",
+   "lat": 9.96,
+   "lng": 78.19
+  },
+  {
+   "area_id": "pune-a",
+   "state": "MAHARASHTRA",
+   "district": "Pune",
+   "area": "Demo Area A",
+   "lat": 18.57,
+   "lng": 73.82
+  },
+  {
+   "area_id": "pune-b",
+   "state": "MAHARASHTRA",
+   "district": "Pune",
+   "area": "Demo Area B",
+   "lat": 18.47,
+   "lng": 73.91
+  },
+  {
+   "area_id": "pune-c",
+   "state": "MAHARASHTRA",
+   "district": "Pune",
+   "area": "Demo Area C",
+   "lat": 18.55,
+   "lng": 73.93
+  },
+  {
+   "area_id": "gaya-a",
+   "state": "BIHAR",
+   "district": "Gaya",
+   "area": "Demo Area A",
+   "lat": 24.84,
+   "lng": 84.96
+  },
+  {
+   "area_id": "gaya-b",
+   "state": "BIHAR",
+   "district": "Gaya",
+   "area": "Demo Area B",
+   "lat": 24.74,
+   "lng": 85.05
+  },
+  {
+   "area_id": "gaya-c",
+   "state": "BIHAR",
+   "district": "Gaya",
+   "area": "Demo Area C",
+   "lat": 24.82,
+   "lng": 85.07
+  }
+ ]
+}

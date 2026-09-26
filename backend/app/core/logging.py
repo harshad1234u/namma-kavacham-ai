@@ -12,6 +12,15 @@ import re
 SENSITIVE_KEYS = frozenset(
     {
         "body",
+        "query",
+        "question",
+        "need",
+        "request_text",
+        "answers",
+        "location",
+        "district",
+        "village",
+        "pincode",
         "text",
         "message",
         "matched_text",

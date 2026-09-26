@@ -1,0 +1,134 @@
+{
+  "id": "pmay_u",
+  "names": {
+    "en": "Pradhan Mantri Awas Yojana – Urban 2.0 (PMAY-U 2.0)"
+  },
+  "abbreviations": [
+    "PMAY-U",
+    "PMAY-U 2.0",
+    "PMAYU"
+  ],
+  "aliases": [
+    "awas yojana urban",
+    "pm awas urban",
+    "प्रधानमंत्री आवास योजना शहरी",
+    "आवास योजना शहरी"
+  ],
+  "level": "central",
+  "ministry": "Ministry of Housing and Urban Affairs",
+  "need_tags": [
+    "housing"
+  ],
+  "description": {
+    "text": {
+      "en": "PMAY-U 2.0 ('Housing for All' Mission) gives financial assistance to urban poor and middle-class families to construct, purchase or rent a house at an affordable cost in cities."
+    },
+    "source_ref": "pmayu_mis",
+    "quote": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) – ‘Housing for All’ Mission provides financial Assistance to 1 crore urban poor and middle-class families to construct, purchase or rent a house at an affordable cost in cities."
+  },
+  "benefits": [
+    {
+      "text": {
+        "en": "Four verticals: Beneficiary Led Construction, Affordable Housing in Partnership, Affordable Rental Housing and Interest Subsidy Scheme."
+      },
+      "source_ref": "pmayu_mis",
+      "quote": "PMAY-U 2.0 is implemented through four verticals i.e., Beneficiary Led Construction, Affordable Housing in Partnership, Affordable Rental Housing and Interest Subsidy Scheme."
+    },
+    {
+      "text": {
+        "en": "BLC: financial assistance to EWS families to build a new pucca house (30–45 sq.m carpet area) on their own land."
+      },
+      "source_ref": "pmayu_mis",
+      "quote": "The BLC vertical provides financial assistance to individual Eligibility families belonging to EWS categories to construct new pucca houses on their own available land. The beneficiaries under this vertical may be allowed to construct all weather pucca houses of minimum 30 sqm. and maximum of 45 sqm. carpet area."
+    },
+    {
+      "text": {
+        "en": "AHP: central assistance to EWS beneficiaries to own a pucca house of 30–45 sq.m built by public/private agencies."
+      },
+      "source_ref": "pmayu_mis",
+      "quote": "The AHP vertical provides Central Assistance to EWS beneficiaries for owning a pucca house. Under this vertical, affordable houses of 30-45 sqm carpet area are constructed by Public/Private Agencies for eligible beneficiaries."
+    },
+    {
+      "text": {
+        "en": "ISS: interest subsidy on home loans sanctioned and disbursed on or after 01.09.2024 for EWS, LIG and MIG families with annual income up to ₹3 lakh, ₹6 lakh and ₹9 lakh respectively."
+      },
+      "source_ref": "pmayu_mis",
+      "quote": "Under ISS vertical, subsidy is provided on home loans sanctioned and disbursed on 01.09.2024 or after to eligible EWS, LIG & MIG beneficiaries with annual income of up to ₹3 lakh, ₹6 lakh & ₹9 lakh respectively to avail the benefit of the Scheme."
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "urban_resident",
+      "attribute": "residence_type",
+      "operator": "eq",
+      "value": "urban",
+      "statement": {
+        "text": {
+          "en": "The mission is for urban poor and middle-class families, for houses in cities."
+        },
+        "source_ref": "pmayu_mis",
+        "quote": "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) – ‘Housing for All’ Mission provides financial Assistance to 1 crore urban poor and middle-class families to construct, purchase or rent a house at an affordable cost in cities."
+      }
+    },
+    {
+      "id": "no_pucca_house",
+      "attribute": "owns_pucca_house",
+      "operator": "is_true",
+      "kind": "exclusion",
+      "statement": {
+        "text": {
+          "en": "Families belonging to EWS/LIG/MIG segments with no pucca house anywhere in the country are eligible."
+        },
+        "source_ref": "pmayu_mis",
+        "quote": "Families belonging to EWS/LIG/MIG segments, having no pucca house anywhere in the country, are eligible to purchase or construct a house under PMAY-U 2.0."
+      }
+    },
+    {
+      "id": "income_segment",
+      "attribute": "other",
+      "statement": {
+        "text": {
+          "en": "You must belong to the EWS, LIG or MIG segment. For the Interest Subsidy vertical the annual income limits are ₹3 lakh (EWS), ₹6 lakh (LIG) and ₹9 lakh (MIG)."
+        },
+        "source_ref": "pmayu_mis",
+        "quote": "Under ISS vertical, subsidy is provided on home loans sanctioned and disbursed on 01.09.2024 or after to eligible EWS, LIG & MIG beneficiaries with annual income of up to ₹3 lakh, ₹6 lakh & ₹9 lakh respectively to avail the benefit of the Scheme."
+      }
+    }
+  ],
+  "criteria_complete": false,
+  "documents": [],
+  "application_steps": [],
+  "channels": [
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "Apply for PMAY-U 2.0 (official MIS portal)"
+      },
+      "official_url": "https://pmaymis.gov.in/PMAYMIS2_2024/PmayDefault.aspx",
+      "source_ref": "pmayu_mis"
+    }
+  ],
+  "official_domains": [
+    "pmaymis.gov.in",
+    "pmay-urban.gov.in"
+  ],
+  "sources": [
+    {
+      "id": "pmayu_mis",
+      "publisher": "PMAY-U MIS portal, Ministry of Housing and Urban Affairs",
+      "title": "Apply for PMAY-U 2.0 — PMAY(U) MIS home",
+      "url": "https://pmaymis.gov.in/PMAYMIS2_2024/PmayDefault.aspx",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "Pradhan Mantri Awas Yojana - Urban 2.0 (PMAY-U 2.0) – ‘Housing for All’ Mission provides financial Assistance to 1 crore urban poor and middle-class families to construct, purchase or rent a house at an affordable cost in cities.",
+        "PMAY-U 2.0 is implemented through four verticals i.e., Beneficiary Led Construction, Affordable Housing in Partnership, Affordable Rental Housing and Interest Subsidy Scheme.",
+        "Families belonging to EWS/LIG/MIG segments, having no pucca house anywhere in the country, are eligible to purchase or construct a house under PMAY-U 2.0.",
+        "The BLC vertical provides financial assistance to individual Eligibility families belonging to EWS categories to construct new pucca houses on their own available land. The beneficiaries under this vertical may be allowed to construct all weather pucca houses of minimum 30 sqm. and maximum of 45 sqm. carpet area.",
+        "The AHP vertical provides Central Assistance to EWS beneficiaries for owning a pucca house. Under this vertical, affordable houses of 30-45 sqm carpet area are constructed by Public/Private Agencies for eligible beneficiaries.",
+        "Under ISS vertical, subsidy is provided on home loans sanctioned and disbursed on 01.09.2024 or after to eligible EWS, LIG & MIG beneficiaries with annual income of up to ₹3 lakh, ₹6 lakh & ₹9 lakh respectively to avail the benefit of the Scheme.",
+        "PMAY-U 2.0 also ensures equity across different segments of population by addressing the housing requirements of widows, single women, persons with disabilities, senior citizens, transgenders, persons belonging to Scheduled Castes/Scheduled Tribes, Minorities and other weaker & vulnerable sections of the society."
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

@@ -2,7 +2,9 @@
 
 /* Tokens from stitch_namma_kavacham_ai_ux_prototype/civic_shield_guard/DESIGN.md */
 @theme {
-  --font-sans: "Noto Sans", "Noto Sans Tamil", "IBM Plex Sans", system-ui, sans-serif;
+  --font-sans: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Tamil", "Noto Sans Bengali", "Noto Sans Telugu", "Noto Sans Kannada",
+    "Noto Sans Malayalam", "Noto Sans Gujarati", "Noto Sans Gurmukhi", "Noto Sans Oriya", "Noto Sans Ol Chiki", "Noto Sans Meetei Mayek",
+    "Noto Naskh Arabic", system-ui, sans-serif;
   --font-mono: "Noto Sans Mono", ui-monospace, monospace;
 
   --color-navy: #0f233d;
@@ -37,8 +39,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-:lang(ta) {
+/* Indic conjuncts and matras clip below ~1.45; Perso-Arabic (Urdu, Kashmiri, Sindhi) needs more room. */
+:lang(ta), :lang(hi), :lang(mr), :lang(ne), :lang(sa), :lang(mai), :lang(doi), :lang(kok), :lang(brx), :lang(bn), :lang(as),
+:lang(te), :lang(kn), :lang(ml), :lang(gu), :lang(pa), :lang(or), :lang(sat), :lang(mni) {
   line-height: 1.7;
+}
+:lang(ur), :lang(ks), :lang(sd) {
+  line-height: 1.9;
 }
 
 :focus-visible {

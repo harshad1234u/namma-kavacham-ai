@@ -1,0 +1,99 @@
+{
+ "source": {
+  "type": "demo",
+  "name": "CivicInsight demonstration dataset (synthetic)",
+  "last_updated": "2026-09-26",
+  "scope": "4 districts, 12 fictional localities",
+  "note": "Synthetic figures for demonstration only. Not census, government or official statistics."
+ },
+ "profiles": [
+  {
+   "area_id": "tiruchirappalli-a",
+   "population": 185000,
+   "households": 46250,
+   "children_percent": 23.5,
+   "elderly_percent": 7.2,
+   "literacy_rate": 72.5
+  },
+  {
+   "area_id": "tiruchirappalli-b",
+   "population": 125000,
+   "households": 31250,
+   "children_percent": 22.2,
+   "elderly_percent": 7.0,
+   "literacy_rate": 77.5
+  },
+  {
+   "area_id": "tiruchirappalli-c",
+   "population": 54000,
+   "households": 13500,
+   "children_percent": 18.2,
+   "elderly_percent": 8.9,
+   "literacy_rate": 84.8
+  },
+  {
+   "area_id": "madurai-a",
+   "population": 106000,
+   "households": 26500,
+   "children_percent": 17.2,
+   "elderly_percent": 6.3,
+   "literacy_rate": 68.2
+  },
+  {
+   "area_id": "madurai-b",
+   "population": 146000,
+   "households": 36500,
+   "children_percent": 22.9,
+   "elderly_percent": 6.3,
+   "literacy_rate": 88.9
+  },
+  {
+   "area_id": "pune-a",
+   "population": 137000,
+   "households": 34250,
+   "children_percent": 16.4,
+   "elderly_percent": 8.4,
+   "literacy_rate": 76.1
+  },
+  {
+   "area_id": "pune-b",
+   "population": 128000,
+   "households": 32000,
+   "children_percent": 20.6,
+   "elderly_percent": 6.4,
+   "literacy_rate": 75.8
+  },
+  {
+   "area_id": "pune-c",
+   "population": 150000,
+   "households": 37500,
+   "children_percent": 25.1,
+   "elderly_percent": 10.6,
+   "literacy_rate": 85.1
+  },
+  {
+   "area_id": "gaya-a",
+   "population": 154000,
+   "households": 38500,
+   "children_percent": 22.8,
+   "elderly_percent": 8.6,
+   "literacy_rate": 79.5
+  },
+  {
+   "area_id": "gaya-b",
+   "population": 104000,
+   "households": 26000,
+   "children_percent": 17.1,
+   "elderly_percent": 11.8,
+   "literacy_rate": 88.8
+  },
+  {
+   "area_id": "gaya-c",
+   "population": 40000,
+   "households": 10000,
+   "children_percent": 24.1,
+   "elderly_percent": 6.3,
+   "literacy_rate": 89.4
+  }
+ ]
+}

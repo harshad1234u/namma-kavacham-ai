@@ -5,6 +5,7 @@ from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.api.analyze import router as analyze_router
+from app.civic.router import router as civic_router
 from app.core.config import get_settings
 from app.core.logging import configure_logging, get_logger
 
@@ -89,3 +90,4 @@ async def healthz() -> dict:
 
 
 app.include_router(analyze_router)
+app.include_router(civic_router)

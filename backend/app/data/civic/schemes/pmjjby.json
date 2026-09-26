@@ -1,0 +1,120 @@
+{
+  "id": "pmjjby",
+  "names": {
+    "en": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)"
+  },
+  "abbreviations": [
+    "PMJJBY"
+  ],
+  "aliases": [
+    "jeevan jyoti bima yojana",
+    "जीवन ज्योति बीमा योजना"
+  ],
+  "level": "central",
+  "ministry": "Department of Financial Services, Ministry of Finance",
+  "need_tags": [
+    "insurance_life_accident"
+  ],
+  "description": {
+    "text": {
+      "en": "PMJJBY is a one-year life insurance scheme, renewable every year."
+    },
+    "source_ref": "pmjjby",
+    "quote": "The Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY) is a one-year life insurance Scheme renewable from year to year."
+  },
+  "benefits": [
+    {
+      "text": {
+        "en": "Life cover of ₹2 lakh for death due to any reason."
+      },
+      "source_ref": "pmjjby",
+      "quote": "It offers coverage of Rs. Two lacs for death due to any reason and is available to people in the age group of 18 to 50 years having a bank account.",
+      "amount_inr": 200000
+    },
+    {
+      "text": {
+        "en": "Annual premium ₹436; cover period 1 June to 31 May."
+      },
+      "source_ref": "pmjjby",
+      "quote": "Annual premium is Rs.436 per year; Risk Cover period: 1st June to 31st May;",
+      "amount_inr": 436
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "age_18_50",
+      "attribute": "age",
+      "operator": "between",
+      "value": [
+        18,
+        50
+      ],
+      "statement": {
+        "text": {
+          "en": "Available to people aged 18 to 50 years."
+        },
+        "source_ref": "pmjjby",
+        "quote": "It offers coverage of Rs. Two lacs for death due to any reason and is available to people in the age group of 18 to 50 years having a bank account."
+      }
+    },
+    {
+      "id": "bank_account",
+      "attribute": "has_bank_account",
+      "operator": "is_true",
+      "statement": {
+        "text": {
+          "en": "You need a bank account."
+        },
+        "source_ref": "pmjjby",
+        "quote": "It offers coverage of Rs. Two lacs for death due to any reason and is available to people in the age group of 18 to 50 years having a bank account."
+      }
+    }
+  ],
+  "criteria_complete": true,
+  "documents": [],
+  "application_steps": [
+    {
+      "text": {
+        "en": "Enrol through your bank account; the premium is paid by auto-debit."
+      },
+      "source_ref": "pmjjby",
+      "quote": "It involves convenient bank account linked enrolment and premium payment through auto-debit from the bank account of the subscriber;"
+    }
+  ],
+  "channels": [
+    {
+      "type": "bank",
+      "label": {
+        "en": "Your bank (bank-account-linked enrolment)"
+      },
+      "source_ref": "pmjjby"
+    },
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "PMJJBY page, Department of Financial Services (official)"
+      },
+      "official_url": "https://financialservices.gov.in/pradhan-mantri-jeevan-jyoti-bima-yojana-pmjjby",
+      "source_ref": "pmjjby"
+    }
+  ],
+  "official_domains": [
+    "financialservices.gov.in"
+  ],
+  "sources": [
+    {
+      "id": "pmjjby",
+      "publisher": "Department of Financial Services, Ministry of Finance",
+      "title": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)",
+      "url": "https://financialservices.gov.in/pradhan-mantri-jeevan-jyoti-bima-yojana-pmjjby",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "The Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY) is a one-year life insurance Scheme renewable from year to year.",
+        "It offers coverage of Rs. Two lacs for death due to any reason and is available to people in the age group of 18 to 50 years having a bank account.",
+        "Annual premium is Rs.436 per year; Risk Cover period: 1st June to 31st May;",
+        "It involves convenient bank account linked enrolment and premium payment through auto-debit from the bank account of the subscriber;"
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

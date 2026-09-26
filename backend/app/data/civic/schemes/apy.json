@@ -1,0 +1,104 @@
+{
+  "id": "apy",
+  "names": {
+    "en": "Atal Pension Yojana (APY)"
+  },
+  "abbreviations": [
+    "APY"
+  ],
+  "aliases": [
+    "atal pension yojana",
+    "atal pension",
+    "अटल पेंशन योजना",
+    "அடல் ஓய்வூதிய"
+  ],
+  "level": "central",
+  "ministry": "Department of Financial Services, Ministry of Finance",
+  "need_tags": [
+    "pension_old_age"
+  ],
+  "description": {
+    "text": {
+      "en": "APY encourages workers in the unorganised sector to save voluntarily for retirement, with a defined pension depending on contribution and its period."
+    },
+    "source_ref": "apy",
+    "quote": "The Government launched the Atal Pension Yojana (APY) to encourage the workers in unorganized sector to voluntarily save for their retirement."
+  },
+  "benefits": [
+    {
+      "text": {
+        "en": "A fixed minimum pension of ₹1,000, ₹2,000, ₹3,000, ₹4,000 or ₹5,000 per month from age 60, depending on your contributions and joining age."
+      },
+      "source_ref": "apy",
+      "quote": "Under APY, the subscribers would receive the fixed minimum pension of Rs. 1000 per month, Rs. 2000 per month, Rs. 3000 per month, Rs. 4000 per month and Rs. 5000 per month at the age of 60 years depending on their contributions, which itself would be based on the age of joining APY.",
+      "amount_inr": 5000,
+      "period": "per_month"
+    },
+    {
+      "text": {
+        "en": "The minimum pension is guaranteed by the Government."
+      },
+      "source_ref": "apy",
+      "quote": "The minimum pension would be guaranteed by the Government, i.e., if the accumulated corpus based on contributions earns a lower than estimated return on investment and is inadequate to provide the minimum guaranteed pension, the Central Government would fund such inadequacy."
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "join_age_18_40",
+      "attribute": "age",
+      "operator": "between",
+      "value": [
+        18,
+        40
+      ],
+      "statement": {
+        "text": {
+          "en": "You can join between the ages of 18 and 40."
+        },
+        "source_ref": "apy",
+        "quote": "The minimum age of joining APY is 18 years and maximum age is 40 years."
+      }
+    }
+  ],
+  "criteria_complete": false,
+  "documents": [],
+  "application_steps": [
+    {
+      "text": {
+        "en": "Contributions can be made monthly, quarterly or half-yearly."
+      },
+      "source_ref": "apy",
+      "quote": "Subscribers can make contributions to APY on monthly/ quarterly / half-yearly basis."
+    }
+  ],
+  "channels": [
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "APY page, Department of Financial Services (official)"
+      },
+      "official_url": "https://financialservices.gov.in/atal-pension-yojana-apy",
+      "source_ref": "apy"
+    }
+  ],
+  "official_domains": [
+    "financialservices.gov.in"
+  ],
+  "sources": [
+    {
+      "id": "apy",
+      "publisher": "Department of Financial Services, Ministry of Finance",
+      "title": "Atal Pension Yojana (APY)",
+      "url": "https://financialservices.gov.in/atal-pension-yojana-apy",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "The Government launched the Atal Pension Yojana (APY) to encourage the workers in unorganized sector to voluntarily save for their retirement.",
+        "Under APY, the subscribers would receive the fixed minimum pension of Rs. 1000 per month, Rs. 2000 per month, Rs. 3000 per month, Rs. 4000 per month and Rs. 5000 per month at the age of 60 years depending on their contributions, which itself would be based on the age of joining APY.",
+        "The minimum age of joining APY is 18 years and maximum age is 40 years.",
+        "The minimum pension would be guaranteed by the Government, i.e., if the accumulated corpus based on contributions earns a lower than estimated return on investment and is inadequate to provide the minimum guaranteed pension, the Central Government would fund such inadequacy.",
+        "Subscribers can make contributions to APY on monthly/ quarterly / half-yearly basis."
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

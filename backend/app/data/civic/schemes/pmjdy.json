@@ -1,0 +1,63 @@
+{
+  "id": "pmjdy",
+  "names": {"en": "Pradhan Mantri Jan-Dhan Yojana (PMJDY)"},
+  "abbreviations": ["PMJDY"],
+  "aliases": ["jan dhan yojana", "jan-dhan yojana", "jan dhan account", "जन धन योजना", "जन-धन योजना", "ஜன் தன்"],
+  "level": "central",
+  "ministry": "Ministry of Finance (Department of Financial Services)",
+  "need_tags": ["banking_access", "insurance_life_accident"],
+  "description": {
+    "text": {"en": "PMJDY is the National Mission for Financial Inclusion, to give affordable access to financial services: a basic savings and deposit account, remittance, credit, insurance and pension."},
+    "source_ref": "pmjdy_scheme",
+    "quote": "Pradhan Mantri Jan-Dhan Yojana (PMJDY) is National Mission for Financial Inclusion to ensure access to financial services, namely, a basic savings & deposit accounts, remittance, credit, insurance, pension in an affordable manner."
+  },
+  "benefits": [
+    {"text": {"en": "One basic savings bank account is opened for an unbanked person."}, "source_ref": "pmjdy_scheme", "quote": "One basic savings bank account is opened for unbanked person."},
+    {"text": {"en": "No minimum balance is required, and interest is earned on the deposit."}, "source_ref": "pmjdy_scheme", "quote": "There is no requirement to maintain any minimum balance in PMJDY accounts. Interest is earned on the deposit in PMJDY accounts."},
+    {"text": {"en": "A RuPay debit card is provided to the account holder."}, "source_ref": "pmjdy_scheme", "quote": "Rupay Debit card is provided to PMJDY account holder."},
+    {"text": {"en": "Accident insurance cover of ₹1 lakh with the RuPay card (₹2 lakh for accounts opened after 28.8.2018)."}, "amount_inr": 200000, "source_ref": "pmjdy_scheme", "quote": "Accident Insurance Cover of Rs.1 lakh (enhanced to Rs. 2 lakh to new PMJDY accounts opened after 28.8.2018) is available with RuPay card issued to the PMJDY account holders."},
+    {"text": {"en": "An overdraft facility of up to ₹10,000 is available to eligible account holders."}, "amount_inr": 10000, "source_ref": "pmjdy_scheme", "quote": "An overdraft (OD) facility up to Rs. 10,000 to eligible account holders is available."},
+    {"text": {"en": "PMJDY accounts are eligible for Direct Benefit Transfer (DBT), PMJJBY, PMSBY, Atal Pension Yojana and the MUDRA scheme."}, "source_ref": "pmjdy_scheme", "quote": "PMJDY accounts are eligible for Direct Benefit Transfer (DBT), Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY), Pradhan Mantri Suraksha Bima Yojana (PMSBY), Atal Pension Yojana (APY), Micro Units Development & Refinance Agency Bank (MUDRA) scheme."}
+  ],
+  "eligibility": [
+    {
+      "id": "no_other_account",
+      "attribute": "has_bank_account",
+      "operator": "is_true",
+      "kind": "exclusion",
+      "statement": {"text": {"en": "The account can be opened by persons who do not have any other bank account."}, "source_ref": "pmjdy_scheme", "quote": "by persons not having any other account."}
+    }
+  ],
+  "criteria_complete": false,
+  "documents": [],
+  "application_steps": [
+    {"text": {"en": "Open a basic savings bank deposit (BSBD) account at any bank branch or Business Correspondent (Bank Mitra) outlet."}, "source_ref": "pmjdy_scheme", "quote": "Under the scheme, a basic savings bank deposit (BSBD) account can be opened in any bank branch or Business Correspondent (Bank Mitra) outlet, by persons not having any other account."}
+  ],
+  "channels": [
+    {"type": "bank", "label": {"en": "Any bank branch or Business Correspondent (Bank Mitra) outlet"}, "source_ref": "pmjdy_scheme"},
+    {"type": "online_portal", "label": {"en": "PMJDY scheme details (official)"}, "official_url": "https://pmjdy.gov.in/scheme", "source_ref": "pmjdy_scheme"}
+  ],
+  "helplines": [{"number": "1800 11 0001", "source_ref": "pmjdy_scheme"}, {"number": "1800 180 1111", "source_ref": "pmjdy_scheme"}],
+  "official_domains": ["pmjdy.gov.in"],
+  "sources": [
+    {
+      "id": "pmjdy_scheme",
+      "publisher": "PMJDY Mission Office, Department of Financial Services, Ministry of Finance",
+      "title": "Pradhan Mantri Jan Dhan Yojana — Scheme Details",
+      "url": "https://pmjdy.gov.in/scheme",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "Pradhan Mantri Jan-Dhan Yojana (PMJDY) is National Mission for Financial Inclusion to ensure access to financial services, namely, a basic savings & deposit accounts, remittance, credit, insurance, pension in an affordable manner.",
+        "Under the scheme, a basic savings bank deposit (BSBD) account can be opened in any bank branch or Business Correspondent (Bank Mitra) outlet, by persons not having any other account.",
+        "One basic savings bank account is opened for unbanked person.",
+        "There is no requirement to maintain any minimum balance in PMJDY accounts. Interest is earned on the deposit in PMJDY accounts.",
+        "Rupay Debit card is provided to PMJDY account holder.",
+        "Accident Insurance Cover of Rs.1 lakh (enhanced to Rs. 2 lakh to new PMJDY accounts opened after 28.8.2018) is available with RuPay card issued to the PMJDY account holders.",
+        "An overdraft (OD) facility up to Rs. 10,000 to eligible account holders is available.",
+        "PMJDY accounts are eligible for Direct Benefit Transfer (DBT), Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY), Pradhan Mantri Suraksha Bima Yojana (PMSBY), Atal Pension Yojana (APY), Micro Units Development & Refinance Agency Bank (MUDRA) scheme.",
+        "National Toll Free:- 1800 11 0001 1800 180 1111"
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

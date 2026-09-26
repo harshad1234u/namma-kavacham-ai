@@ -1,0 +1,5361 @@
+{
+ "source": {
+  "type": "demo",
+  "name": "CivicInsight demonstration dataset (synthetic)",
+  "last_updated": "2026-09-26",
+  "scope": "4 districts, 12 fictional localities",
+  "note": "Synthetic figures for demonstration only. Not census, government or official statistics."
+ },
+ "requests": [
+  {
+   "id": "DEMO-0001",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-09"
+  },
+  {
+   "id": "DEMO-0002",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-18"
+  },
+  {
+   "id": "DEMO-0003",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0004",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0005",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-06"
+  },
+  {
+   "id": "DEMO-0006",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0007",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0008",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-24"
+  },
+  {
+   "id": "DEMO-0009",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-12"
+  },
+  {
+   "id": "DEMO-0010",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-09"
+  },
+  {
+   "id": "DEMO-0011",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-16"
+  },
+  {
+   "id": "DEMO-0012",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-14"
+  },
+  {
+   "id": "DEMO-0013",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0014",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-04"
+  },
+  {
+   "id": "DEMO-0015",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-09"
+  },
+  {
+   "id": "DEMO-0016",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-13"
+  },
+  {
+   "id": "DEMO-0017",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-02"
+  },
+  {
+   "id": "DEMO-0018",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-02"
+  },
+  {
+   "id": "DEMO-0019",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0020",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-27"
+  },
+  {
+   "id": "DEMO-0021",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0022",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0023",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-02"
+  },
+  {
+   "id": "DEMO-0024",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-01"
+  },
+  {
+   "id": "DEMO-0025",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0026",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-09"
+  },
+  {
+   "id": "DEMO-0027",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0028",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-08"
+  },
+  {
+   "id": "DEMO-0029",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-10"
+  },
+  {
+   "id": "DEMO-0030",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0031",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0032",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-22"
+  },
+  {
+   "id": "DEMO-0033",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-03"
+  },
+  {
+   "id": "DEMO-0034",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-29"
+  },
+  {
+   "id": "DEMO-0035",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0036",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0037",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0038",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-08"
+  },
+  {
+   "id": "DEMO-0039",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0040",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-06"
+  },
+  {
+   "id": "DEMO-0041",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-27"
+  },
+  {
+   "id": "DEMO-0042",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-17"
+  },
+  {
+   "id": "DEMO-0043",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0044",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-09"
+  },
+  {
+   "id": "DEMO-0045",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0046",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-18"
+  },
+  {
+   "id": "DEMO-0047",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0048",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-23"
+  },
+  {
+   "id": "DEMO-0049",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-13"
+  },
+  {
+   "id": "DEMO-0050",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-14"
+  },
+  {
+   "id": "DEMO-0051",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-22"
+  },
+  {
+   "id": "DEMO-0052",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-27"
+  },
+  {
+   "id": "DEMO-0053",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-11"
+  },
+  {
+   "id": "DEMO-0054",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-26"
+  },
+  {
+   "id": "DEMO-0055",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-22"
+  },
+  {
+   "id": "DEMO-0056",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0057",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0058",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0059",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0060",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-25"
+  },
+  {
+   "id": "DEMO-0061",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-14"
+  },
+  {
+   "id": "DEMO-0062",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0063",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-01"
+  },
+  {
+   "id": "DEMO-0064",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0065",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0066",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0067",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-07-23"
+  },
+  {
+   "id": "DEMO-0068",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-05"
+  },
+  {
+   "id": "DEMO-0069",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0070",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-18"
+  },
+  {
+   "id": "DEMO-0071",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-29"
+  },
+  {
+   "id": "DEMO-0072",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-28"
+  },
+  {
+   "id": "DEMO-0073",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0074",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-26"
+  },
+  {
+   "id": "DEMO-0075",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0076",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-04"
+  },
+  {
+   "id": "DEMO-0077",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-09"
+  },
+  {
+   "id": "DEMO-0078",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0079",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0080",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0081",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0082",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0083",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-19"
+  },
+  {
+   "id": "DEMO-0084",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0085",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0086",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-28"
+  },
+  {
+   "id": "DEMO-0087",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-07-24"
+  },
+  {
+   "id": "DEMO-0088",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0089",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0090",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-25"
+  },
+  {
+   "id": "DEMO-0091",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0092",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0093",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-01"
+  },
+  {
+   "id": "DEMO-0094",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0095",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0096",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0097",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-17"
+  },
+  {
+   "id": "DEMO-0098",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-12"
+  },
+  {
+   "id": "DEMO-0099",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-07"
+  },
+  {
+   "id": "DEMO-0100",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0101",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-19"
+  },
+  {
+   "id": "DEMO-0102",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0103",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-18"
+  },
+  {
+   "id": "DEMO-0104",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0105",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-16"
+  },
+  {
+   "id": "DEMO-0106",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0107",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0108",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-15"
+  },
+  {
+   "id": "DEMO-0109",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0110",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-07-20"
+  },
+  {
+   "id": "DEMO-0111",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-30"
+  },
+  {
+   "id": "DEMO-0112",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-27"
+  },
+  {
+   "id": "DEMO-0113",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-29"
+  },
+  {
+   "id": "DEMO-0114",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-15"
+  },
+  {
+   "id": "DEMO-0115",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0116",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-07-28"
+  },
+  {
+   "id": "DEMO-0117",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0118",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-06"
+  },
+  {
+   "id": "DEMO-0119",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0120",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0121",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-13"
+  },
+  {
+   "id": "DEMO-0122",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0123",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0124",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0125",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-17"
+  },
+  {
+   "id": "DEMO-0126",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-17"
+  },
+  {
+   "id": "DEMO-0127",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0128",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-03"
+  },
+  {
+   "id": "DEMO-0129",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-23"
+  },
+  {
+   "id": "DEMO-0130",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-24"
+  },
+  {
+   "id": "DEMO-0131",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-01"
+  },
+  {
+   "id": "DEMO-0132",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0133",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0134",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0135",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-29"
+  },
+  {
+   "id": "DEMO-0136",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-16"
+  },
+  {
+   "id": "DEMO-0137",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0138",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0139",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-04"
+  },
+  {
+   "id": "DEMO-0140",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0141",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0142",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0143",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-21"
+  },
+  {
+   "id": "DEMO-0144",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0145",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0146",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0147",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0148",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-09"
+  },
+  {
+   "id": "DEMO-0149",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0150",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0151",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0152",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "tiruchirappalli-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-06"
+  },
+  {
+   "id": "DEMO-0153",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-23"
+  },
+  {
+   "id": "DEMO-0154",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-10"
+  },
+  {
+   "id": "DEMO-0155",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-04"
+  },
+  {
+   "id": "DEMO-0156",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0157",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0158",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0159",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-30"
+  },
+  {
+   "id": "DEMO-0160",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-16"
+  },
+  {
+   "id": "DEMO-0161",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0162",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-21"
+  },
+  {
+   "id": "DEMO-0163",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0164",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0165",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0166",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0167",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-24"
+  },
+  {
+   "id": "DEMO-0168",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-21"
+  },
+  {
+   "id": "DEMO-0169",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-30"
+  },
+  {
+   "id": "DEMO-0170",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-09"
+  },
+  {
+   "id": "DEMO-0171",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-31"
+  },
+  {
+   "id": "DEMO-0172",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0173",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-31"
+  },
+  {
+   "id": "DEMO-0174",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0175",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0176",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-15"
+  },
+  {
+   "id": "DEMO-0177",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-05"
+  },
+  {
+   "id": "DEMO-0178",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0179",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0180",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-20"
+  },
+  {
+   "id": "DEMO-0181",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-22"
+  },
+  {
+   "id": "DEMO-0182",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0183",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-18"
+  },
+  {
+   "id": "DEMO-0184",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0185",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-26"
+  },
+  {
+   "id": "DEMO-0186",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0187",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-17"
+  },
+  {
+   "id": "DEMO-0188",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-28"
+  },
+  {
+   "id": "DEMO-0189",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-31"
+  },
+  {
+   "id": "DEMO-0190",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0191",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-14"
+  },
+  {
+   "id": "DEMO-0192",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-01"
+  },
+  {
+   "id": "DEMO-0193",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0194",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-05"
+  },
+  {
+   "id": "DEMO-0195",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0196",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0197",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-24"
+  },
+  {
+   "id": "DEMO-0198",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-07-29"
+  },
+  {
+   "id": "DEMO-0199",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0200",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-09"
+  },
+  {
+   "id": "DEMO-0201",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-19"
+  },
+  {
+   "id": "DEMO-0202",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "tiruchirappalli-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-06"
+  },
+  {
+   "id": "DEMO-0203",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0204",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-16"
+  },
+  {
+   "id": "DEMO-0205",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-14"
+  },
+  {
+   "id": "DEMO-0206",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0207",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-27"
+  },
+  {
+   "id": "DEMO-0208",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-04"
+  },
+  {
+   "id": "DEMO-0209",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-21"
+  },
+  {
+   "id": "DEMO-0210",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-16"
+  },
+  {
+   "id": "DEMO-0211",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0212",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-05"
+  },
+  {
+   "id": "DEMO-0213",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-03"
+  },
+  {
+   "id": "DEMO-0214",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-24"
+  },
+  {
+   "id": "DEMO-0215",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-07"
+  },
+  {
+   "id": "DEMO-0216",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-04"
+  },
+  {
+   "id": "DEMO-0217",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-28"
+  },
+  {
+   "id": "DEMO-0218",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "tiruchirappalli-c",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0219",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-18"
+  },
+  {
+   "id": "DEMO-0220",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0221",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0222",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-24"
+  },
+  {
+   "id": "DEMO-0223",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-20"
+  },
+  {
+   "id": "DEMO-0224",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0225",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-20"
+  },
+  {
+   "id": "DEMO-0226",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0227",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0228",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-05"
+  },
+  {
+   "id": "DEMO-0229",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-16"
+  },
+  {
+   "id": "DEMO-0230",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0231",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-14"
+  },
+  {
+   "id": "DEMO-0232",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-31"
+  },
+  {
+   "id": "DEMO-0233",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-13"
+  },
+  {
+   "id": "DEMO-0234",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-14"
+  },
+  {
+   "id": "DEMO-0235",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0236",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-19"
+  },
+  {
+   "id": "DEMO-0237",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0238",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0239",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-22"
+  },
+  {
+   "id": "DEMO-0240",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-15"
+  },
+  {
+   "id": "DEMO-0241",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-24"
+  },
+  {
+   "id": "DEMO-0242",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0243",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-07-30"
+  },
+  {
+   "id": "DEMO-0244",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0245",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-07"
+  },
+  {
+   "id": "DEMO-0246",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0247",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-01"
+  },
+  {
+   "id": "DEMO-0248",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-18"
+  },
+  {
+   "id": "DEMO-0249",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-27"
+  },
+  {
+   "id": "DEMO-0250",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-16"
+  },
+  {
+   "id": "DEMO-0251",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0252",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0253",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-06"
+  },
+  {
+   "id": "DEMO-0254",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0255",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-06"
+  },
+  {
+   "id": "DEMO-0256",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-01"
+  },
+  {
+   "id": "DEMO-0257",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0258",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-07"
+  },
+  {
+   "id": "DEMO-0259",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-18"
+  },
+  {
+   "id": "DEMO-0260",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-31"
+  },
+  {
+   "id": "DEMO-0261",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-06"
+  },
+  {
+   "id": "DEMO-0262",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-11"
+  },
+  {
+   "id": "DEMO-0263",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-22"
+  },
+  {
+   "id": "DEMO-0264",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-17"
+  },
+  {
+   "id": "DEMO-0265",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-04"
+  },
+  {
+   "id": "DEMO-0266",
+   "text": "எங்கள் பகுதியில் குடிநீர் வசதி சரியாக இல்லை. தினமும் 4 கிலோமீட்டர் செல்ல வேண்டியுள்ளது.",
+   "language": "ta",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-09"
+  },
+  {
+   "id": "DEMO-0267",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-01"
+  },
+  {
+   "id": "DEMO-0268",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-16"
+  },
+  {
+   "id": "DEMO-0269",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0270",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0271",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-20"
+  },
+  {
+   "id": "DEMO-0272",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-01"
+  },
+  {
+   "id": "DEMO-0273",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-06"
+  },
+  {
+   "id": "DEMO-0274",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "madurai-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-02"
+  },
+  {
+   "id": "DEMO-0275",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-06"
+  },
+  {
+   "id": "DEMO-0276",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-18"
+  },
+  {
+   "id": "DEMO-0277",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-18"
+  },
+  {
+   "id": "DEMO-0278",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-20"
+  },
+  {
+   "id": "DEMO-0279",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0280",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0281",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0282",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0283",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0284",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-28"
+  },
+  {
+   "id": "DEMO-0285",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-20"
+  },
+  {
+   "id": "DEMO-0286",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0287",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-08"
+  },
+  {
+   "id": "DEMO-0288",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0289",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-06"
+  },
+  {
+   "id": "DEMO-0290",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-29"
+  },
+  {
+   "id": "DEMO-0291",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0292",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0293",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0294",
+   "text": "குப்பை அள்ளப்படவில்லை, சாக்கடை நிரம்பி வழிகிறது.",
+   "language": "ta",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-18"
+  },
+  {
+   "id": "DEMO-0295",
+   "text": "Garbage is not collected and drains are overflowing.",
+   "language": "en",
+   "category": "sanitation",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-01"
+  },
+  {
+   "id": "DEMO-0296",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "madurai-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0297",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "madurai-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-22"
+  },
+  {
+   "id": "DEMO-0298",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-24"
+  },
+  {
+   "id": "DEMO-0299",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "madurai-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0300",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "madurai-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0301",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "madurai-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-06"
+  },
+  {
+   "id": "DEMO-0302",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "madurai-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-22"
+  },
+  {
+   "id": "DEMO-0303",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "madurai-b",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0304",
+   "text": "எங்கள் ஊரில் சிக்னல் இல்லை.",
+   "language": "ta",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0305",
+   "text": "There is no mobile network signal in our area.",
+   "language": "en",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0306",
+   "text": "எங்கள் ஊரில் சிக்னல் இல்லை.",
+   "language": "ta",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0307",
+   "text": "There is no mobile network signal in our area.",
+   "language": "en",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-01"
+  },
+  {
+   "id": "DEMO-0308",
+   "text": "எங்கள் ஊரில் சிக்னல் இல்லை.",
+   "language": "ta",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0309",
+   "text": "There is no mobile network signal in our area.",
+   "language": "en",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-02"
+  },
+  {
+   "id": "DEMO-0310",
+   "text": "There is no mobile network signal in our area.",
+   "language": "en",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-22"
+  },
+  {
+   "id": "DEMO-0311",
+   "text": "எங்கள் ஊரில் சிக்னல் இல்லை.",
+   "language": "ta",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-30"
+  },
+  {
+   "id": "DEMO-0312",
+   "text": "There is no mobile network signal in our area.",
+   "language": "en",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-01"
+  },
+  {
+   "id": "DEMO-0313",
+   "text": "There is no mobile network signal in our area.",
+   "language": "en",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-04"
+  },
+  {
+   "id": "DEMO-0314",
+   "text": "எங்கள் ஊரில் சிக்னல் இல்லை.",
+   "language": "ta",
+   "category": "digital_connectivity",
+   "area_id": "madurai-c",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0315",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-08"
+  },
+  {
+   "id": "DEMO-0316",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0317",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-29"
+  },
+  {
+   "id": "DEMO-0318",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-13"
+  },
+  {
+   "id": "DEMO-0319",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-24"
+  },
+  {
+   "id": "DEMO-0320",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-23"
+  },
+  {
+   "id": "DEMO-0321",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0322",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0323",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0324",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-28"
+  },
+  {
+   "id": "DEMO-0325",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-29"
+  },
+  {
+   "id": "DEMO-0326",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0327",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0328",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0329",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-15"
+  },
+  {
+   "id": "DEMO-0330",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-17"
+  },
+  {
+   "id": "DEMO-0331",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-18"
+  },
+  {
+   "id": "DEMO-0332",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-06"
+  },
+  {
+   "id": "DEMO-0333",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-27"
+  },
+  {
+   "id": "DEMO-0334",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-14"
+  },
+  {
+   "id": "DEMO-0335",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-28"
+  },
+  {
+   "id": "DEMO-0336",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-14"
+  },
+  {
+   "id": "DEMO-0337",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0338",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-16"
+  },
+  {
+   "id": "DEMO-0339",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0340",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-31"
+  },
+  {
+   "id": "DEMO-0341",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0342",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-16"
+  },
+  {
+   "id": "DEMO-0343",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-02"
+  },
+  {
+   "id": "DEMO-0344",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-22"
+  },
+  {
+   "id": "DEMO-0345",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-29"
+  },
+  {
+   "id": "DEMO-0346",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-12"
+  },
+  {
+   "id": "DEMO-0347",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0348",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0349",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0350",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0351",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-13"
+  },
+  {
+   "id": "DEMO-0352",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-14"
+  },
+  {
+   "id": "DEMO-0353",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-24"
+  },
+  {
+   "id": "DEMO-0354",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-30"
+  },
+  {
+   "id": "DEMO-0355",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0356",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-09"
+  },
+  {
+   "id": "DEMO-0357",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0358",
+   "text": "Road near our government school is completely damaged and buses cannot enter during rain.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-16"
+  },
+  {
+   "id": "DEMO-0359",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0360",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-16"
+  },
+  {
+   "id": "DEMO-0361",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-16"
+  },
+  {
+   "id": "DEMO-0362",
+   "text": "பள்ளி அருகே உள்ள சாலை முழுவதும் குழிகளாக உள்ளது.",
+   "language": "ta",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0363",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-07"
+  },
+  {
+   "id": "DEMO-0364",
+   "text": "The road is full of potholes, two accidents happened this month.",
+   "language": "en",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0365",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-28"
+  },
+  {
+   "id": "DEMO-0366",
+   "text": "सड़क में बड़े गड्ढे हैं, बारिश में पानी भर जाता है।",
+   "language": "hi",
+   "category": "roads",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0367",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-22"
+  },
+  {
+   "id": "DEMO-0368",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-27"
+  },
+  {
+   "id": "DEMO-0369",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0370",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-31"
+  },
+  {
+   "id": "DEMO-0371",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0372",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-20"
+  },
+  {
+   "id": "DEMO-0373",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-24"
+  },
+  {
+   "id": "DEMO-0374",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-30"
+  },
+  {
+   "id": "DEMO-0375",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-20"
+  },
+  {
+   "id": "DEMO-0376",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0377",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0378",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-16"
+  },
+  {
+   "id": "DEMO-0379",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-06"
+  },
+  {
+   "id": "DEMO-0380",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0381",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-19"
+  },
+  {
+   "id": "DEMO-0382",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0383",
+   "text": "गांव में बस नहीं आती।",
+   "language": "hi",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-01"
+  },
+  {
+   "id": "DEMO-0384",
+   "text": "Only one bus a day comes to our village.",
+   "language": "en",
+   "category": "public_transport",
+   "area_id": "pune-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-04"
+  },
+  {
+   "id": "DEMO-0385",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0386",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-15"
+  },
+  {
+   "id": "DEMO-0387",
+   "text": "The water pipeline near the temple is broken and leaking for weeks.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-16"
+  },
+  {
+   "id": "DEMO-0388",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-12"
+  },
+  {
+   "id": "DEMO-0389",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0390",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-01"
+  },
+  {
+   "id": "DEMO-0391",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-24"
+  },
+  {
+   "id": "DEMO-0392",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0393",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0394",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0395",
+   "text": "Enga area la water facility sari illa, tanker um varala.",
+   "language": "romanised_indic",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0396",
+   "text": "हमारे मोहल्ले में पीने का पानी नहीं आता, नल सूखे हैं।",
+   "language": "hi",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0397",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0398",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0399",
+   "text": "Tap water is dirty and has a bad smell, children are falling sick.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-28"
+  },
+  {
+   "id": "DEMO-0400",
+   "text": "Our area does not have proper drinking water. We walk 4 km every day for water.",
+   "language": "en",
+   "category": "water",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0401",
+   "text": "The market road is unsafe at night because it is dark.",
+   "language": "en",
+   "category": "public_safety",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0402",
+   "text": "The market road is unsafe at night because it is dark.",
+   "language": "en",
+   "category": "public_safety",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0403",
+   "text": "Theft cases have increased near the bus stand.",
+   "language": "en",
+   "category": "public_safety",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0404",
+   "text": "The market road is unsafe at night because it is dark.",
+   "language": "en",
+   "category": "public_safety",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-04"
+  },
+  {
+   "id": "DEMO-0405",
+   "text": "The market road is unsafe at night because it is dark.",
+   "language": "en",
+   "category": "public_safety",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0406",
+   "text": "The market road is unsafe at night because it is dark.",
+   "language": "en",
+   "category": "public_safety",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-10"
+  },
+  {
+   "id": "DEMO-0407",
+   "text": "Theft cases have increased near the bus stand.",
+   "language": "en",
+   "category": "public_safety",
+   "area_id": "pune-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-18"
+  },
+  {
+   "id": "DEMO-0408",
+   "text": "The market road is unsafe at night because it is dark.",
+   "language": "en",
+   "category": "public_safety",
+   "area_id": "pune-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-28"
+  },
+  {
+   "id": "DEMO-0409",
+   "text": "Theft cases have increased near the bus stand.",
+   "language": "en",
+   "category": "public_safety",
+   "area_id": "pune-b",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-08-27"
+  },
+  {
+   "id": "DEMO-0410",
+   "text": "Many families live in kutcha huts with leaking roofs.",
+   "language": "en",
+   "category": "housing",
+   "area_id": "pune-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0411",
+   "text": "Many families live in kutcha huts with leaking roofs.",
+   "language": "en",
+   "category": "housing",
+   "area_id": "pune-c",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0412",
+   "text": "बारिश में हमारा घर टूट गया।",
+   "language": "hi",
+   "category": "housing",
+   "area_id": "pune-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-29"
+  },
+  {
+   "id": "DEMO-0413",
+   "text": "Many families live in kutcha huts with leaking roofs.",
+   "language": "en",
+   "category": "housing",
+   "area_id": "pune-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0414",
+   "text": "बारिश में हमारा घर टूट गया।",
+   "language": "hi",
+   "category": "housing",
+   "area_id": "pune-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0415",
+   "text": "बारिश में हमारा घर टूट गया।",
+   "language": "hi",
+   "category": "housing",
+   "area_id": "pune-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-07"
+  },
+  {
+   "id": "DEMO-0416",
+   "text": "बारिश में हमारा घर टूट गया।",
+   "language": "hi",
+   "category": "housing",
+   "area_id": "pune-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0417",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "pune-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-16"
+  },
+  {
+   "id": "DEMO-0418",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "pune-c",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-07-30"
+  },
+  {
+   "id": "DEMO-0419",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "pune-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-16"
+  },
+  {
+   "id": "DEMO-0420",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "pune-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-17"
+  },
+  {
+   "id": "DEMO-0421",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "pune-c",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-11"
+  },
+  {
+   "id": "DEMO-0422",
+   "text": "मजदूरी का भुगतान कई महीनों से नहीं हुआ।",
+   "language": "hi",
+   "category": "employment",
+   "area_id": "pune-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0423",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-22"
+  },
+  {
+   "id": "DEMO-0424",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0425",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-07-12"
+  },
+  {
+   "id": "DEMO-0426",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-15"
+  },
+  {
+   "id": "DEMO-0427",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-05"
+  },
+  {
+   "id": "DEMO-0428",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-22"
+  },
+  {
+   "id": "DEMO-0429",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0430",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0431",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0432",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-06"
+  },
+  {
+   "id": "DEMO-0433",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0434",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-19"
+  },
+  {
+   "id": "DEMO-0435",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-15"
+  },
+  {
+   "id": "DEMO-0436",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0437",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0438",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0439",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-19"
+  },
+  {
+   "id": "DEMO-0440",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-20"
+  },
+  {
+   "id": "DEMO-0441",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0442",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-06"
+  },
+  {
+   "id": "DEMO-0443",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0444",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0445",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-09-21"
+  },
+  {
+   "id": "DEMO-0446",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-31"
+  },
+  {
+   "id": "DEMO-0447",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0448",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0449",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0450",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-18"
+  },
+  {
+   "id": "DEMO-0451",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-22"
+  },
+  {
+   "id": "DEMO-0452",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "high",
+   "source": "voice",
+   "created_at": "2026-07-01"
+  },
+  {
+   "id": "DEMO-0453",
+   "text": "Power cuts for 8 hours every day in our village.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0454",
+   "text": "गांव में बिजली की कटौती रोज़ होती है, ट्रांसफार्मर खराब है।",
+   "language": "hi",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0455",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0456",
+   "text": "Streetlights have not worked for months and the road is dark.",
+   "language": "en",
+   "category": "electricity",
+   "area_id": "gaya-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-21"
+  },
+  {
+   "id": "DEMO-0457",
+   "text": "The irrigation canal is dry and crops are failing.",
+   "language": "en",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-29"
+  },
+  {
+   "id": "DEMO-0458",
+   "text": "The irrigation canal is dry and crops are failing.",
+   "language": "en",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0459",
+   "text": "The irrigation canal is dry and crops are failing.",
+   "language": "en",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0460",
+   "text": "The irrigation canal is dry and crops are failing.",
+   "language": "en",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0461",
+   "text": "सिंचाई के लिए पानी नहीं है, फसल सूख रही है।",
+   "language": "hi",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0462",
+   "text": "The irrigation canal is dry and crops are failing.",
+   "language": "en",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0463",
+   "text": "सिंचाई के लिए पानी नहीं है, फसल सूख रही है।",
+   "language": "hi",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-30"
+  },
+  {
+   "id": "DEMO-0464",
+   "text": "सिंचाई के लिए पानी नहीं है, फसल सूख रही है।",
+   "language": "hi",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-24"
+  },
+  {
+   "id": "DEMO-0465",
+   "text": "The irrigation canal is dry and crops are failing.",
+   "language": "en",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0466",
+   "text": "The irrigation canal is dry and crops are failing.",
+   "language": "en",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0467",
+   "text": "सिंचाई के लिए पानी नहीं है, फसल सूख रही है।",
+   "language": "hi",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0468",
+   "text": "सिंचाई के लिए पानी नहीं है, फसल सूख रही है।",
+   "language": "hi",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0469",
+   "text": "The irrigation canal is dry and crops are failing.",
+   "language": "en",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0470",
+   "text": "सिंचाई के लिए पानी नहीं है, फसल सूख रही है।",
+   "language": "hi",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-14"
+  },
+  {
+   "id": "DEMO-0471",
+   "text": "The irrigation canal is dry and crops are failing.",
+   "language": "en",
+   "category": "agriculture",
+   "area_id": "gaya-a",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-22"
+  },
+  {
+   "id": "DEMO-0472",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-13"
+  },
+  {
+   "id": "DEMO-0473",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-18"
+  },
+  {
+   "id": "DEMO-0474",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0475",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0476",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-17"
+  },
+  {
+   "id": "DEMO-0477",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-08"
+  },
+  {
+   "id": "DEMO-0478",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-02"
+  },
+  {
+   "id": "DEMO-0479",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-18"
+  },
+  {
+   "id": "DEMO-0480",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-14"
+  },
+  {
+   "id": "DEMO-0481",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-07-27"
+  },
+  {
+   "id": "DEMO-0482",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-29"
+  },
+  {
+   "id": "DEMO-0483",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0484",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-29"
+  },
+  {
+   "id": "DEMO-0485",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-04"
+  },
+  {
+   "id": "DEMO-0486",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-02"
+  },
+  {
+   "id": "DEMO-0487",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-25"
+  },
+  {
+   "id": "DEMO-0488",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-03"
+  },
+  {
+   "id": "DEMO-0489",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0490",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-16"
+  },
+  {
+   "id": "DEMO-0491",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0492",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-16"
+  },
+  {
+   "id": "DEMO-0493",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-15"
+  },
+  {
+   "id": "DEMO-0494",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-11"
+  },
+  {
+   "id": "DEMO-0495",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0496",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0497",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-17"
+  },
+  {
+   "id": "DEMO-0498",
+   "text": "The school has only one teacher for five classes.",
+   "language": "en",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-07-19"
+  },
+  {
+   "id": "DEMO-0499",
+   "text": "स्कूल की छत टूटी है, बच्चे बाहर बैठते हैं।",
+   "language": "hi",
+   "category": "education",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0500",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "gaya-b",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-01"
+  },
+  {
+   "id": "DEMO-0501",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0502",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-27"
+  },
+  {
+   "id": "DEMO-0503",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-27"
+  },
+  {
+   "id": "DEMO-0504",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-20"
+  },
+  {
+   "id": "DEMO-0505",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-17"
+  },
+  {
+   "id": "DEMO-0506",
+   "text": "No doctor at the primary health centre most days.",
+   "language": "en",
+   "category": "healthcare",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-21"
+  },
+  {
+   "id": "DEMO-0507",
+   "text": "अस्पताल बहुत दूर है और दवा नहीं मिलती।",
+   "language": "hi",
+   "category": "healthcare",
+   "area_id": "gaya-b",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-12"
+  },
+  {
+   "id": "DEMO-0508",
+   "text": "ஆரம்ப சுகாதார நிலையத்தில் மருத்துவர் இல்லை, மருந்தும் இல்லை.",
+   "language": "ta",
+   "category": "healthcare",
+   "area_id": "gaya-b",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-07-22"
+  },
+  {
+   "id": "DEMO-0509",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-20"
+  },
+  {
+   "id": "DEMO-0510",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-17"
+  },
+  {
+   "id": "DEMO-0511",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0512",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-15"
+  },
+  {
+   "id": "DEMO-0513",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-21"
+  },
+  {
+   "id": "DEMO-0514",
+   "text": "मजदूरी का भुगतान कई महीनों से नहीं हुआ।",
+   "language": "hi",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-08-08"
+  },
+  {
+   "id": "DEMO-0515",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-05"
+  },
+  {
+   "id": "DEMO-0516",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "low",
+   "source": "voice",
+   "created_at": "2026-09-02"
+  },
+  {
+   "id": "DEMO-0517",
+   "text": "मजदूरी का भुगतान कई महीनों से नहीं हुआ।",
+   "language": "hi",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-26"
+  },
+  {
+   "id": "DEMO-0518",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-20"
+  },
+  {
+   "id": "DEMO-0519",
+   "text": "मजदूरी का भुगतान कई महीनों से नहीं हुआ।",
+   "language": "hi",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-21"
+  },
+  {
+   "id": "DEMO-0520",
+   "text": "मजदूरी का भुगतान कई महीनों से नहीं हुआ।",
+   "language": "hi",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-07-06"
+  },
+  {
+   "id": "DEMO-0521",
+   "text": "मजदूरी का भुगतान कई महीनों से नहीं हुआ।",
+   "language": "hi",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-09"
+  },
+  {
+   "id": "DEMO-0522",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-07"
+  },
+  {
+   "id": "DEMO-0523",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-09-10"
+  },
+  {
+   "id": "DEMO-0524",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-27"
+  },
+  {
+   "id": "DEMO-0525",
+   "text": "मजदूरी का भुगतान कई महीनों से नहीं हुआ।",
+   "language": "hi",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-12"
+  },
+  {
+   "id": "DEMO-0526",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-09-06"
+  },
+  {
+   "id": "DEMO-0527",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "high",
+   "source": "text",
+   "created_at": "2026-07-24"
+  },
+  {
+   "id": "DEMO-0528",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-11"
+  },
+  {
+   "id": "DEMO-0529",
+   "text": "No work available under the job scheme for months.",
+   "language": "en",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-08-14"
+  },
+  {
+   "id": "DEMO-0530",
+   "text": "मजदूरी का भुगतान कई महीनों से नहीं हुआ।",
+   "language": "hi",
+   "category": "employment",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-08-23"
+  },
+  {
+   "id": "DEMO-0531",
+   "text": "Many families live in kutcha huts with leaking roofs.",
+   "language": "en",
+   "category": "housing",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-22"
+  },
+  {
+   "id": "DEMO-0532",
+   "text": "Many families live in kutcha huts with leaking roofs.",
+   "language": "en",
+   "category": "housing",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-23"
+  },
+  {
+   "id": "DEMO-0533",
+   "text": "Many families live in kutcha huts with leaking roofs.",
+   "language": "en",
+   "category": "housing",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "text",
+   "created_at": "2026-09-01"
+  },
+  {
+   "id": "DEMO-0534",
+   "text": "बारिश में हमारा घर टूट गया।",
+   "language": "hi",
+   "category": "housing",
+   "area_id": "gaya-c",
+   "urgency": "medium",
+   "source": "voice",
+   "created_at": "2026-09-06"
+  },
+  {
+   "id": "DEMO-0535",
+   "text": "बारिश में हमारा घर टूट गया।",
+   "language": "hi",
+   "category": "housing",
+   "area_id": "gaya-c",
+   "urgency": "low",
+   "source": "text",
+   "created_at": "2026-08-21"
+  }
+ ]
+}
