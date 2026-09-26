@@ -1,10 +1,16 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { Language } from "../types/analysis";
+import { LANG_CODES, langInfo } from "./languages";
 import { STRINGS, type Strings } from "./strings";
 
 const STORAGE_KEY = "nk-language";
 
 interface LanguageState {
+  /** Any of the 22 Scheduled Languages or English. */
+  code: string;
+  setCode: (code: string) => void;
+  dir: "ltr" | "rtl";
+  /** Legacy two-language view used by the Stay Safe checker ("ta" only when Tamil is chosen). */
   lang: Language;
   setLang: (lang: Language) => void;
   t: Strings;
@@ -12,27 +18,33 @@ interface LanguageState {
 
 const LanguageContext = createContext<LanguageState | null>(null);
 
-function initialLanguage(): Language {
+function initialCode(): string {
   try {
-    return localStorage.getItem(STORAGE_KEY) === "ta" ? "ta" : "en";
+    const stored = localStorage.getItem(STORAGE_KEY);
+    return stored && LANG_CODES.has(stored) ? stored : "en";
   } catch {
     return "en";
   }
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Language>(initialLanguage);
+  const [code, setCode] = useState<string>(initialCode);
+  const dir = langInfo(code).dir;
 
   useEffect(() => {
-    document.documentElement.lang = lang;
+    document.documentElement.lang = code;
+    document.documentElement.dir = dir;
     try {
-      localStorage.setItem(STORAGE_KEY, lang);
+      localStorage.setItem(STORAGE_KEY, code);
     } catch {
       /* storage unavailable (private mode) — language still works for this session */
     }
-  }, [lang]);
+  }, [code, dir]);
 
-  const value = useMemo(() => ({ lang, setLang, t: STRINGS[lang] }), [lang]);
+  const value = useMemo(() => {
+    const lang: Language = code === "ta" ? "ta" : "en";
+    return { code, setCode, dir, lang, setLang: (l: Language) => setCode(l), t: STRINGS[lang] };
+  }, [code, dir]);
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 

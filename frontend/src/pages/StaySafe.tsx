@@ -39,7 +39,7 @@ const TONE: Record<Sample["tone"], string> = {
   advisory: "bg-teal/15 text-teal-deep",
 };
 
-export function Home() {
+export function StaySafe() {
   const { lang, t } = useLanguage();
   const navigate = useNavigate();
 
