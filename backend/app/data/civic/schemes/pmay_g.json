@@ -65,6 +65,33 @@
         "source_ref": "pmayg_elig",
         "quote": "Q1. Do you meet any of the following conditions? You: a. do not have a shelter b. are destitute/ living on alms c. are a manual scavenger d. are part of a Primitive Tribal Group e. are a legally released bonded labourer"
       }
+    },
+    {
+      "id": "rural_resident",
+      "attribute": "residence_type",
+      "operator": "eq",
+      "value": "rural",
+      "kind": "inclusion",
+      "statement": {
+        "text": {
+          "en": "The official self-check asks whether you live in a rural area (the scheme is for rural households)."
+        },
+        "source_ref": "pmayg_elig",
+        "quote": "Q2. Do you reside in a rural area?"
+      }
+    },
+    {
+      "id": "no_pucca_house",
+      "attribute": "owns_pucca_house",
+      "operator": "is_true",
+      "kind": "exclusion",
+      "statement": {
+        "text": {
+          "en": "The official self-check asks whether you or any household member owns a pucca house."
+        },
+        "source_ref": "pmayg_elig",
+        "quote": "Q3. Do you or any member of your household own a pucca house?"
+      }
     }
   ],
   "criteria_complete": false,
@@ -112,7 +139,9 @@
       "url": "https://pmayg.dord.gov.in/netiayHome/questions.html",
       "retrieved": "2026-09-26",
       "quotes": [
-        "Q1. Do you meet any of the following conditions? You: a. do not have a shelter b. are destitute/ living on alms c. are a manual scavenger d. are part of a Primitive Tribal Group e. are a legally released bonded labourer"
+        "Q1. Do you meet any of the following conditions? You: a. do not have a shelter b. are destitute/ living on alms c. are a manual scavenger d. are part of a Primitive Tribal Group e. are a legally released bonded labourer",
+        "Q2. Do you reside in a rural area?",
+        "Q3. Do you or any member of your household own a pucca house?"
       ]
     }
   ],
