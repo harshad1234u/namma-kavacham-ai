@@ -71,7 +71,7 @@ function EligibilityWizard({ schemeId }: { schemeId: string }) {
               {[...(q.type === "bool" ? ["true", "false"] : q.options), "unknown"].map((o) => (
                 <label key={o} className={`inline-flex min-h-10 cursor-pointer items-center gap-2 rounded-md px-3 ring-1 ${answers[q.attribute] === o ? "bg-navy text-white ring-navy" : "bg-white ring-line-strong"}`}>
                   <input type="radio" className="sr-only" name={q.attribute} value={o} checked={answers[q.attribute] === o} onChange={() => setAnswers({ ...answers, [q.attribute]: o })} />
-                  {o === "true" ? c.yes : o === "false" ? c.no : o === "unknown" ? c.dontKnow : o.replace(/_/g, " ")}
+                  {o === "true" ? c.yes : o === "false" ? c.no : o === "unknown" ? c.dontKnow : c.options[o] ?? o.replace(/_/g, " ")}
                 </label>
               ))}
             </div>

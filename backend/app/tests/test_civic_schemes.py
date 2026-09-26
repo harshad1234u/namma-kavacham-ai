@@ -52,6 +52,10 @@ def test_pm_kisan_10000_per_year_is_contradicted_by_the_official_amount():
     assert f.outcome == "contradicted" and "₹6,000 per year" in f.detail_en and f.source_ref == "pmkisan_home"
     assert verify_claim("PM-KISAN gives ₹6,000 per year").status == "supported"
     assert verify_claim("पीएम किसान ₹10,000 सालाना देता है").status == "contradicted"
+    # period stated before the amount (common in Hindi/Tamil word order)
+    assert verify_claim("क्या पीएम किसान हर साल ₹10,000 देता है?").status == "contradicted"
+    assert verify_claim("பிஎம் கிசான் ஆண்டுக்கு ₹10,000 தருகிறதா?").status == "contradicted"
+    assert verify_claim("क्या पीएम किसान हर साल ₹6,000 देता है?").status == "supported"
 
 
 def test_amount_for_a_period_the_source_does_not_state_is_only_not_covered():

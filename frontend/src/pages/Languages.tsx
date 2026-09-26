@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ErrorBox, Loading, PageTitle, card } from "../components/civic/ui";
-import { useCivic } from "../i18n/civic";
+import { str, useCivic } from "../i18n/civic";
 import { getJson } from "../services/civicApi";
 import type { LanguageInfo } from "../types/civic";
 
@@ -14,7 +14,7 @@ export function Languages() {
       .then((r) => { setLangs(r.languages); setNote(r.note); })
       .catch(() => setError(true));
   }, []);
-  const sup = (s: string) => c[`sup_${s}` as keyof typeof c] ?? s;
+  const sup = (s: string) => str(c, `sup_${s}`);
   return (
     <div className="space-y-4">
       <PageTitle title={c.languagesTitle} subtitle={c.languagesBody} />

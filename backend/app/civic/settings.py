@@ -18,7 +18,8 @@ class CivicSettings(BaseSettings):
 
     ai_enabled: bool = False
     nvidia_nim_base_url: str = "https://integrate.api.nvidia.com/v1"
-    nvidia_nim_api_key: SecretStr = SecretStr("")
+    nvidia_nim_api_key: SecretStr = SecretStr("")  # chat (Sarvam-M); also used for embeddings unless the next is set
+    nvidia_nim_embedding_api_key: SecretStr = SecretStr("")  # optional separate key for the embedding model
     nvidia_nim_sarvam_model: str = "sarvamai/sarvam-m"
     nvidia_nim_embedding_model: str = "nvidia/nemotron-3-embed-1b"
     nvidia_nim_timeout_seconds: float = 20.0
@@ -40,6 +41,9 @@ class CivicSettings(BaseSettings):
     @property
     def ai_active(self) -> bool:
         return self.ai_enabled and bool(self.nvidia_nim_api_key.get_secret_value())
+
+    def embedding_key(self) -> str:
+        return self.nvidia_nim_embedding_api_key.get_secret_value() or self.nvidia_nim_api_key.get_secret_value()
 
 
 @lru_cache

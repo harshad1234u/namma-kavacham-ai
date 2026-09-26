@@ -92,6 +92,29 @@ describe("platform", () => {
     expect(screen.getByRole("note")).toHaveTextContent(/not yet available in Urdu/);
   });
 
+  it("uses right-to-left for Urdu, Kashmiri and Sindhi and left-to-right for the Indic scripts", async () => {
+    const user = userEvent.setup();
+    renderAt("/");
+    const picker = screen.getByRole("combobox", { name: /language/i });
+    for (const code of ["ur", "ks", "sd"]) {
+      await user.selectOptions(picker, code);
+      expect(document.documentElement.dir).toBe("rtl");
+    }
+    for (const code of ["hi", "ta", "bn", "sat", "mni"]) {
+      await user.selectOptions(picker, code);
+      expect(document.documentElement.dir).toBe("ltr");
+      expect(document.documentElement.lang).toBe(code);
+    }
+  });
+
+  it("translates form answer options instead of showing raw codes", async () => {
+    localStorage.setItem("nk-language", "hi");
+    renderAt("/schemes/discover");
+    expect(await screen.findByRole("option", { name: "रेहड़ी-पटरी विक्रेता" })).toBeInTheDocument();
+    expect(screen.getByRole("option", { name: "महिला" })).toBeInTheDocument();
+    expect(screen.queryByRole("option", { name: "street vendor" })).not.toBeInTheDocument();
+  });
+
   it("keeps the existing scam checker reachable under Stay Safe", async () => {
     renderAt("/safety");
     expect(await screen.findByRole("link", { name: /start a check/i })).toHaveAttribute("href", "/analyze");

@@ -24,9 +24,10 @@ IMPLEMENTED / DEMO / PARTIAL / FUTURE breakdown: **[docs/civicinsight.md](docs/c
 | Variable | Default | Purpose |
 |---|---|---|
 | `AI_ENABLED` | `false` | Turns on NVIDIA NIM for the civic modules (also needs the key) |
-| `NVIDIA_NIM_API_KEY` | — | NIM API key (never logged or returned) |
+| `NVIDIA_NIM_API_KEY` | — | NIM API key for the chat model (never logged or returned) |
+| `NVIDIA_NIM_EMBEDDING_API_KEY` | falls back to `NVIDIA_NIM_API_KEY` | Separate key for the embedding model, if yours differs |
 | `NVIDIA_NIM_BASE_URL` | `https://integrate.api.nvidia.com/v1` | NIM endpoint (hosted or self-hosted) |
-| `NVIDIA_NIM_SARVAM_MODEL` | `sarvamai/sarvam-m` | Chat model for understanding, explanation, translation |
+| `NVIDIA_NIM_SARVAM_MODEL` | `sarvamai/sarvam-m` | Chat model for understanding, explanation, translation. **Retired on NVIDIA's hosted NIM (HTTP 410, end of life 2026-07-27)**: until a replacement is approved, chat AI falls back to deterministic behaviour |
 | `NVIDIA_NIM_EMBEDDING_MODEL` | `nvidia/nemotron-3-embed-1b` | Embeddings for official-evidence retrieval |
 | `RETRIEVAL_ENABLED` | `true` | Live fetch of the official-source registry |
 | `DEV_WEIGHT_*`, `DEV_HOTSPOT_MIN_REPORTS`, … | see `app/civic/settings.py` | Development Priority Engine configuration |

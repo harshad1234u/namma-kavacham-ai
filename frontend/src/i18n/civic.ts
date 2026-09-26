@@ -228,6 +228,14 @@ const en = {
   sup_authored: "Written by the team",
   sup_reviewed: "Native-reviewed",
   sup_machine: "AI (when enabled)",
+  sortBy: "Sort by",
+  options: {
+    female: "Female", male: "Male", other: "Other", rural: "Rural", urban: "Urban",
+    farmer: "Farmer", agricultural_worker: "Agricultural worker", student: "Student", self_employed: "Self-employed",
+    salaried: "Salaried", unorganised_worker: "Unorganised-sector worker", street_vendor: "Street vendor", artisan: "Artisan / craftsperson",
+    unemployed: "Unemployed", homemaker: "Homemaker",
+    sc: "Scheduled Caste (SC)", st: "Scheduled Tribe (ST)", obc: "Other Backward Class (OBC)", general: "General",
+  } as Record<string, string>,
   sup_none: "English fallback",
 };
 
@@ -449,6 +457,14 @@ const hi: CivicStrings = {
   sup_authored: "टीम द्वारा लिखित",
   sup_reviewed: "मूल भाषी द्वारा समीक्षित",
   sup_machine: "AI (चालू होने पर)",
+  sortBy: "क्रम",
+  options: {
+    female: "महिला", male: "पुरुष", other: "अन्य", rural: "ग्रामीण", urban: "शहरी",
+    farmer: "किसान", agricultural_worker: "खेतिहर मज़दूर", student: "विद्यार्थी", self_employed: "स्व-रोज़गार",
+    salaried: "वेतनभोगी", unorganised_worker: "असंगठित क्षेत्र का कामगार", street_vendor: "रेहड़ी-पटरी विक्रेता", artisan: "कारीगर / शिल्पकार",
+    unemployed: "बेरोज़गार", homemaker: "गृहिणी / गृहस्थ",
+    sc: "अनुसूचित जाति (SC)", st: "अनुसूचित जनजाति (ST)", obc: "अन्य पिछड़ा वर्ग (OBC)", general: "सामान्य",
+  },
   sup_none: "अंग्रेज़ी में",
 };
 // END NEEDS NATIVE HINDI REVIEW
@@ -669,6 +685,14 @@ const ta: CivicStrings = {
   sup_authored: "குழுவால் எழுதப்பட்டது",
   sup_reviewed: "தாய்மொழியாளர் சரிபார்த்தது",
   sup_machine: "AI (இயக்கத்தில் இருந்தால்)",
+  sortBy: "வரிசைப்படுத்து",
+  options: {
+    female: "பெண்", male: "ஆண்", other: "மற்றவர்", rural: "கிராமப்புறம்", urban: "நகர்ப்புறம்",
+    farmer: "விவசாயி", agricultural_worker: "விவசாயத் தொழிலாளர்", student: "மாணவர்", self_employed: "சுயதொழில்",
+    salaried: "ஊதியம் பெறுபவர்", unorganised_worker: "அமைப்புசாரா தொழிலாளர்", street_vendor: "தெருவோர வியாபாரி", artisan: "கைவினைஞர்",
+    unemployed: "வேலையில்லாதவர்", homemaker: "இல்லத்தரசி / இல்லப் பொறுப்பாளர்",
+    sc: "பட்டியல் சாதி (SC)", st: "பட்டியல் பழங்குடி (ST)", obc: "பிற பிற்படுத்தப்பட்ட வகுப்பு (OBC)", general: "பொது",
+  },
   sup_none: "ஆங்கிலத்தில்",
 };
 // END NEEDS NATIVE TAMIL REVIEW
@@ -683,3 +707,9 @@ export function useCivic(): { c: CivicStrings; fallback: boolean; langName: stri
 
 export const fill = (s: string, vars: Record<string, string | number>) =>
   s.replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? `{${k}}`));
+
+/** Dynamic key lookup (e.g. `status_${s}`) that only ever returns text; falls back to the key itself. */
+export function str(c: CivicStrings, key: string): string {
+  const v = (c as unknown as Record<string, unknown>)[key];
+  return typeof v === "string" ? v : key;
+}

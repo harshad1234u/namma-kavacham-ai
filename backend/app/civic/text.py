@@ -74,8 +74,9 @@ def amounts_with_period(text: str) -> list[tuple[int, str | None]]:
             amount = round(float(num.replace(",", "")) * _MULT.get(unit, 1))
         except ValueError:
             continue
-        tail = text[m.end():m.end() + 30]
-        period = next((k for k, rx in _PERIOD_RE.items() if rx.search(tail)), None)
+        tail, head = text[m.end():m.end() + 30], text[max(0, m.start() - 25):m.start()]
+        # English usually states the period after the amount; Hindi/Tamil often before it ("हर साल ₹10,000").
+        period = next((k for k, rx in _PERIOD_RE.items() if rx.search(tail)), None) or             next((k for k, rx in _PERIOD_RE.items() if rx.search(head)), None)
         if amount:
             out.append((amount, period))
     return out

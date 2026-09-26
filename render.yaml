@@ -36,6 +36,9 @@ services:
         value: https://integrate.api.nvidia.com/v1
       - key: NVIDIA_NIM_API_KEY
         sync: false
+      # Optional separate key for the embedding model (falls back to NVIDIA_NIM_API_KEY).
+      - key: NVIDIA_NIM_EMBEDDING_API_KEY
+        sync: false
       - key: NVIDIA_NIM_SARVAM_MODEL
         value: sarvamai/sarvam-m
       - key: NVIDIA_NIM_EMBEDDING_MODEL

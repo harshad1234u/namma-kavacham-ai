@@ -78,7 +78,7 @@ export function SchemesDiscover() {
       <label htmlFor={id} className={label}>{title}</label>
       <select id={id} value={profile[key] ?? ""} onChange={(e) => setProfile({ ...profile, [key]: e.target.value })} className={`${input} mt-1`}>
         <option value="">{c.any}</option>
-        {opts.map((o) => <option key={o} value={o}>{o.replace(/_/g, " ")}</option>)}
+        {opts.map((o) => <option key={o} value={o}>{c.options[o] ?? o.replace(/_/g, " ")}</option>)}
       </select>
     </div>
   );

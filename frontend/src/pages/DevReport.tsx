@@ -2,7 +2,7 @@ import { CheckCircle2, Mic, Square } from "lucide-react";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { ErrorBox, Loading, PageTitle, btnPrimary, btnSecondary, card, input, label } from "../components/civic/ui";
-import { useCivic } from "../i18n/civic";
+import { str, useCivic } from "../i18n/civic";
 import { useLanguage } from "../i18n/LanguageContext";
 import { ApiError } from "../services/api";
 import { getJson, postForm, query } from "../services/civicApi";
@@ -93,7 +93,7 @@ export function DevReport() {
             <div><dt className="text-sm text-ink-muted">{c.area}</dt><dd className="font-semibold">{[receipt.locality, receipt.district, title(receipt.state)].filter(Boolean).join(", ")}</dd></div>
           </dl>
           <ol className="flex flex-wrap gap-2" aria-label="Status">
-            {receipt.statuses.map((s) => <li key={s} className="rounded-full bg-teal/15 px-3 py-1 text-sm font-semibold text-teal-deep">{c[`status_${s}` as keyof typeof c]}</li>)}
+            {receipt.statuses.map((s) => <li key={s} className="rounded-full bg-teal/15 px-3 py-1 text-sm font-semibold text-teal-deep">{str(c, `status_${s}`)}</li>)}
           </ol>
           <p className="text-sm text-ink-muted">{receipt.note}</p>
           <p className="font-mono text-sm">#{receipt.id}</p>
@@ -216,7 +216,7 @@ export function DevMyReports() {
         <div key={r.id} className={card}>
           <p className="font-bold text-navy">{r.category_label} · {r.district}</p>
           <p className="font-mono text-xs">#{r.id} · {r.created_at}</p>
-          <ol className="mt-2 flex flex-wrap gap-2">{r.statuses.map((s) => <li key={s} className="rounded-full bg-teal/15 px-3 py-1 text-xs font-semibold text-teal-deep">{c[`status_${s}` as keyof typeof c]}</li>)}</ol>
+          <ol className="mt-2 flex flex-wrap gap-2">{r.statuses.map((s) => <li key={s} className="rounded-full bg-teal/15 px-3 py-1 text-xs font-semibold text-teal-deep">{str(c, `status_${s}`)}</li>)}</ol>
           <Link to={`/dev/hotspots/${r.issue_id}`} className="mt-2 inline-block text-sm font-semibold underline">{c.viewIssue}</Link>
         </div>
       ))}

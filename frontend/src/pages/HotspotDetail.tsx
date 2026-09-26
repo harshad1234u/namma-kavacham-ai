@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Bars, ErrorBox, ExplanationBlock, LevelBadge, Loading, PageTitle, ProvenanceBadge, card } from "../components/civic/ui";
-import { useCivic } from "../i18n/civic";
+import { str, useCivic } from "../i18n/civic";
 import { useLanguage } from "../i18n/LanguageContext";
 import { ApiError } from "../services/api";
 import { getJson, query } from "../services/civicApi";
@@ -32,7 +32,7 @@ export function HotspotDetail() {
       <PageTitle title={`${place} — ${d.category_label}`} />
       <div className="-mt-3 flex flex-wrap items-center gap-2">
         <LevelBadge level={d.priority_level} score={d.priority_score} />
-        <span className="rounded-full bg-surface px-3 py-1 text-xs font-semibold">{c[`gap_${d.gap_level}` as keyof typeof c]}</span>
+        <span className="rounded-full bg-surface px-3 py-1 text-xs font-semibold">{str(c, `gap_${d.gap_level}`)}</span>
         <span className="rounded-full bg-surface px-3 py-1 text-xs font-semibold">{d.report_count} {c.reports}</span>
         {Object.entries(d.provenance).slice(0, 1).map(([k, p]) => <ProvenanceBadge key={k} source={p} />)}
       </div>
@@ -50,7 +50,7 @@ export function HotspotDetail() {
             {d.components.map((comp) => (
               <li key={comp.name}>
                 <div className="flex justify-between text-sm font-semibold">
-                  <span>{c[`comp_${comp.name}` as keyof typeof c] ?? comp.name}</span>
+                  <span>{str(c, `comp_${comp.name}`)}</span>
                   <span className="tabular-nums">{comp.assessed ? `+${comp.points}` : c.notAssessed}</span>
                 </div>
                 <div className="mt-1 h-2 rounded bg-surface" aria-hidden>

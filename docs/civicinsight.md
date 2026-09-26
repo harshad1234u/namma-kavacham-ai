@@ -37,8 +37,16 @@ data: `backend/app/data/civic/`. The Stay Safe pipeline (`app/api/analyze.py` an
 * `NIMProvider` → `SarvamMProvider`, `NemotronEmbeddingProvider` (`app/civic/nim/provider.py`): OpenAI-compatible
   HTTP, one retry on 429/5xx, safe error reasons only, guided JSON (`nvext.guided_json`) with a retry without it if an
   endpoint rejects it, `<think>` blocks stripped.
-* **Availability note (26 Sep 2026):** `nvidia/nemotron-3-embed-1b` is in the public hosted catalog;
-  **Sarvam-M is not listed there.** The model id and endpoint are configurable; run `scripts/check_nim.py` with your key.
+* **Live validation (26 Sep 2026, real keys):**
+  * `nvidia/nemotron-3-embed-1b`: authenticated, HTTP 200, 2048-dimensional float vectors, consumed by the evidence
+    index (a Hindi query correctly ranked the PM-KISAN page). **Working.**
+  * `sarvamai/sarvam-m`: the hosted endpoint returns **HTTP 410 Gone — "reached its end of life on 2026-07-27 and is no
+    longer available"** (also absent from `/v1/models`). The chat key itself authenticates (HTTP 200 on the embeddings
+    endpoint; an invalid key gets 403). The provider reports this as `model_retired`, and every chat feature falls back to
+    the deterministic path. No other model has been substituted; choosing a replacement (hosted chat model or a
+    self-hosted Sarvam-M NIM via `NVIDIA_NIM_BASE_URL`) needs the owner's approval.
+  * Separate keys are supported: `NVIDIA_NIM_EMBEDDING_API_KEY` (falls back to `NVIDIA_NIM_API_KEY`).
+  * Run `python scripts/check_nim.py` (with `AI_ENABLED=true`) to re-check.
 * AI is off unless `AI_ENABLED=true` **and** a key is set. With AI off (or NIM failing) every feature still works
   deterministically, and responses say so (`explanation.status`, `understanding.method`, `/v1/meta/ai`).
 
@@ -173,7 +181,8 @@ the existing app apply. No secrets in the repo; the NIM key is never logged, ech
 |---|---|
 | Scheme KB (13 central schemes), verify, discover, eligibility, official channels | IMPLEMENTED |
 | Official-source retrieval (registry, exact quotes, keyword ranking) | IMPLEMENTED |
-| Nemotron embedding ranking, Sarvam-M understanding/explanation/translation | IMPLEMENTED, **not yet verified against live NIM** (Sarvam-M not in the hosted catalog) |
+| Nemotron embedding ranking | IMPLEMENTED, **verified live** (2048-dim) |
+| Sarvam-M understanding/explanation/translation | IMPLEMENTED and tested with a simulated provider; **blocked live: model retired on hosted NIM (HTTP 410)** — deterministic fallback active |
 | Development requests, classification, aggregation, gap, priority, hotspots, dashboard, insight | IMPLEMENTED |
 | Demographic / infrastructure / investment data, citizen request volume | DEMO |
 | 22-language support | PARTIAL (see §8) |
@@ -185,8 +194,11 @@ the existing app apply. No secrets in the repo; the NIM key is never logged, ech
 ## 11. Known limitations
 * Requests live in process memory: restarts (Render free tier sleeps) reset citizen reports to the demo seed.
 * No rate limiting: with AI on, repeated requests cost NIM calls; public report submission is capped at 5,000 in memory.
-* Keyword classifier/understanding misses unseen phrasing; answer options (e.g. gender, occupation) and backend
-  category/issue labels are English in the UI.
+* Keyword classifier/understanding misses unseen phrasing. Backend-generated text is English only: category and
+  complaint-theme labels in charts, priority-component notes and gap reasons, finding details (labelled "EN"),
+  receipt note, disclaimers, validation messages and demo project names.
+* The first official-retrieval request with embeddings on builds the whole index (~35 s on a cold server); later
+  requests use the 6-hour cache.
 * The grounding validator checks numbers/URLs/script, not meaning: an AI sentence could still misstate a stance. The
   deterministic status is always shown above the AI text and labelled.
 * Retrieval covers only the registry; a real scheme outside it may be NOT_FOUND (never called fake).

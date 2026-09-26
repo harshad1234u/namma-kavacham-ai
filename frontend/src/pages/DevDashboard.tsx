@@ -3,7 +3,7 @@ import { useEffect, useId, useState, type FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { HotspotMap } from "../components/civic/HotspotMap";
 import { Bars, ErrorBox, LevelBadge, Loading, PageTitle, ProvenanceBadge, Stat, btnPrimary, btnSecondary, card, input, label } from "../components/civic/ui";
-import { useCivic } from "../i18n/civic";
+import { str, useCivic } from "../i18n/civic";
 import { useLanguage } from "../i18n/LanguageContext";
 import { getJson, query } from "../services/civicApi";
 import type { Dashboard, DevMeta, IssueSummary } from "../types/civic";
@@ -113,7 +113,7 @@ export function DevDashboard() {
             </div>
             <HotspotMap issues={issues} />
             <div className="flex items-center gap-2 text-sm">
-              <label htmlFor={`${fid}sort`}>Sort</label>
+              <label htmlFor={`${fid}sort`}>{c.sortBy}</label>
               <select id={`${fid}sort`} value={sort} onChange={(e) => setSort(e.target.value)} className="rounded-md border border-line-strong px-2 py-1">
                 <option value="priority">{c.priority}</option>
                 <option value="reports">{c.reports}</option>
@@ -143,7 +143,7 @@ export function DevDashboard() {
                       <td className="py-2 pr-3">{catLabel(i.category)}</td>
                       <td className="py-2 pr-3 text-right tabular-nums">{i.report_count}</td>
                       <td className="py-2 pr-3"><LevelBadge level={i.priority_level} score={i.priority_score} /></td>
-                      <td className="py-2">{c[`gap_${i.gap_level}` as keyof typeof c]}</td>
+                      <td className="py-2">{str(c, `gap_${i.gap_level}`)}</td>
                     </tr>
                   ))}
                 </tbody>

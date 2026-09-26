@@ -57,7 +57,8 @@ class NIMProvider:
                     await asyncio.sleep(wait)
                     continue
                 code = r.status_code
-                raise NIMError("auth" if code in (401, 403) else "model_not_found" if code == 404 else f"http_{code}")
+                reasons = {401: "auth", 403: "auth", 404: "model_not_found", 410: "model_retired"}
+                raise NIMError(reasons.get(code, f"http_{code}"))
         raise NIMError("unreachable")
 
 
@@ -130,5 +131,5 @@ def build_chat(settings: CivicSettings) -> SarvamMProvider | None:
 def build_embedder(settings: CivicSettings) -> NemotronEmbeddingProvider | None:
     if not settings.ai_active:
         return None
-    return NemotronEmbeddingProvider(settings.nvidia_nim_base_url, settings.nvidia_nim_api_key.get_secret_value(),
+    return NemotronEmbeddingProvider(settings.nvidia_nim_base_url, settings.embedding_key(),
                                      settings.nvidia_nim_embedding_model, settings.nvidia_nim_timeout_seconds)
