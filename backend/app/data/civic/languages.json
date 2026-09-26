@@ -1,0 +1,328 @@
+{
+ "schema_version": "1.0",
+ "note": "Support status per capability. authored = written by the team (not native-reviewed); machine = AI-generated, unreviewed; none = not available (English fallback). A language is never marked 'reviewed' without a review record.",
+ "languages": [
+  {
+   "code": "en",
+   "name": "English",
+   "native_name": "English",
+   "script": "latin",
+   "dir": "ltr",
+   "scheduled": false,
+   "tier": 1,
+   "support": {
+    "ui": "authored",
+    "query_understanding": "authored",
+    "kb_text": "authored"
+   }
+  },
+  {
+   "code": "as",
+   "name": "Assamese",
+   "native_name": "অসমীয়া",
+   "script": "bengali",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "bn",
+   "name": "Bengali",
+   "native_name": "বাংলা",
+   "script": "bengali",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "brx",
+   "name": "Bodo",
+   "native_name": "बड़ो",
+   "script": "devanagari",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "doi",
+   "name": "Dogri",
+   "native_name": "डोगरी",
+   "script": "devanagari",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "gu",
+   "name": "Gujarati",
+   "native_name": "ગુજરાતી",
+   "script": "gujarati",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "hi",
+   "name": "Hindi",
+   "native_name": "हिन्दी",
+   "script": "devanagari",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 1,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "kn",
+   "name": "Kannada",
+   "native_name": "ಕನ್ನಡ",
+   "script": "kannada",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "ks",
+   "name": "Kashmiri",
+   "native_name": "کٲشُر",
+   "script": "arabic",
+   "dir": "rtl",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "kok",
+   "name": "Konkani",
+   "native_name": "कोंकणी",
+   "script": "devanagari",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "mai",
+   "name": "Maithili",
+   "native_name": "मैथिली",
+   "script": "devanagari",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "ml",
+   "name": "Malayalam",
+   "native_name": "മലയാളം",
+   "script": "malayalam",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "mni",
+   "name": "Manipuri (Meitei)",
+   "native_name": "ꯃꯤꯇꯩꯂꯣꯟ",
+   "script": "meetei_mayek",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "mr",
+   "name": "Marathi",
+   "native_name": "मराठी",
+   "script": "devanagari",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "ne",
+   "name": "Nepali",
+   "native_name": "नेपाली",
+   "script": "devanagari",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "or",
+   "name": "Odia",
+   "native_name": "ଓଡ଼ିଆ",
+   "script": "odia",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "pa",
+   "name": "Punjabi",
+   "native_name": "ਪੰਜਾਬੀ",
+   "script": "gurmukhi",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "sa",
+   "name": "Sanskrit",
+   "native_name": "संस्कृतम्",
+   "script": "devanagari",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "sat",
+   "name": "Santali",
+   "native_name": "ᱥᱟᱱᱛᱟᱲᱤ",
+   "script": "ol_chiki",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "sd",
+   "name": "Sindhi",
+   "native_name": "سنڌي",
+   "script": "arabic",
+   "dir": "rtl",
+   "scheduled": true,
+   "tier": 3,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "ta",
+   "name": "Tamil",
+   "native_name": "தமிழ்",
+   "script": "tamil",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 1,
+   "support": {
+    "ui": "authored",
+    "query_understanding": "machine",
+    "kb_text": "authored"
+   }
+  },
+  {
+   "code": "te",
+   "name": "Telugu",
+   "native_name": "తెలుగు",
+   "script": "telugu",
+   "dir": "ltr",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  },
+  {
+   "code": "ur",
+   "name": "Urdu",
+   "native_name": "اردو",
+   "script": "arabic",
+   "dir": "rtl",
+   "scheduled": true,
+   "tier": 2,
+   "support": {
+    "ui": "none",
+    "query_understanding": "machine",
+    "kb_text": "none"
+   }
+  }
+ ]
+}
