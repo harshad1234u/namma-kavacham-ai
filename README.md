@@ -1,13 +1,46 @@
-# Namma Kavacham AI (நம்ம கவசம்)
+# CivicInsight AI
 
-Verify before you trust. Know before you act.
+**An AI-powered Indian citizen platform that helps people discover and verify government schemes and services,
+while turning multilingual citizen feedback into actionable development intelligence.**
 
-A web-first, bilingual (English/Tamil) scam-risk checker for suspicious messages, links, and screenshots.
+Official government sources provide the evidence. NVIDIA NIM (Sarvam-M + Nemotron embeddings) understands the
+citizen's language and explains the evidence. Deterministic engines make every decision.
+
+| Module | What it does | Where |
+|---|---|---|
+| **Government Intelligence** | Ask about / verify a scheme claim against a curated KB of 13 central schemes quoted from `.gov.in` pages, falling back to live retrieval from a reviewed registry of official pages; scheme discovery; eligibility guidance (4 honest outcomes); official application channels only | `/v1/schemes/*`, `backend/app/civic/schemes`, `backend/app/civic/retrieval` |
+| **Development Intelligence** | Citizens report needs (text / opt-in voice / photo); deterministic classification with optional Sarvam-M closed-vocabulary fallback; aggregation, clustering, gap + configurable priority engines, hotspots, policymaker dashboard, grounded policy insight | `/v1/development/*`, `backend/app/civic/development` |
+| **Stay Safe** (original product) | Scam-risk checker for messages, links and screenshots; unchanged | `/v1/analyze`, `/safety`, `/analyze` |
+
+Languages: all 22 Scheduled Languages can be selected; support differs per language and is published at
+`/v1/meta/languages` and the in-app **Languages** page (authored UI in English, Hindi and Tamil; AI understanding and
+translation for the Sarvam-M-listed Indic languages when AI is enabled; English fallback, clearly labelled, elsewhere).
+
+Full architecture, verification rules, priority methodology, data provenance, privacy/security model and the
+IMPLEMENTED / DEMO / PARTIAL / FUTURE breakdown: **[docs/civicinsight.md](docs/civicinsight.md)**.
+
+### CivicInsight configuration (backend env)
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `AI_ENABLED` | `false` | Turns on NVIDIA NIM for the civic modules (also needs the key) |
+| `NVIDIA_NIM_API_KEY` | — | NIM API key (never logged or returned) |
+| `NVIDIA_NIM_BASE_URL` | `https://integrate.api.nvidia.com/v1` | NIM endpoint (hosted or self-hosted) |
+| `NVIDIA_NIM_SARVAM_MODEL` | `sarvamai/sarvam-m` | Chat model for understanding, explanation, translation |
+| `NVIDIA_NIM_EMBEDDING_MODEL` | `nvidia/nemotron-3-embed-1b` | Embeddings for official-evidence retrieval |
+| `RETRIEVAL_ENABLED` | `true` | Live fetch of the official-source registry |
+| `DEV_WEIGHT_*`, `DEV_HOTSPOT_MIN_REPORTS`, … | see `app/civic/settings.py` | Development Priority Engine configuration |
+
+Check NIM connectivity: `cd backend && python scripts/check_nim.py`. Re-verify every KB quote against the live
+official pages: `python scripts/verify_scheme_sources.py`.
+
+---
+
+# Stay Safe module (formerly Namma Kavacham AI)
+
+A bilingual (English/Tamil) scam-risk checker for suspicious messages, links, and screenshots.
 Deterministic checks decide the risk level; AI only explains; a missing or unavailable check is never shown as safe.
-
-Scope and design decisions live in [docs/](docs/). The UI follows the Stitch reference in
-[stitch_namma_kavacham_ai_ux_prototype/](stitch_namma_kavacham_ai_ux_prototype/). The design documents in
-`docs/` predate the switch of the default AI provider from Gemini to Groq; this README reflects the current code.
+Scope and design decisions for this module live in [docs/](docs/).
 
 ## Status: Phase 5 (government scheme checks, Tamil review draft)
 
