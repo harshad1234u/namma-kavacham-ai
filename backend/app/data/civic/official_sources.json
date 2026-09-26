@@ -1,0 +1,15 @@
+{
+  "note": "Extra official pages the retriever may fetch, beyond the sources cited in the curated scheme KB. Add a page only after checking it serves readable text over valid TLS on a .gov.in/.nic.in domain. Content fetched from these pages is evidence at query time only; it is never written into the curated KB.",
+  "reviewed": "2026-09-26",
+  "sources": [
+    {"url": "https://financialservices.gov.in/stand-india-scheme-supi", "title": "Stand Up India Scheme (SUPI)", "publisher": "Department of Financial Services, Ministry of Finance"},
+    {"url": "https://financialservices.gov.in/schemes-and-services", "title": "Schemes and Services", "publisher": "Department of Financial Services, Ministry of Finance"},
+    {"url": "https://pmay-urban.gov.in/about", "title": "About PMAY (Urban)", "publisher": "Ministry of Housing and Urban Affairs", "scheme_id": "pmay_u"},
+    {"url": "https://udyamregistration.gov.in/", "title": "Udyam Registration", "publisher": "Ministry of Micro, Small & Medium Enterprises"},
+    {"url": "https://jaljeevanmission.gov.in/", "title": "Jal Jeevan Mission", "publisher": "Ministry of Jal Shakti"},
+    {"url": "https://swachhbharatmission.ddws.gov.in/", "title": "Swachh Bharat Mission (Grameen)", "publisher": "Ministry of Jal Shakti, Department of Drinking Water & Sanitation"},
+    {"url": "https://nhm.gov.in/", "title": "National Health Mission", "publisher": "Ministry of Health and Family Welfare"},
+    {"url": "https://dbtbharat.gov.in/", "title": "Direct Benefit Transfer", "publisher": "Government of India (DBT Mission)"},
+    {"url": "https://pmvishwakarma.gov.in/Home/HowToRegister", "title": "PM Vishwakarma — How to Register", "publisher": "Ministry of Micro, Small & Medium Enterprises", "scheme_id": "pm_vishwakarma"}
+  ]
+}
