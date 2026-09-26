@@ -1,6 +1,6 @@
 {
  "schema_version": "1.0",
- "note": "Support status per capability. authored = written by the team (not native-reviewed); machine = AI-generated, unreviewed; none = not available (English fallback). A language is never marked 'reviewed' without a review record.",
+ "note": "Support per capability. authored = written by the CivicInsight team (Hindi and Tamil text awaits native review); machine = AI (Sarvam-M on NVIDIA NIM) understanding or translation, only when AI is enabled, validated and labelled; none = English fallback. The 10 Indic languages marked machine are those listed for Sarvam-M; quality for them is not yet evaluated here. No language is marked reviewed without a review record.",
  "languages": [
   {
    "code": "en",
@@ -23,10 +23,10 @@
    "script": "bengali",
    "dir": "ltr",
    "scheduled": true,
-   "tier": 2,
+   "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -41,7 +41,7 @@
    "support": {
     "ui": "none",
     "query_understanding": "machine",
-    "kb_text": "none"
+    "kb_text": "machine"
    }
   },
   {
@@ -54,7 +54,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -68,7 +68,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -83,7 +83,7 @@
    "support": {
     "ui": "none",
     "query_understanding": "machine",
-    "kb_text": "none"
+    "kb_text": "machine"
    }
   },
   {
@@ -95,9 +95,9 @@
    "scheduled": true,
    "tier": 1,
    "support": {
-    "ui": "none",
-    "query_understanding": "machine",
-    "kb_text": "none"
+    "ui": "authored",
+    "query_understanding": "authored",
+    "kb_text": "machine"
    }
   },
   {
@@ -111,7 +111,7 @@
    "support": {
     "ui": "none",
     "query_understanding": "machine",
-    "kb_text": "none"
+    "kb_text": "machine"
    }
   },
   {
@@ -124,7 +124,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -138,7 +138,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -152,7 +152,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -167,7 +167,7 @@
    "support": {
     "ui": "none",
     "query_understanding": "machine",
-    "kb_text": "none"
+    "kb_text": "machine"
    }
   },
   {
@@ -180,7 +180,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -195,7 +195,7 @@
    "support": {
     "ui": "none",
     "query_understanding": "machine",
-    "kb_text": "none"
+    "kb_text": "machine"
    }
   },
   {
@@ -208,7 +208,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -223,7 +223,7 @@
    "support": {
     "ui": "none",
     "query_understanding": "machine",
-    "kb_text": "none"
+    "kb_text": "machine"
    }
   },
   {
@@ -237,7 +237,7 @@
    "support": {
     "ui": "none",
     "query_understanding": "machine",
-    "kb_text": "none"
+    "kb_text": "machine"
    }
   },
   {
@@ -250,7 +250,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -264,7 +264,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -278,7 +278,7 @@
    "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   },
@@ -292,8 +292,8 @@
    "tier": 1,
    "support": {
     "ui": "authored",
-    "query_understanding": "machine",
-    "kb_text": "authored"
+    "query_understanding": "authored",
+    "kb_text": "machine"
    }
   },
   {
@@ -307,7 +307,7 @@
    "support": {
     "ui": "none",
     "query_understanding": "machine",
-    "kb_text": "none"
+    "kb_text": "machine"
    }
   },
   {
@@ -317,10 +317,10 @@
    "script": "arabic",
    "dir": "rtl",
    "scheduled": true,
-   "tier": 2,
+   "tier": 3,
    "support": {
     "ui": "none",
-    "query_understanding": "machine",
+    "query_understanding": "none",
     "kb_text": "none"
    }
   }

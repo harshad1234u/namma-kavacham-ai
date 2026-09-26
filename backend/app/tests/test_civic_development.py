@@ -254,3 +254,15 @@ def test_dashboard_and_meta(api):
     assert len(m["categories"]) == 12 and len(m["states_and_uts"]) == 36 and m["weights"]["citizen_demand"] == 30
     assert api.get("/v1/development/data/investments").json()["source"]["type"] == "demo"
     assert api.get("/v1/development/data/secrets").status_code == 404
+
+
+def test_store_initialisation_is_thread_safe(monkeypatch):
+    """Concurrent first requests must never see a half-seeded (empty) store."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    from app.civic.development import store as store_mod
+
+    monkeypatch.setattr(store_mod, "_store", None)
+    with ThreadPoolExecutor(8) as pool:
+        sizes = list(pool.map(lambda _: len(store_mod.get_store().all()), range(16)))
+    assert min(sizes) >= 535

@@ -80,11 +80,17 @@ def today() -> date:
 
 
 _store: RequestStore | None = None
+_init_lock = threading.Lock()
 
 
 def get_store() -> RequestStore:
+    """Process-wide store. FastAPI calls this from worker threads, so it is created under a lock and
+    published only once fully seeded (a half-seeded store would serve empty results)."""
     global _store
     if _store is None:
-        _store = RequestStore()
-        _store.seed()
+        with _init_lock:
+            if _store is None:
+                s = RequestStore()
+                s.seed()
+                _store = s
     return _store

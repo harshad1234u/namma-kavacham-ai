@@ -1,5 +1,6 @@
 """Official Government Source Retrieval: fetch the reviewed registry (cached), index it, return evidence."""
 import asyncio
+import threading
 import time
 from dataclasses import dataclass
 
@@ -62,13 +63,17 @@ class OfficialSourceRetriever:
 
 
 _retriever: OfficialSourceRetriever | None = None
+_init_lock = threading.Lock()
 
 
 def get_retriever() -> OfficialSourceRetriever:
+    """Process-wide retriever (one page cache). Called from worker threads, hence the lock."""
     global _retriever
     if _retriever is None:
-        from app.civic.settings import get_civic_settings
+        with _init_lock:
+            if _retriever is None:
+                from app.civic.settings import get_civic_settings
 
-        s = get_civic_settings()
-        _retriever = OfficialSourceRetriever(seed_sources(), s.retrieval_timeout_seconds, s.retrieval_cache_seconds)
+                s = get_civic_settings()
+                _retriever = OfficialSourceRetriever(seed_sources(), s.retrieval_timeout_seconds, s.retrieval_cache_seconds)
     return _retriever
