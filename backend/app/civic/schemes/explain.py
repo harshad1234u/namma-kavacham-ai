@@ -81,7 +81,7 @@ def template_en(outcome: VerifyOutcome) -> str:
     return " ".join(lines)
 
 
-def _acceptable(text: str, lang: str, grounding: str, secret: str) -> list[str]:
+def acceptable(text: str, lang: str, grounding: str, secret: str) -> list[str]:
     problems = ungrounded(text, grounding, secret)
     if any(not is_official_host(u.split("://")[-1].split("/")[0]) for u in urls(text)):
         problems.append("unofficial_url")
@@ -154,7 +154,7 @@ async def explain(outcome: VerifyOutcome, lang: str, chat: SarvamMProvider | Non
     try:
         raw = await chat.chat_json(EXPLAIN_SYSTEM, prompt, schema, max_tokens=900)
         text = str(raw.get("explanation", "")).strip()
-        problems = _acceptable(text, lang, json.dumps(facts, ensure_ascii=False) + "\n" + grounding, secret)
+        problems = acceptable(text, lang, json.dumps(facts, ensure_ascii=False) + "\n" + grounding, secret)
         if not problems:
             return _remember(key, Explanation(text, lang, "ai_generated", chat.model))
         log.info("explanation_rejected", extra={"problems": problems, "lang": lang})

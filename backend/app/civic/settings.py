@@ -26,6 +26,16 @@ class CivicSettings(BaseSettings):
     retrieval_enabled: bool = True
     retrieval_timeout_seconds: float = 12.0
     retrieval_cache_seconds: int = 6 * 3600
+    # Development Priority Engine (weights are relative; they need not sum to 100).
+    dev_weight_demand: float = 30
+    dev_weight_population: float = 25
+    dev_weight_infrastructure_gap: float = 20
+    dev_weight_urgency: float = 10
+    dev_weight_investment_gap: float = 15
+    dev_demand_saturation_reports: int = 150  # report count at which demand scores 1.0
+    dev_population_saturation: int = 200_000  # population at which impact scores 1.0
+    dev_hotspot_min_reports: int = 20
+    dev_min_data_completeness: float = 0.5  # below this share of weight, priority is "unable to assess"
 
     @property
     def ai_active(self) -> bool:

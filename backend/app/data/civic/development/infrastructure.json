@@ -1,0 +1,111 @@
+{
+ "source": {
+  "type": "demo",
+  "name": "CivicInsight demonstration dataset (synthetic)",
+  "last_updated": "2026-09-26",
+  "scope": "4 districts, 12 fictional localities",
+  "note": "Synthetic figures for demonstration only. Not census, government or official statistics."
+ },
+ "profiles": [
+  {
+   "area_id": "tiruchirappalli-a",
+   "water_facilities": 14,
+   "road_km": 213,
+   "health_facilities": 1,
+   "schools": 16,
+   "sanitation_facilities": 19,
+   "transport_points": 4,
+   "police_points": 6
+  },
+  {
+   "area_id": "tiruchirappalli-b",
+   "water_facilities": 17,
+   "road_km": 164,
+   "health_facilities": 4,
+   "schools": 9,
+   "sanitation_facilities": 25,
+   "transport_points": 10,
+   "police_points": 2
+  },
+  {
+   "area_id": "tiruchirappalli-c",
+   "water_facilities": 22,
+   "road_km": 153,
+   "health_facilities": 4,
+   "schools": 9,
+   "sanitation_facilities": 4,
+   "transport_points": 12,
+   "police_points": 5
+  },
+  {
+   "area_id": "madurai-a",
+   "water_facilities": 29,
+   "road_km": 228,
+   "health_facilities": 2,
+   "schools": 28,
+   "sanitation_facilities": 25,
+   "transport_points": 16,
+   "police_points": 4
+  },
+  {
+   "area_id": "madurai-b",
+   "water_facilities": 16,
+   "road_km": 219,
+   "health_facilities": 7,
+   "schools": 35,
+   "sanitation_facilities": 23,
+   "transport_points": 19,
+   "police_points": 2
+  },
+  {
+   "area_id": "madurai-c",
+   "water_facilities": 11,
+   "road_km": 85,
+   "health_facilities": 2,
+   "schools": 16,
+   "sanitation_facilities": 21,
+   "transport_points": 20,
+   "police_points": 6
+  },
+  {
+   "area_id": "pune-a",
+   "water_facilities": 34,
+   "road_km": 83,
+   "health_facilities": 6,
+   "schools": 14,
+   "sanitation_facilities": 17,
+   "transport_points": 4,
+   "police_points": 4
+  },
+  {
+   "area_id": "pune-b",
+   "water_facilities": 31,
+   "road_km": 121,
+   "health_facilities": 2,
+   "schools": 16,
+   "sanitation_facilities": 25,
+   "transport_points": 11,
+   "police_points": 3
+  },
+  {
+   "area_id": "gaya-a",
+   "water_facilities": 29,
+   "road_km": 159,
+   "health_facilities": 1,
+   "schools": 10,
+   "sanitation_facilities": 8,
+   "transport_points": 21,
+   "police_points": 1
+  },
+  {
+   "area_id": "gaya-b",
+   "water_facilities": 32,
+   "road_km": 181,
+   "health_facilities": 1,
+   "schools": 19,
+   "sanitation_facilities": 23,
+   "transport_points": 4,
+   "police_points": 6
+  }
+ ]
+}

@@ -1,0 +1,151 @@
+{
+ "source": {
+  "type": "demo",
+  "name": "CivicInsight demonstration dataset (synthetic)",
+  "last_updated": "2026-09-26",
+  "scope": "4 districts, 12 fictional localities",
+  "note": "Synthetic figures for demonstration only. Not census, government or official statistics."
+ },
+ "projects": [
+  {
+   "project_id": "P001",
+   "name": "Demo: Road resurfacing programme",
+   "area_id": "tiruchirappalli-b",
+   "category": "roads",
+   "budget_inr": 42000000,
+   "status": "ongoing",
+   "start_date": "2026-06-05",
+   "expected_completion": "2027-01-29"
+  },
+  {
+   "project_id": "P002",
+   "name": "Demo: Ring road widening",
+   "area_id": "pune-a",
+   "category": "roads",
+   "budget_inr": 180000000,
+   "status": "planned",
+   "start_date": "2026-03-31",
+   "expected_completion": "2027-05-16"
+  },
+  {
+   "project_id": "P003",
+   "name": "Demo: Urban bus route extension",
+   "area_id": "pune-a",
+   "category": "public_transport",
+   "budget_inr": 25000000,
+   "status": "proposed",
+   "start_date": "2026-07-08",
+   "expected_completion": "2027-02-01"
+  },
+  {
+   "project_id": "P004",
+   "name": "Demo: Primary health centre upgrade",
+   "area_id": "madurai-a",
+   "category": "healthcare",
+   "budget_inr": 30000000,
+   "status": "delayed",
+   "start_date": "2025-10-20",
+   "expected_completion": "2026-12-28"
+  },
+  {
+   "project_id": "P005",
+   "name": "Demo: Feeder line and transformer replacement",
+   "area_id": "gaya-a",
+   "category": "electricity",
+   "budget_inr": 55000000,
+   "status": "approved",
+   "start_date": "2026-08-17",
+   "expected_completion": "2028-02-01"
+  },
+  {
+   "project_id": "P006",
+   "name": "Demo: School building repairs",
+   "area_id": "gaya-b",
+   "category": "education",
+   "budget_inr": 12000000,
+   "status": "completed",
+   "start_date": "2025-11-21",
+   "expected_completion": "2026-12-18"
+  },
+  {
+   "project_id": "P007",
+   "name": "Demo: Canal desilting",
+   "area_id": "gaya-a",
+   "category": "agriculture",
+   "budget_inr": 9000000,
+   "status": "planned",
+   "start_date": "2026-04-08",
+   "expected_completion": "2028-04-10"
+  },
+  {
+   "project_id": "P008",
+   "name": "Demo: Underground drainage phase 1",
+   "area_id": "madurai-b",
+   "category": "sanitation",
+   "budget_inr": 60000000,
+   "status": "ongoing",
+   "start_date": "2026-03-16",
+   "expected_completion": "2028-06-07"
+  },
+  {
+   "project_id": "P009",
+   "name": "Demo: Water treatment plant expansion",
+   "area_id": "pune-b",
+   "category": "water",
+   "budget_inr": 75000000,
+   "status": "ongoing",
+   "start_date": "2025-08-24",
+   "expected_completion": "2028-01-03"
+  },
+  {
+   "project_id": "P010",
+   "name": "Demo: Street lighting upgrade",
+   "area_id": "pune-b",
+   "category": "public_safety",
+   "budget_inr": 6000000,
+   "status": "completed",
+   "start_date": "2026-08-13",
+   "expected_completion": "2027-03-08"
+  },
+  {
+   "project_id": "P011",
+   "name": "Demo: Solid waste collection vehicles",
+   "area_id": "tiruchirappalli-b",
+   "category": "sanitation",
+   "budget_inr": 8000000,
+   "status": "approved",
+   "start_date": "2026-07-02",
+   "expected_completion": "2027-06-24"
+  },
+  {
+   "project_id": "P012",
+   "name": "Demo: Mobile tower connectivity",
+   "area_id": "madurai-c",
+   "category": "digital_connectivity",
+   "budget_inr": 15000000,
+   "status": "proposed",
+   "start_date": "2026-01-14",
+   "expected_completion": "2027-07-26"
+  },
+  {
+   "project_id": "P013",
+   "name": "Demo: Anganwadi and school toilets",
+   "area_id": "tiruchirappalli-c",
+   "category": "education",
+   "budget_inr": 4000000,
+   "status": "planned",
+   "start_date": "2026-03-24",
+   "expected_completion": "2027-07-22"
+  },
+  {
+   "project_id": "P014",
+   "name": "Demo: Rural employment works shelf",
+   "area_id": "gaya-c",
+   "category": "employment",
+   "budget_inr": 20000000,
+   "status": "ongoing",
+   "start_date": "2026-06-14",
+   "expected_completion": "2028-07-27"
+  }
+ ]
+}

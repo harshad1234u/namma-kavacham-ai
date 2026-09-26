@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 
+from app.civic.development.router import router as development_router
 from app.civic.languages import LanguageRegistry, load_languages, normalize_code
 from app.civic.nim.provider import NemotronEmbeddingProvider, SarvamMProvider, build_chat, build_embedder
 from app.civic.retrieval.service import OfficialSourceRetriever, get_retriever
@@ -36,6 +37,7 @@ from app.civic.settings import CivicSettings, get_civic_settings
 from app.core.logging import get_logger
 
 router = APIRouter(prefix="/v1", tags=["civic"])
+router.include_router(development_router)
 log = get_logger("civic")
 
 
