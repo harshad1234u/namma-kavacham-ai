@@ -1,0 +1,184 @@
+{
+  "id": "pm_svanidhi",
+  "names": {
+    "en": "PM Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi)"
+  },
+  "abbreviations": [
+    "PM SVANidhi",
+    "SVANidhi",
+    "PM SVANIDHI"
+  ],
+  "aliases": [
+    "svanidhi",
+    "street vendor loan",
+    "पीएम स्वनिधि",
+    "स्वनिधि",
+    "ஸ்வநிதி"
+  ],
+  "level": "central",
+  "ministry": "Ministry of Housing and Urban Affairs",
+  "need_tags": [
+    "street_vendor_credit",
+    "small_business_loan"
+  ],
+  "description": {
+    "text": {
+      "en": "PM SVANidhi is a special micro-credit facility for street vendors."
+    },
+    "source_ref": "svn_home",
+    "quote": "PM Street Vendor’s AtmaNirbhar Nidhi A SPECIAL MICRO-CREDIT FACILITY FOR STREET VENDORS"
+  },
+  "benefits": [],
+  "eligibility": [
+    {
+      "id": "street_vendor",
+      "attribute": "occupation",
+      "operator": "eq",
+      "value": "street_vendor",
+      "statement": {
+        "text": {
+          "en": "The facility is for street vendors."
+        },
+        "source_ref": "svn_home",
+        "quote": "A SPECIAL MICRO-CREDIT FACILITY FOR STREET VENDORS"
+      }
+    },
+    {
+      "id": "notified_state",
+      "attribute": "other",
+      "statement": {
+        "text": {
+          "en": "Only available to vendors in States/UTs that have notified rules and a scheme under the Street Vendors (Protection of Livelihood and Regulation of Street Vending) Act, 2014."
+        },
+        "source_ref": "svn_home",
+        "quote": "The scheme is available for beneficiaries belonging to only those States/UTs which have notified rules and scheme under Street Vendors (Protection of Livelihood and Regulation of Street Vending) Act, 2014."
+      }
+    },
+    {
+      "id": "vendor_category",
+      "attribute": "other",
+      "statement": {
+        "text": {
+          "en": "Vendors fall into four categories: A/B – covered in the Urban Local Body survey (with or without a Certificate of Vending/ID card); C – left out of the survey or started vending after it; D – vendors from surrounding peri-urban/rural areas vending within ULB limits. Categories C and D need a Letter of Recommendation from the ULB/Town Vending Committee or a declaration."
+        },
+        "source_ref": "svn_pre",
+        "quote": "You will fall in one of the following 4 categories of Street vendors. Check your status and the documents/ information which you need to keep ready Category Vendor Status Action required by Vendor A Vendor has been covered in the survey of Urban Local Body (ULB) and have been issued Certificate of Vending (CoV) or Identity card (ID Card) by ULB or the Town Vending Committee Check your name in the survey list on the portal and note your Survey reference Number (SRN). Keep a copy of your CoV or ID card ready for uploading during application process B Vendor has been covered in the survey of Urban Local Body (ULB) and has not been issued Certificate of Vending or Identity card by the ULB or the Town Vending Committee Check your name in the survey list on the portal and note your Survey reference Number (SRN). A Provisional CoV shall be generated for you by the system while making online application C Street vendors, left out of the ULB-led identification survey or who have started vending after completion of the survey. C1 Vendor has been issued Letter of Recommendation by ULB/ TVC Keep a copy of LoR ready for uploading C2 Vendor has not been issued LoR Vendor to declare one of the followings: (i) Vendor has received One Time assistance during Covid lockdown (ii) Vendor is a member of the vending/ Hawkers association. D Street vendors of surrounding development/ peri-urban / rural areas vending in the geographical limitsvof the ULBs (not covered in Survey) D1 Vendor has been issued Letter of Recommendation by ULB/ TVC Keep a copy of LoR ready for uploading D2 Vendor has not been issued LoR Vendor to declare one of the followings: (i) Vendor has received One Time assistance during Covid lockdown (ii) Vendor is a member of the vending/ Hawkers association."
+      }
+    }
+  ],
+  "criteria_complete": false,
+  "documents": [
+    {
+      "name": {
+        "en": "Certificate of Vending or ULB ID card (category A)"
+      },
+      "statement": {
+        "text": {
+          "en": "Category A vendors: keep a copy of the Certificate of Vending or ID card ready for upload."
+        },
+        "source_ref": "svn_pre",
+        "quote": "Keep a copy of your CoV or ID card ready for uploading during application process"
+      }
+    },
+    {
+      "name": {
+        "en": "Letter of Recommendation (categories C1, D1)"
+      },
+      "statement": {
+        "text": {
+          "en": "Vendors issued a Letter of Recommendation by the ULB/TVC: keep a copy ready for upload."
+        },
+        "source_ref": "svn_pre",
+        "quote": "Vendor has been issued Letter of Recommendation by ULB/ TVC Keep a copy of LoR ready for uploading"
+      }
+    }
+  ],
+  "application_steps": [
+    {
+      "text": {
+        "en": "Understand the loan application requirements and keep all information ready before starting."
+      },
+      "source_ref": "svn_pre",
+      "quote": "Properly understand the information documents required to fill the Loan application form (LAF) for the Scheme. Keep all the information ready before you start the application process."
+    },
+    {
+      "text": {
+        "en": "Make sure your mobile number is linked to your Aadhaar; it is needed for eKYC during the online application."
+      },
+      "source_ref": "svn_pre",
+      "quote": "You are requested to make sure that your mobile phone is linked to your aadhaar number.This will be required for your e KYC/Aadhaar validation during online application process."
+    },
+    {
+      "text": {
+        "en": "Check your survey status and note your Survey Reference Number (SRN) if you were covered by the ULB survey."
+      },
+      "source_ref": "svn_pre",
+      "quote": "Check your name in the survey list on the portal and note your Survey reference Number (SRN)."
+    },
+    {
+      "text": {
+        "en": "Apply yourself on the portal or through a Common Service Centre (CSC) near you."
+      },
+      "source_ref": "svn_pre",
+      "quote": "You can apply directly yourself and also through a Common Service Centre(CSC) near you locality."
+    }
+  ],
+  "channels": [
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "PM SVANidhi portal – apply for loan (official)"
+      },
+      "official_url": "https://pmsvanidhi.mohua.gov.in/",
+      "source_ref": "svn_home"
+    },
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "Check your survey status (official)"
+      },
+      "official_url": "https://pmsvanidhi.mohua.gov.in/Schemes/SearchVendor",
+      "source_ref": "svn_home"
+    },
+    {
+      "type": "common_service_centre",
+      "label": {
+        "en": "A Common Service Centre (CSC) near you"
+      },
+      "source_ref": "svn_pre"
+    }
+  ],
+  "official_domains": [
+    "pmsvanidhi.mohua.gov.in"
+  ],
+  "sources": [
+    {
+      "id": "svn_home",
+      "publisher": "PM SVANidhi portal, Ministry of Housing and Urban Affairs",
+      "title": "PM SVANidhi — home page",
+      "url": "https://pmsvanidhi.mohua.gov.in/",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "PM Street Vendor’s AtmaNirbhar Nidhi A SPECIAL MICRO-CREDIT FACILITY FOR STREET VENDORS",
+        "The scheme is available for beneficiaries belonging to only those States/UTs which have notified rules and scheme under Street Vendors (Protection of Livelihood and Regulation of Street Vending) Act, 2014."
+      ]
+    },
+    {
+      "id": "svn_pre",
+      "publisher": "PM SVANidhi portal, Ministry of Housing and Urban Affairs",
+      "title": "PM SVANidhi — Pre-Application Steps (How to Apply)",
+      "url": "https://pmsvanidhi.mohua.gov.in/Home/PreApplication",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "Properly understand the information documents required to fill the Loan application form (LAF) for the Scheme. Keep all the information ready before you start the application process.",
+        "You are requested to make sure that your mobile phone is linked to your aadhaar number.This will be required for your e KYC/Aadhaar validation during online application process.",
+        "You will fall in one of the following 4 categories of Street vendors. Check your status and the documents/ information which you need to keep ready Category Vendor Status Action required by Vendor A Vendor has been covered in the survey of Urban Local Body (ULB) and have been issued Certificate of Vending (CoV) or Identity card (ID Card) by ULB or the Town Vending Committee Check your name in the survey list on the portal and note your Survey reference Number (SRN). Keep a copy of your CoV or ID card ready for uploading during application process B Vendor has been covered in the survey of Urban Local Body (ULB) and has not been issued Certificate of Vending or Identity card by the ULB or the Town Vending Committee Check your name in the survey list on the portal and note your Survey reference Number (SRN). A Provisional CoV shall be generated for you by the system while making online application C Street vendors, left out of the ULB-led identification survey or who have started vending after completion of the survey. C1 Vendor has been issued Letter of Recommendation by ULB/ TVC Keep a copy of LoR ready for uploading C2 Vendor has not been issued LoR Vendor to declare one of the followings: (i) Vendor has received One Time assistance during Covid lockdown (ii) Vendor is a member of the vending/ Hawkers association. D Street vendors of surrounding development/ peri-urban / rural areas vending in the geographical limitsvof the ULBs (not covered in Survey) D1 Vendor has been issued Letter of Recommendation by ULB/ TVC Keep a copy of LoR ready for uploading D2 Vendor has not been issued LoR Vendor to declare one of the followings: (i) Vendor has received One Time assistance during Covid lockdown (ii) Vendor is a member of the vending/ Hawkers association.",
+        "Check your name in the survey list on the portal and note your Survey reference Number (SRN).",
+        "Keep a copy of your CoV or ID card ready for uploading during application process",
+        "Vendor has been issued Letter of Recommendation by ULB/ TVC Keep a copy of LoR ready for uploading",
+        "You can apply directly yourself and also through a Common Service Centre(CSC) near you locality."
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

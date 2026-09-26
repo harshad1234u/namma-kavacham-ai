@@ -1,0 +1,67 @@
+{
+  "id": "pm_vishwakarma",
+  "names": {"en": "PM Vishwakarma"},
+  "abbreviations": ["PM Vishwakarma"],
+  "aliases": ["vishwakarma yojana", "pm vishwakarma yojana", "विश्वकर्मा योजना", "पीएम विश्वकर्मा", "விஸ்வகர்மா"],
+  "level": "central",
+  "ministry": "Ministry of Micro, Small & Medium Enterprises",
+  "need_tags": ["artisan_support", "small_business_loan", "skill_training"],
+  "description": {
+    "text": {"en": "PM Vishwakarma provides end-to-end support to traditional artisans and craftspeople to scale up their conventional products and services."},
+    "source_ref": "vk_home",
+    "quote": "PM Vishwakarma is a new scheme and envisages to provide end-to-end holistic support to the traditional artisans and craftspeople in scaling up of their conventional products and services."
+  },
+  "benefits": [
+    {"text": {"en": "Recognition as a Vishwakarma through a certificate and ID card."}, "source_ref": "vk_home", "quote": "Recognition: Recognition as Vishwakarma through Certificate and ID Card"},
+    {"text": {"en": "Skill verification followed by 5–7 days (40 hours) of basic training; optional 15 days (120 hours) of advanced training; training stipend of ₹500 per day."}, "amount_inr": 500, "source_ref": "vk_home", "quote": "Skilling: a. Skill Verification followed by 5-7 days (40 hours) Basic Training b. Interested candidates can also enroll for 15 days (120 hours) Advanced Training c. Training Stipend: Rs 500 per day"},
+    {"text": {"en": "Toolkit incentive: a grant of ₹15,000."}, "amount_inr": 15000, "source_ref": "vk_home", "quote": "Toolkit Incentive: Rs 15,000 grant"},
+    {"text": {"en": "Collateral-free enterprise development loans: ₹1 lakh (first tranche, 18 months repayment) and ₹2 lakh (second tranche, 30 months repayment), at a concessional 5% interest charged to the beneficiary."}, "amount_inr": 100000, "source_ref": "vk_home", "quote": "Credit Support: a. Collateral free Enterprise Development Loans: Rs 1 lakh (First Tranche for 18 months repayment) & Rs 2 lakh (Second Tranche for 30 months repayment) b. Concessional Rate of Interest: 5% to be charged from the beneficiary"},
+    {"text": {"en": "Digital transaction incentive of ₹1 per transaction, for up to 100 transactions a month."}, "source_ref": "vk_home", "quote": "Incentive for Digital Transaction: Re 1 per transaction for maximum upto100 transactions (monthly)"}
+  ],
+  "eligibility": [
+    {"id": "artisan_trade", "attribute": "occupation", "operator": "eq", "value": "artisan",
+     "statement": {"text": {"en": "You must be an artisan or craftsperson working with hands and tools in one of the 18 family-based traditional trades listed by the scheme, self-employed in the unorganised sector."}, "source_ref": "vk_home", "quote": "An artisan or craftsperson working with hands and tools and engaged in one of the 18 family-based traditional trades mentioned in the scheme, in unorganized sector on self-employment basis, shall be eligible for registration under PM Vishwakarma."}},
+    {"id": "listed_trade", "attribute": "other",
+     "statement": {"text": {"en": "Eligible trades include carpenter, boat maker, armourer, blacksmith, hammer and tool kit maker, locksmith, sculptor/stone breaker, goldsmith, potter, cobbler/footwear artisan, mason, basket/mat/broom maker/coir weaver, traditional doll and toy maker, barber, garland maker, washerman, tailor and fishing net maker."}, "source_ref": "vk_home", "quote": "Eligible Trades Wood Based Carpenter (Suthar) Boat Maker Iron/Metal Based*/ Stone Based Armourer Blacksmith (Lohar) Hammer and Tool Kit Maker Locksmith Sculptor (Moortikar, stone carver), Stone Breaker Gold/Silver Based Goldsmith (Sunar) Clay Based Potter (Kumhaar) Leather Based Cobbler (Charmakar)/ Shoesmith/ Footwear Artisan Architecture/ Construction Mason (Raajmistri) Others Basket/ Mat/ Broom Maker/ Coir Weaver Doll & Toy Maker (Traditional) Barber (Naai) Garland Maker (Malakaar) Washerman (Dhobi) Tailor (Darzi) Fishing Net Maker"}},
+    {"id": "age_18_plus", "attribute": "age", "operator": "gte", "value": 18,
+     "statement": {"text": {"en": "You must be at least 18 years old on the date of registration."}, "source_ref": "vk_home", "quote": "The minimum age of the beneficiary should be 18 years on the date of registration."}},
+    {"id": "no_similar_loans_5y", "attribute": "other",
+     "statement": {"text": {"en": "You must be working in the trade on the date of registration and must not have taken loans in the past 5 years under similar Central or State credit schemes for self-employment (for example PMEGP, PM SVANidhi, Mudra)."}, "source_ref": "vk_home", "quote": "The beneficiary should be engaged in the concerned trade on the date of registration and should not have availed loans under similar credit-based schemes of Central Government or State Government for self-employment/ business development, e.g. PMEGP, PM SVANidhi, Mudra, in the past 5 years."}},
+    {"id": "one_per_family", "attribute": "other",
+     "statement": {"text": {"en": "Registration and benefits are limited to one member of the family (husband, wife and unmarried children)."}, "source_ref": "vk_home", "quote": "The registration and benefits under the Scheme shall be restricted to one member of the family. For availing benefits under the Scheme, a ‘family’ is defined as consisting of the husband, wife and unmarried children."}},
+    {"id": "excl_government_service", "attribute": "family_in_government_service", "operator": "is_true", "kind": "exclusion",
+     "statement": {"text": {"en": "A person in government service, and their family members, are not eligible."}, "source_ref": "vk_home", "quote": "A person in government service and their family members shall not be eligible under the Scheme."}}
+  ],
+  "criteria_complete": true,
+  "documents": [],
+  "application_steps": [],
+  "channels": [
+    {"type": "online_portal", "label": {"en": "Apply Now (official PM Vishwakarma portal)"}, "official_url": "https://pmvishwakarma.gov.in/Login/CSCLogin?cscLoginRedirection=RegisterArtisans", "source_ref": "vk_home"},
+    {"type": "online_portal", "label": {"en": "How to register (official)"}, "official_url": "https://pmvishwakarma.gov.in/Home/HowToRegister", "source_ref": "vk_home"}
+  ],
+  "official_domains": ["pmvishwakarma.gov.in"],
+  "sources": [
+    {
+      "id": "vk_home",
+      "publisher": "PM Vishwakarma official portal, Ministry of Micro, Small & Medium Enterprises",
+      "title": "PM Vishwakarma — home page (Scheme Objectives, Eligibility Criteria, Eligible Trades, Scheme Benefits)",
+      "url": "https://pmvishwakarma.gov.in/",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "PM Vishwakarma is a new scheme and envisages to provide end-to-end holistic support to the traditional artisans and craftspeople in scaling up of their conventional products and services.",
+        "An artisan or craftsperson working with hands and tools and engaged in one of the 18 family-based traditional trades mentioned in the scheme, in unorganized sector on self-employment basis, shall be eligible for registration under PM Vishwakarma.",
+        "The minimum age of the beneficiary should be 18 years on the date of registration.",
+        "The beneficiary should be engaged in the concerned trade on the date of registration and should not have availed loans under similar credit-based schemes of Central Government or State Government for self-employment/ business development, e.g. PMEGP, PM SVANidhi, Mudra, in the past 5 years.",
+        "The registration and benefits under the Scheme shall be restricted to one member of the family. For availing benefits under the Scheme, a ‘family’ is defined as consisting of the husband, wife and unmarried children.",
+        "A person in government service and their family members shall not be eligible under the Scheme.",
+        "Eligible Trades Wood Based Carpenter (Suthar) Boat Maker Iron/Metal Based*/ Stone Based Armourer Blacksmith (Lohar) Hammer and Tool Kit Maker Locksmith Sculptor (Moortikar, stone carver), Stone Breaker Gold/Silver Based Goldsmith (Sunar) Clay Based Potter (Kumhaar) Leather Based Cobbler (Charmakar)/ Shoesmith/ Footwear Artisan Architecture/ Construction Mason (Raajmistri) Others Basket/ Mat/ Broom Maker/ Coir Weaver Doll & Toy Maker (Traditional) Barber (Naai) Garland Maker (Malakaar) Washerman (Dhobi) Tailor (Darzi) Fishing Net Maker",
+        "Recognition: Recognition as Vishwakarma through Certificate and ID Card",
+        "Skilling: a. Skill Verification followed by 5-7 days (40 hours) Basic Training b. Interested candidates can also enroll for 15 days (120 hours) Advanced Training c. Training Stipend: Rs 500 per day",
+        "Toolkit Incentive: Rs 15,000 grant",
+        "Credit Support: a. Collateral free Enterprise Development Loans: Rs 1 lakh (First Tranche for 18 months repayment) & Rs 2 lakh (Second Tranche for 30 months repayment) b. Concessional Rate of Interest: 5% to be charged from the beneficiary",
+        "Incentive for Digital Transaction: Re 1 per transaction for maximum upto100 transactions (monthly)"
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

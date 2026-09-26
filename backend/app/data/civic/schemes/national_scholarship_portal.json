@@ -1,0 +1,92 @@
+{
+  "id": "national_scholarship_portal",
+  "names": {
+    "en": "National Scholarship Portal (NSP)"
+  },
+  "abbreviations": [
+    "NSP"
+  ],
+  "aliases": [
+    "national scholarship portal",
+    "scholarships.gov.in",
+    "राष्ट्रीय छात्रवृत्ति पोर्टल",
+    "தேசிய உதவித்தொகை"
+  ],
+  "level": "central",
+  "ministry": "Government of India (National Scholarship Portal)",
+  "need_tags": [
+    "education_scholarship"
+  ],
+  "description": {
+    "text": {
+      "en": "NSP is the national portal where students apply for central scholarship schemes. From academic year 2026–27, students may apply for one merit-based scheme and one or more welfare-based schemes, as per each scheme's eligibility criteria."
+    },
+    "source_ref": "nsp_home",
+    "quote": "Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria."
+  },
+  "benefits": [],
+  "eligibility": [
+    {
+      "id": "student",
+      "attribute": "occupation",
+      "operator": "eq",
+      "value": "student",
+      "statement": {
+        "text": {
+          "en": "For students applying to scholarship schemes listed on the portal (each scheme has its own criteria)."
+        },
+        "source_ref": "nsp_home",
+        "quote": "Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria."
+      }
+    },
+    {
+      "id": "udid_for_disabled",
+      "attribute": "other",
+      "statement": {
+        "text": {
+          "en": "Students with disabilities must first log in to the UDID portal and consent to share UDID details before applying on NSP."
+        },
+        "source_ref": "nsp_home",
+        "quote": "All disabled students must first login in the UDID portal and provide consent to share their UDID details and then submit application in NSP. Otherwise, they will not be able to submit their application."
+      }
+    }
+  ],
+  "criteria_complete": false,
+  "documents": [],
+  "application_steps": [
+    {
+      "text": {
+        "en": "Students with disabilities: complete UDID consent first, then submit the NSP application."
+      },
+      "source_ref": "nsp_home",
+      "quote": "All disabled students must first login in the UDID portal and provide consent to share their UDID details and then submit application in NSP. Otherwise, they will not be able to submit their application."
+    }
+  ],
+  "channels": [
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "National Scholarship Portal (official)"
+      },
+      "official_url": "https://scholarships.gov.in/",
+      "source_ref": "nsp_home"
+    }
+  ],
+  "official_domains": [
+    "scholarships.gov.in"
+  ],
+  "sources": [
+    {
+      "id": "nsp_home",
+      "publisher": "National Scholarship Portal",
+      "title": "NSP — home page (announcements)",
+      "url": "https://scholarships.gov.in/",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria.",
+        "All disabled students must first login in the UDID portal and provide consent to share their UDID details and then submit application in NSP. Otherwise, they will not be able to submit their application."
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "mgnrega",
+  "names": {
+    "en": "Mahatma Gandhi National Rural Employment Guarantee Scheme (MGNREGA)"
+  },
+  "abbreviations": [
+    "MGNREGA",
+    "MGNREGS",
+    "NREGA"
+  ],
+  "aliases": [
+    "mahatma gandhi nrega",
+    "100 days work",
+    "मनरेगा",
+    "नरेगा",
+    "நூறு நாள் வேலை"
+  ],
+  "level": "central",
+  "ministry": "Ministry of Rural Development",
+  "need_tags": [
+    "employment"
+  ],
+  "description": {
+    "text": {
+      "en": "MGNREGA aims to improve the livelihood security of rural households by providing at least 100 days of guaranteed wage employment in a financial year."
+    },
+    "source_ref": "nrega_home",
+    "quote": "The vision of Mahatma Gandhi NREGA is to enhance the livelihood security of rural households across the country by providing at least 100 days of guaranteed wage employment in a financial year to every rural household whose adult members volunteer to do unskilled manual work."
+  },
+  "benefits": [
+    {
+      "text": {
+        "en": "At least 100 days of guaranteed wage employment in a financial year for every rural household whose adult members volunteer to do unskilled manual work."
+      },
+      "source_ref": "nrega_home",
+      "quote": "The vision of Mahatma Gandhi NREGA is to enhance the livelihood security of rural households across the country by providing at least 100 days of guaranteed wage employment in a financial year to every rural household whose adult members volunteer to do unskilled manual work."
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "rural_household",
+      "attribute": "residence_type",
+      "operator": "eq",
+      "value": "rural",
+      "statement": {
+        "text": {
+          "en": "For rural households."
+        },
+        "source_ref": "nrega_home",
+        "quote": "The vision of Mahatma Gandhi NREGA is to enhance the livelihood security of rural households across the country by providing at least 100 days of guaranteed wage employment in a financial year to every rural household whose adult members volunteer to do unskilled manual work."
+      }
+    },
+    {
+      "id": "adult_unskilled_volunteer",
+      "attribute": "other",
+      "statement": {
+        "text": {
+          "en": "Adult members of the household must volunteer to do unskilled manual work."
+        },
+        "source_ref": "nrega_home",
+        "quote": "The vision of Mahatma Gandhi NREGA is to enhance the livelihood security of rural households across the country by providing at least 100 days of guaranteed wage employment in a financial year to every rural household whose adult members volunteer to do unskilled manual work."
+      }
+    }
+  ],
+  "criteria_complete": false,
+  "documents": [],
+  "application_steps": [],
+  "channels": [
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "MGNREGA official portal"
+      },
+      "official_url": "https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx",
+      "source_ref": "nrega_home"
+    }
+  ],
+  "official_domains": [
+    "nrega.dord.gov.in"
+  ],
+  "sources": [
+    {
+      "id": "nrega_home",
+      "publisher": "Ministry of Rural Development (MGNREGA portal)",
+      "title": "Mahatma Gandhi NREGA — home (Vision)",
+      "url": "https://nrega.dord.gov.in/MGNREGA_new/Nrega_home.aspx",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "The vision of Mahatma Gandhi NREGA is to enhance the livelihood security of rural households across the country by providing at least 100 days of guaranteed wage employment in a financial year to every rural household whose adult members volunteer to do unskilled manual work.",
+        "Mahatma Gandhi NREGA recognizes the importance of strengthening the livelihood resource base of the poor by reaching the most vulnerable sections of rural areas, including Scheduled Castes, Scheduled Tribes, women-headed households, and other marginalized groups."
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

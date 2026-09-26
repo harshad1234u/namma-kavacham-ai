@@ -1,0 +1,120 @@
+{
+  "id": "pmay_g",
+  "names": {
+    "en": "Pradhan Mantri Awaas Yojana – Gramin (PMAY-G)"
+  },
+  "abbreviations": [
+    "PMAY-G",
+    "PMAYG"
+  ],
+  "aliases": [
+    "awaas yojana gramin",
+    "awas yojana gramin",
+    "pm awas gramin",
+    "प्रधान मंत्री आवास योजना-ग्रामीण",
+    "आवास योजना ग्रामीण"
+  ],
+  "level": "central",
+  "ministry": "Ministry of Rural Development",
+  "need_tags": [
+    "housing"
+  ],
+  "description": {
+    "text": {
+      "en": "PMAY-G aims to provide a pucca house with basic amenities to all houseless households and households living in kutcha or dilapidated houses in rural areas. It replaced Indira Awaas Yojana from 1 April 2016."
+    },
+    "source_ref": "pmayg_about",
+    "quote": "PMAY-G aims at providing a pucca house, with basic amenities, to all houseless householder and those households living in kutcha and dilapidated house"
+  },
+  "benefits": [
+    {
+      "text": {
+        "en": "The page states that unit assistance was increased to ₹1.20 lakh in plain areas and ₹1.30 lakh in hilly states, difficult areas and IAP districts."
+      },
+      "source_ref": "pmayg_about",
+      "quote": "The unit assistance has been increased from Rs. 70,000 to Rs. 1.20 lakh in plain and from Rs75,000 to Rs 1.30 lakh in hilly states, difficult areas and IAP district.",
+      "amount_inr": 120000
+    },
+    {
+      "text": {
+        "en": "The minimum house size is 25 sq.m, including a hygienic cooking space."
+      },
+      "source_ref": "pmayg_about",
+      "quote": "The minimum size of the house has been increased to 25 sq.mt (from20sq.mt) with a hygienic cooking space."
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "houseless_or_kutcha",
+      "attribute": "other",
+      "statement": {
+        "text": {
+          "en": "The scheme targets houseless households and households living in kutcha or dilapidated houses."
+        },
+        "source_ref": "pmayg_about",
+        "quote": "PMAY-G aims at providing a pucca house, with basic amenities, to all houseless householder and those households living in kutcha and dilapidated house"
+      }
+    },
+    {
+      "id": "priority_conditions",
+      "attribute": "other",
+      "statement": {
+        "text": {
+          "en": "The official self-check first asks whether you: have no shelter; are destitute/living on alms; are a manual scavenger; belong to a Primitive Tribal Group; or are a legally released bonded labourer."
+        },
+        "source_ref": "pmayg_elig",
+        "quote": "Q1. Do you meet any of the following conditions? You: a. do not have a shelter b. are destitute/ living on alms c. are a manual scavenger d. are part of a Primitive Tribal Group e. are a legally released bonded labourer"
+      }
+    }
+  ],
+  "criteria_complete": false,
+  "documents": [],
+  "application_steps": [],
+  "channels": [
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "Am I Eligible? – official PMAY-G self-check"
+      },
+      "official_url": "https://pmayg.dord.gov.in/netiayHome/questions.html",
+      "source_ref": "pmayg_elig"
+    },
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "PMAY-G official portal"
+      },
+      "official_url": "https://pmayg.dord.gov.in/",
+      "source_ref": "pmayg_about"
+    }
+  ],
+  "official_domains": [
+    "pmayg.dord.gov.in"
+  ],
+  "sources": [
+    {
+      "id": "pmayg_about",
+      "publisher": "PMAY-G portal, Ministry of Rural Development",
+      "title": "PMAY-G — About Us",
+      "url": "https://pmayg.dord.gov.in/netiayHome/about.aspx",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "PMAY-G aims at providing a pucca house, with basic amenities, to all houseless householder and those households living in kutcha and dilapidated house",
+        "the of has IAY has been re-structured into Pradhan Mantri Awaas Yojana –Gramin (PMAY-G) w.e.f. 1st April 2016.",
+        "The unit assistance has been increased from Rs. 70,000 to Rs. 1.20 lakh in plain and from Rs75,000 to Rs 1.30 lakh in hilly states, difficult areas and IAP district.",
+        "The minimum size of the house has been increased to 25 sq.mt (from20sq.mt) with a hygienic cooking space."
+      ]
+    },
+    {
+      "id": "pmayg_elig",
+      "publisher": "PMAY-G portal, Ministry of Rural Development",
+      "title": "PMAY-G — Am I Eligible?",
+      "url": "https://pmayg.dord.gov.in/netiayHome/questions.html",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "Q1. Do you meet any of the following conditions? You: a. do not have a shelter b. are destitute/ living on alms c. are a manual scavenger d. are part of a Primitive Tribal Group e. are a legally released bonded labourer"
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

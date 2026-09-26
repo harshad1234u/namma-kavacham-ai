@@ -1,0 +1,144 @@
+{
+  "id": "pmuy",
+  "names": {"en": "Pradhan Mantri Ujjwala Yojana (PMUY)"},
+  "abbreviations": ["PMUY", "Ujjwala 2.0"],
+  "aliases": ["ujjwala yojana", "ujjwala", "उज्ज्वला योजना", "उज्ज्वला", "உஜ்வாலா"],
+  "level": "central",
+  "ministry": "Ministry of Petroleum and Natural Gas",
+  "need_tags": ["cooking_fuel"],
+  "description": {
+    "text": {"en": "PMUY was introduced in May 2016 by the Ministry of Petroleum and Natural Gas to make clean cooking fuel such as LPG available to rural and deprived households that were using traditional fuels like firewood, coal or cow-dung cakes."},
+    "source_ref": "pmuy_about",
+    "quote": "In May 2016, Ministry of Petroleum and Natural Gas (MOPNG), introduced the ‘Pradhan Mantri Ujjwala Yojana’ (PMUY) as a flagship scheme with an objective to make clean cooking fuel such as LPG available to the rural and deprived households which were otherwise using traditional cooking fuels such as firewood, coal, cow-dung cakes etc."
+  },
+  "benefits": [
+    {
+      "text": {"en": "Government of India cash assistance for the PMUY connection: ₹2,050 for a 14.2 kg cylinder connection or ₹1,300 for a 5 kg cylinder connection."},
+      "amount_inr": 2050,
+      "source_ref": "pmuy_home",
+      "quote": "Cash assistance for PMUY connections is provided by Government of India - 2050 (for a connection 14.2kg cylinder/ 1300 for a 5 kg cylinder)."
+    },
+    {
+      "text": {"en": "The cash assistance covers the cylinder security deposit, pressure regulator, LPG hose, domestic gas consumer card and inspection/installation/demonstration charges."},
+      "source_ref": "pmuy_home",
+      "quote": "The cash assistance covers: Security Deposit of Cylinder – 1700 for 14.2 kg cylinder/ 950 for 5 kg cylinder Pressure Regulator – 150 LPG Hose – 100 Domestic Gas Consumer Card – 25 Inspection/ Installation/ Demonstration charges – 75"
+    },
+    {
+      "text": {"en": "All PMUY beneficiaries also get the first LPG refill and a stove (hotplate) free of cost, along with a deposit-free connection, from the Oil Marketing Companies."},
+      "source_ref": "pmuy_home",
+      "quote": "Additionally, All PMUY beneficiaries will be provided with first LPG refill and Stove (hotplate) both free of cost along with their deposit free connection by the Oil Marketing Companies (OMCs)."
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "woman_applicant",
+      "attribute": "gender",
+      "operator": "eq",
+      "value": "female",
+      "statement": {
+        "text": {"en": "The applicant must be a woman aged 18 or above."},
+        "source_ref": "pmuy_apply",
+        "quote": "The applicant must be a woman who has attained 18 years of age."
+      }
+    },
+    {
+      "id": "age_18_plus",
+      "attribute": "age",
+      "operator": "gte",
+      "value": 18,
+      "statement": {
+        "text": {"en": "The applicant must be a woman aged 18 or above."},
+        "source_ref": "pmuy_apply",
+        "quote": "The applicant must be a woman who has attained 18 years of age."
+      }
+    },
+    {
+      "id": "no_other_lpg",
+      "attribute": "household_has_lpg_connection",
+      "operator": "is_true",
+      "kind": "exclusion",
+      "statement": {
+        "text": {"en": "There must be no other LPG connection from any Oil Marketing Company in the same household."},
+        "source_ref": "pmuy_apply",
+        "quote": "There should be no other LPG connection from any Oil Marketing Company (OMC) within the same household."
+      }
+    },
+    {
+      "id": "poor_household_declaration",
+      "attribute": "other",
+      "statement": {
+        "text": {"en": "The woman must belong to a poor household, shown by submitting a deprivation declaration in the prescribed format."},
+        "source_ref": "pmuy_apply",
+        "quote": "The adult woman must belong to a poor household based on submission of a deprivation declaration (as per prescribed format)."
+      }
+    }
+  ],
+  "criteria_complete": true,
+  "documents": [
+    {"name": {"en": "KYC application form"}, "statement": {"text": {"en": "Know Your Customer (KYC) application form."}, "source_ref": "pmuy_apply", "quote": "Know Your Customer (KYC) application form."}},
+    {"name": {"en": "Aadhaar of the applicant (proof of identity)"}, "statement": {"text": {"en": "Proof of identity: Aadhaar copy of the applicant."}, "source_ref": "pmuy_apply", "quote": "Proof of Identity (Aadhaar copy of Applicant)"}},
+    {"name": {"en": "Proof of address (only if different from Aadhaar)"}, "statement": {"text": {"en": "Proof of address, only if your current address differs from the Aadhaar address (migrants may give a self-declaration)."}, "source_ref": "pmuy_apply", "quote": "Proof of Address (only in case Address in Aadhaar is different from currently residing address) (Self Declaration as per Annexure I for migrant applicants)"}},
+    {"name": {"en": "Ration card or other State document showing family composition"}, "statement": {"text": {"en": "Ration card issued by the State you apply from, or another State Government document certifying family composition (migrants may give a self-declaration)."}, "source_ref": "pmuy_apply", "quote": "Ration Card issued by the State from which application is being made / other State Govt. document certifying family composition"}},
+    {"name": {"en": "Aadhaar of adult family members"}, "statement": {"text": {"en": "Aadhaar copies of the applicant and the adult family members listed in the family document."}, "source_ref": "pmuy_apply", "quote": "Aadhaar copy of Applicant and adult family members appearing in document at Sl. 4"}},
+    {"name": {"en": "Bank account details"}, "statement": {"text": {"en": "Bank account details (passbook copy or cancelled cheque)."}, "source_ref": "pmuy_apply", "quote": "Bank Account details (Passbook copy/Cancelled cheque)"}},
+    {"name": {"en": "Deprivation declaration"}, "statement": {"text": {"en": "Deprivation declaration."}, "source_ref": "pmuy_apply", "quote": "Deprivation Declaration Applicants may apply"}}
+  ],
+  "application_steps": [
+    {
+      "text": {"en": "Apply to any LPG distributor of your choice, either at the distributor's office or through the online portal."},
+      "source_ref": "pmuy_apply",
+      "quote": "Applicants may apply to any distributor of her choice either by submitting application at the distributor or by submitting a request through Online Portal ."
+    }
+  ],
+  "channels": [
+    {"type": "online_portal", "label": {"en": "Apply for a new PMUY connection (official PMUY page with links to each oil company's form)"}, "official_url": "https://www.pmuy.gov.in/ujjwala2.html", "source_ref": "pmuy_apply"},
+    {"type": "offline_office", "label": {"en": "Any LPG distributor of your choice"}, "source_ref": "pmuy_apply"}
+  ],
+  "helplines": [{"number": "14438", "source_ref": "pmuy_apply"}],
+  "official_domains": ["pmuy.gov.in"],
+  "sources": [
+    {
+      "id": "pmuy_apply",
+      "publisher": "Pradhan Mantri Ujjwala Yojana official website",
+      "title": "PMUY — New Ujjwala 2.0 Connection",
+      "url": "https://www.pmuy.gov.in/ujjwala2.html",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "The applicant must be a woman who has attained 18 years of age.",
+        "There should be no other LPG connection from any Oil Marketing Company (OMC) within the same household.",
+        "The adult woman must belong to a poor household based on submission of a deprivation declaration (as per prescribed format).",
+        "Know Your Customer (KYC) application form.",
+        "Proof of Identity (Aadhaar copy of Applicant)",
+        "Proof of Address (only in case Address in Aadhaar is different from currently residing address) (Self Declaration as per Annexure I for migrant applicants)",
+        "Ration Card issued by the State from which application is being made / other State Govt. document certifying family composition",
+        "Aadhaar copy of Applicant and adult family members appearing in document at Sl. 4",
+        "Bank Account details (Passbook copy/Cancelled cheque)",
+        "Deprivation Declaration Applicants may apply to any distributor of her choice either by submitting application at the distributor or by submitting a request through Online Portal .",
+        "14438 (Ujjwala Helpline)"
+      ]
+    },
+    {
+      "id": "pmuy_about",
+      "publisher": "Pradhan Mantri Ujjwala Yojana official website",
+      "title": "About PMUY",
+      "url": "https://www.pmuy.gov.in/about.html",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "In May 2016, Ministry of Petroleum and Natural Gas (MOPNG), introduced the ‘Pradhan Mantri Ujjwala Yojana’ (PMUY) as a flagship scheme with an objective to make clean cooking fuel such as LPG available to the rural and deprived households which were otherwise using traditional cooking fuels such as firewood, coal, cow-dung cakes etc."
+      ]
+    },
+    {
+      "id": "pmuy_home",
+      "publisher": "Pradhan Mantri Ujjwala Yojana official website",
+      "title": "PMUY — home page (PMUY Benefits)",
+      "url": "https://www.pmuy.gov.in/",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "Cash assistance for PMUY connections is provided by Government of India - 2050 (for a connection 14.2kg cylinder/ 1300 for a 5 kg cylinder).",
+        "The cash assistance covers: Security Deposit of Cylinder – 1700 for 14.2 kg cylinder/ 950 for 5 kg cylinder Pressure Regulator – 150 LPG Hose – 100 Domestic Gas Consumer Card – 25 Inspection/ Installation/ Demonstration charges – 75",
+        "Additionally, All PMUY beneficiaries will be provided with first LPG refill and Stove (hotplate) both free of cost along with their deposit free connection by the Oil Marketing Companies (OMCs)."
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}

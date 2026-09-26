@@ -1,0 +1,98 @@
+{
+  "id": "pmmy_mudra",
+  "names": {
+    "en": "Pradhan Mantri MUDRA Yojana (PMMY)"
+  },
+  "abbreviations": [
+    "PMMY",
+    "MUDRA"
+  ],
+  "aliases": [
+    "mudra loan",
+    "mudra yojana",
+    "मुद्रा योजना",
+    "मुद्रा लोन",
+    "முத்ரா"
+  ],
+  "level": "central",
+  "ministry": "Department of Financial Services, Ministry of Finance",
+  "need_tags": [
+    "small_business_loan"
+  ],
+  "description": {
+    "text": {
+      "en": "PMMY, launched on 8 April 2015, gives micro enterprises access to collateral-free institutional credit."
+    },
+    "source_ref": "mudra",
+    "quote": "Pradhan Mantri MUDRA Yojana (PMMY) was launched on 08.04.2015 with the objective of providing access to institutional collateral free credit to micro enterprises."
+  },
+  "benefits": [
+    {
+      "text": {
+        "en": "Loan categories: Shishu up to ₹50,000; Kishore above ₹50,000 up to ₹5 lakh; Tarun above ₹5 lakh up to ₹10 lakh."
+      },
+      "source_ref": "mudra",
+      "quote": "Categories: Shishu – upto Rs.50,000; Kishore– Above Rs.50,000 and upto Rs.5 lakh; Tarun- Above Rs.5 lakh and upto Rs.10 lakh;",
+      "amount_inr": 1000000
+    },
+    {
+      "text": {
+        "en": "Collateral is not required; loans are given by banks, regional rural banks, small finance banks, NBFCs and MFIs."
+      },
+      "source_ref": "mudra",
+      "quote": "Member Lending Institutions (MLIs): Public Sector Banks (PSBs), Private Sector Banks, Foreign Banks, Regional Rural Banks, Small Finance Banks, Non-Banking Financial Companies (NBFCs), Micro Finance Institutions (MFIs) and NBFC- MFIs; Collateral not required."
+    }
+  ],
+  "eligibility": [
+    {
+      "id": "micro_enterprise_purpose",
+      "attribute": "other",
+      "statement": {
+        "text": {
+          "en": "For non-agricultural micro enterprises, including activities allied to agriculture such as poultry, dairy and beekeeping; term loans and working capital."
+        },
+        "source_ref": "mudra",
+        "quote": "Purposes: Non-agricultural, including activities allied to agriculture such as poultry, dairy, beekeeping etc. Term loan and working capital requirements can both be met;"
+      }
+    }
+  ],
+  "criteria_complete": false,
+  "documents": [],
+  "application_steps": [],
+  "channels": [
+    {
+      "type": "bank",
+      "label": {
+        "en": "A Member Lending Institution (bank, RRB, small finance bank, NBFC or MFI)"
+      },
+      "source_ref": "mudra"
+    },
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "PMMY page, Department of Financial Services (official)"
+      },
+      "official_url": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+      "source_ref": "mudra"
+    }
+  ],
+  "official_domains": [
+    "financialservices.gov.in"
+  ],
+  "sources": [
+    {
+      "id": "mudra",
+      "publisher": "Department of Financial Services, Ministry of Finance",
+      "title": "Pradhan Mantri MUDRA Yojana (PMMY)",
+      "url": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+      "retrieved": "2026-09-26",
+      "quotes": [
+        "Pradhan Mantri MUDRA Yojana (PMMY) was launched on 08.04.2015 with the objective of providing access to institutional collateral free credit to micro enterprises.",
+        "Purposes: Non-agricultural, including activities allied to agriculture such as poultry, dairy, beekeeping etc. Term loan and working capital requirements can both be met;",
+        "Categories: Shishu – upto Rs.50,000; Kishore– Above Rs.50,000 and upto Rs.5 lakh; Tarun- Above Rs.5 lakh and upto Rs.10 lakh;",
+        "Member Lending Institutions (MLIs): Public Sector Banks (PSBs), Private Sector Banks, Foreign Banks, Regional Rural Banks, Small Finance Banks, Non-Banking Financial Companies (NBFCs), Micro Finance Institutions (MFIs) and NBFC- MFIs; Collateral not required."
+      ]
+    }
+  ],
+  "last_verified": "2026-09-26"
+}
