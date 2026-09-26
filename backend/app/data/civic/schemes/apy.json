@@ -31,7 +31,8 @@
       },
       "source_ref": "apy",
       "quote": "Under APY, the subscribers would receive the fixed minimum pension of Rs. 1000 per month, Rs. 2000 per month, Rs. 3000 per month, Rs. 4000 per month and Rs. 5000 per month at the age of 60 years depending on their contributions, which itself would be based on the age of joining APY.",
-      "amount_inr": 5000
+      "amount_inr": 5000,
+      "period": "per_month"
     },
     {
       "text": {

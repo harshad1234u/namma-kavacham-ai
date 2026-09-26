@@ -1,5 +1,5 @@
 """API request/response models for /v1/schemes. All citizen-facing text is localised with a status label."""
-from datetime import date
+from datetime import date, datetime
 from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -99,6 +99,7 @@ class EligibilityResult(BaseModel):
 class VerifyRequest(_Req):
     text: str = Field(min_length=1, max_length=MAX_TEXT)
     url: str | None = Field(default=None, max_length=500)
+    ai_consent: bool = False  # the citizen agreed to send PII-minimised text to the AI service (NVIDIA NIM)
 
 
 class FindingOut(BaseModel):
@@ -106,6 +107,7 @@ class FindingOut(BaseModel):
     outcome: Literal["supported", "contradicted", "not_covered"]
     detail: LocText
     source_ref: str | None
+    evidence_url: str | None = None
 
 
 class SchemeVerificationOut(BaseModel):
@@ -114,15 +116,50 @@ class SchemeVerificationOut(BaseModel):
     sources: list[SourceOut]
 
 
+class EvidenceOut(BaseModel):
+    url: str
+    title: str
+    domain: str
+    retrieved_at: datetime
+    quote: str
+    scheme_id: str | None
+    method: str
+
+
+class UnderstandingOut(BaseModel):
+    scheme_ids: list[str]
+    scheme_name: str | None
+    need_tags: list[str]
+    profile: dict[str, Any]
+    method: Literal["deterministic", "ai_assisted"]
+    ai_note: str | None
+    pii_removed: dict[str, int]
+
+
+class ExplanationOut(BaseModel):
+    text: str
+    lang: str
+    status: Literal["ai_generated", "template", "machine_translated", "english_fallback"]
+    model: str | None
+
+
 class VerifyResult(BaseModel):
     status: VerifyStatus
+    basis: Literal["curated_kb", "official_evidence", "none"]
+    message: str | None
     schemes: list[SchemeVerificationOut]
+    evidence_findings: list[FindingOut]
+    evidence: list[EvidenceOut]
+    sources_checked: int | None
+    understanding: UnderstandingOut
+    explanation: ExplanationOut
     disclosure: LocText
-    search_portal: str | None  # official national search portal, offered when we hold nothing on the claim
+    search_portal: str | None  # official national search portal, offered when we could not settle the claim
 
 
 class DiscoverRequest(_Req):
     text: str | None = Field(default=None, max_length=MAX_TEXT)
+    ai_consent: bool = False
     need_tags: list[str] | None = Field(default=None, max_length=17)
     profile: dict[str, int | bool | str | None] = Field(default_factory=dict, max_length=30)
 
@@ -142,3 +179,7 @@ class DiscoverResult(BaseModel):
     suggestions: list[SuggestionOut]
     disclosure: LocText
     search_portal: str
+
+
+class AskResult(VerifyResult):
+    suggestions: list[SuggestionOut]

@@ -1,25 +1,46 @@
 {
   "id": "pm_kisan",
-  "names": {"en": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)"},
-  "abbreviations": ["PM-KISAN", "PM KISAN", "PMKISAN"],
-  "aliases": ["kisan samman nidhi", "पीएम किसान", "किसान सम्मान निधि", "பிஎம் கிசான்", "கிசான் சம்மான்"],
+  "names": {
+    "en": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)"
+  },
+  "abbreviations": [
+    "PM-KISAN",
+    "PM KISAN",
+    "PMKISAN"
+  ],
+  "aliases": [
+    "kisan samman nidhi",
+    "पीएम किसान",
+    "किसान सम्मान निधि",
+    "பிஎம் கிசான்",
+    "கிசான் சம்மான்"
+  ],
   "level": "central",
   "ministry": "Ministry of Agriculture and Farmers Welfare",
-  "need_tags": ["farming_income_support"],
+  "need_tags": [
+    "farming_income_support"
+  ],
   "description": {
-    "text": {"en": "PM-KISAN is a Central Sector scheme, fully funded by the Government of India, that provides income support to land-holding farmer families."},
+    "text": {
+      "en": "PM-KISAN is a Central Sector scheme, fully funded by the Government of India, that provides income support to land-holding farmer families."
+    },
     "source_ref": "pmkisan_home",
     "quote": "PM Kisan is a Central Sector scheme with 100% funding from Government of India."
   },
   "benefits": [
     {
-      "text": {"en": "Income support of ₹6,000 per year, paid in three equal instalments, to all land-holding farmer families."},
+      "text": {
+        "en": "Income support of ₹6,000 per year, paid in three equal instalments, to all land-holding farmer families."
+      },
       "amount_inr": 6000,
       "source_ref": "pmkisan_home",
-      "quote": "Under the scheme an income support of 6,000/- per year in three equal installments will be provided to all land holding farmer families."
+      "quote": "Under the scheme an income support of 6,000/- per year in three equal installments will be provided to all land holding farmer families.",
+      "period": "per_year"
     },
     {
-      "text": {"en": "The money is transferred directly to the beneficiaries' bank accounts."},
+      "text": {
+        "en": "The money is transferred directly to the beneficiaries' bank accounts."
+      },
       "source_ref": "pmkisan_home",
       "quote": "The fund will be directly transferred to the bank accounts of the beneficiaries."
     }
@@ -31,7 +52,9 @@
       "operator": "is_true",
       "kind": "inclusion",
       "statement": {
-        "text": {"en": "The support is for land-holding farmer families."},
+        "text": {
+          "en": "The support is for land-holding farmer families."
+        },
         "source_ref": "pmkisan_home",
         "quote": "will be provided to all land holding farmer families."
       }
@@ -41,7 +64,9 @@
       "attribute": "other",
       "kind": "inclusion",
       "statement": {
-        "text": {"en": "For this scheme, a family means husband, wife and minor children. The State/UT government identifies eligible farmer families."},
+        "text": {
+          "en": "For this scheme, a family means husband, wife and minor children. The State/UT government identifies eligible farmer families."
+        },
         "source_ref": "pmkisan_home",
         "quote": "Definition of family for the scheme is husband, wife and minor children. State Government and UT administration will identify the farmer families which are eligible for support as per scheme guidelines."
       }
@@ -52,7 +77,9 @@
       "operator": "is_true",
       "kind": "exclusion",
       "statement": {
-        "text": {"en": "Excluded: persons who paid income tax in the last assessment year."},
+        "text": {
+          "en": "Excluded: persons who paid income tax in the last assessment year."
+        },
         "source_ref": "pmkisan_home",
         "quote": "All Persons who paid Income Tax in last assessment year"
       }
@@ -62,7 +89,9 @@
       "attribute": "other",
       "kind": "exclusion",
       "statement": {
-        "text": {"en": "Excluded: all institutional land holders."},
+        "text": {
+          "en": "Excluded: all institutional land holders."
+        },
         "source_ref": "pmkisan_home",
         "quote": "All Institutional Land holders."
       }
@@ -72,7 +101,9 @@
       "attribute": "other",
       "kind": "exclusion",
       "statement": {
-        "text": {"en": "Excluded: families with former or present holders of constitutional posts, and former or present Ministers, MPs, MLAs, MLCs, Mayors of Municipal Corporations and Chairpersons of District Panchayats."},
+        "text": {
+          "en": "Excluded: families with former or present holders of constitutional posts, and former or present Ministers, MPs, MLAs, MLCs, Mayors of Municipal Corporations and Chairpersons of District Panchayats."
+        },
         "source_ref": "pmkisan_home",
         "quote": "Former and present holders of constitutional posts Former and present Ministers/ State Ministers and former/present Members of LokSabha/ RajyaSabha/ State Legislative Assemblies/ State Legislative Councils,former and present Mayors of Municipal Corporations, former and present Chairpersons of District Panchayats."
       }
@@ -82,7 +113,9 @@
       "attribute": "other",
       "kind": "exclusion",
       "statement": {
-        "text": {"en": "Excluded: serving or retired officers and employees of Central/State government, PSEs, autonomous institutions and regular employees of local bodies (except Multi Tasking Staff / Class IV / Group D)."},
+        "text": {
+          "en": "Excluded: serving or retired officers and employees of Central/State government, PSEs, autonomous institutions and regular employees of local bodies (except Multi Tasking Staff / Class IV / Group D)."
+        },
         "source_ref": "pmkisan_home",
         "quote": "All serving or retired officers and employees of Central/ State Government Ministries /Offices/Departments and its field units Central or State PSEs and Attached offices /Autonomous Institutions under Government as well as regular employees of the Local Bodies (Excluding Multi Tasking Staff /Class IV/Group D employees)"
       }
@@ -92,7 +125,9 @@
       "attribute": "other",
       "kind": "exclusion",
       "statement": {
-        "text": {"en": "Excluded: retired pensioners of the above categories with a monthly pension of ₹10,000 or more (except Multi Tasking Staff / Class IV / Group D)."},
+        "text": {
+          "en": "Excluded: retired pensioners of the above categories with a monthly pension of ₹10,000 or more (except Multi Tasking Staff / Class IV / Group D)."
+        },
         "source_ref": "pmkisan_home",
         "quote": "All superannuated/retired pensioners whose monthly pension is Rs.10,000/-or more (Excluding Multi Tasking Staff / Class IV/Group D employees) of above category"
       }
@@ -102,7 +137,9 @@
       "attribute": "other",
       "kind": "exclusion",
       "statement": {
-        "text": {"en": "Excluded: registered professionals practising as doctors, engineers, lawyers, chartered accountants or architects."},
+        "text": {
+          "en": "Excluded: registered professionals practising as doctors, engineers, lawyers, chartered accountants or architects."
+        },
         "source_ref": "pmkisan_home",
         "quote": "Professionals like Doctors, Engineers, Lawyers, Chartered Accountants, and Architects registered with Professional bodies and carrying out profession by undertaking practices."
       }
@@ -112,22 +149,49 @@
   "documents": [],
   "application_steps": [
     {
-      "text": {"en": "eKYC is mandatory for registered PM-KISAN farmers. Biometric eKYC is available through CSC operators, the PM-KISAN mobile app and state-authorised logins."},
+      "text": {
+        "en": "eKYC is mandatory for registered PM-KISAN farmers. Biometric eKYC is available through CSC operators, the PM-KISAN mobile app and state-authorised logins."
+      },
       "source_ref": "pmkisan_home",
       "quote": "eKYC is MANDATORY for PMKISAN Registered Farmers. Biometric-based eKYC option is now available for CSC VLE Logins, PM-KISAN Mobile Application and State Authorized User Logins."
     },
     {
-      "text": {"en": "Check your eligibility status with 'Know Your Status' on the PM-KISAN website or mobile app."},
+      "text": {
+        "en": "Check your eligibility status with 'Know Your Status' on the PM-KISAN website or mobile app."
+      },
       "source_ref": "pmkisan_home",
       "quote": "Farmers are requested to check their eligibility status on Know Your Status (KYS) of PM KISAN website/ mobile app"
     }
   ],
   "channels": [
-    {"type": "online_portal", "label": {"en": "New Farmer Registration (official PM-KISAN portal)"}, "official_url": "https://pmkisan.gov.in/RegistrationFormupdated.aspx", "source_ref": "pmkisan_home"},
-    {"type": "online_portal", "label": {"en": "Know Your Status"}, "official_url": "https://pmkisan.gov.in/BeneficiaryStatus_New.aspx", "source_ref": "pmkisan_home"},
-    {"type": "online_portal", "label": {"en": "Helpdesk – Query Form"}, "official_url": "https://pmkisan.gov.in/Grievance.aspx", "source_ref": "pmkisan_home"}
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "New Farmer Registration (official PM-KISAN portal)"
+      },
+      "official_url": "https://pmkisan.gov.in/RegistrationFormupdated.aspx",
+      "source_ref": "pmkisan_home"
+    },
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "Know Your Status"
+      },
+      "official_url": "https://pmkisan.gov.in/BeneficiaryStatus_New.aspx",
+      "source_ref": "pmkisan_home"
+    },
+    {
+      "type": "online_portal",
+      "label": {
+        "en": "Helpdesk – Query Form"
+      },
+      "official_url": "https://pmkisan.gov.in/Grievance.aspx",
+      "source_ref": "pmkisan_home"
+    }
   ],
-  "official_domains": ["pmkisan.gov.in"],
+  "official_domains": [
+    "pmkisan.gov.in"
+  ],
   "sources": [
     {
       "id": "pmkisan_home",

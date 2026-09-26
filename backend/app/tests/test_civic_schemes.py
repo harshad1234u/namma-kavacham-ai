@@ -5,7 +5,7 @@ from app.civic.schemes.eligibility import AnswerError, evaluate, validate_answer
 from app.civic.schemes.extract import extract
 from app.civic.schemes.identify import identify_schemes
 from app.civic.schemes.kb import get_scheme
-from app.civic.schemes.verify import verify_claim
+from app.civic.schemes.verify import verify_against_evidence, verify_against_kb
 from app.civic.text import amounts_inr, localize
 
 
@@ -39,7 +39,25 @@ def test_amount_parsing():
     assert amounts_inr("call 14438 or 1800 11 0001") == set()  # bare numbers are not money
 
 
-# ---------- verification ----------
+# ---------- verification (curated KB path) ----------
+def verify_claim(text, url=None):
+    ids = [m.scheme_id for m in identify_schemes(text)]
+    return verify_against_kb(text, url, ids) or verify_against_evidence(text, url, None, None)
+
+
+def test_pm_kisan_10000_per_year_is_contradicted_by_the_official_amount():
+    out = verify_claim("Is PM-KISAN providing ₹10,000 every year?")
+    assert out.status == "contradicted" and out.basis == "curated_kb"
+    f = [f for f in out.schemes[0].findings if f.aspect == "amount"][0]
+    assert f.outcome == "contradicted" and "₹6,000 per year" in f.detail_en and f.source_ref == "pmkisan_home"
+    assert verify_claim("PM-KISAN gives ₹6,000 per year").status == "supported"
+    assert verify_claim("पीएम किसान ₹10,000 सालाना देता है").status == "contradicted"
+
+
+def test_amount_for_a_period_the_source_does_not_state_is_only_not_covered():
+    assert verify_claim("PM-KISAN pays ₹2,000 per instalment").status == "partially_supported"
+
+
 def test_supported_amount_and_official_link():
     out = verify_claim("PM-KISAN gives ₹6,000 per year. Apply at https://pmkisan.gov.in/RegistrationFormupdated.aspx")
     assert out.status == "supported"
@@ -59,9 +77,10 @@ def test_lookalike_link_is_contradicted_and_unrelated_link_is_not():
     assert verify_claim("PM-KISAN news on example.com").status == "partially_supported"
 
 
-def test_unknown_scheme_is_not_found_and_non_scheme_text_is_unable():
-    assert verify_claim("The new Super Kisan Bonanza Yojana pays everyone").status == "not_found"
-    assert verify_claim("hello how are you").status == "unable_to_verify"
+def test_without_kb_match_or_official_evidence_we_never_say_fake():
+    for text in ("The new Super Kisan Bonanza Yojana pays everyone", "hello how are you"):
+        out = verify_claim(text)
+        assert out.status == "unable_to_verify" and out.message_en == "Unable to verify from the currently available official sources."
 
 
 def test_prompt_injection_text_does_not_change_status():
@@ -167,12 +186,9 @@ def test_eligibility_endpoint(client):
     assert client.post("/v1/schemes/pmuy/eligibility", json={"answers": {}, "extra": 1}).status_code == 422
 
 
-def test_verify_and_discover_endpoints(client):
-    v = client.post("/v1/schemes/verify", json={"text": "Unknown Mega Yojana gives ₹1 lakh"}).json()
-    assert v["status"] == "not_found" and v["search_portal"].startswith("https://www.myscheme.gov.in")
+def test_discover_endpoint(client):
     d = client.post("/v1/schemes/discover", json={"text": "I am a farmer looking for financial assistance", "lang": "hi"}).json()
     assert d["suggestions"][0]["scheme"]["id"] == "pm_kisan" and d["extraction"] == "deterministic"
     p = client.post("/v1/schemes/discover", json={"need_tags": ["housing"], "profile": {"residence_type": "urban"}}).json()
     assert p["extraction"] == "provided" and p["suggestions"][0]["scheme"]["id"] == "pmay_u"
     assert client.post("/v1/schemes/discover", json={"need_tags": ["free_money"]}).status_code == 422
-    assert client.post("/v1/schemes/verify", json={"text": "x" * 2001}).status_code == 422

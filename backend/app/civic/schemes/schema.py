@@ -84,8 +84,20 @@ class Statement(_Strict):
         return check_lang_text(v)
 
 
+Period = Literal["per_year", "per_month", "per_day", "per_instalment", "one_time"]
+_PERIOD_WORDS = {"per_year": ("per year", "per annum", "a year"), "per_month": ("per month",), "per_day": ("per day",),
+                 "per_instalment": ("per instalment", "per installment", "each instalment"), "one_time": ("one time", "one-time")}
+
+
 class Benefit(Statement):
     amount_inr: int | None = None  # only when the source states the amount
+    period: Period | None = None  # only when the quote states the period; enables "contradicted" amount checks
+
+    @model_validator(mode="after")
+    def _period_is_quoted(self) -> "Benefit":
+        if self.period and (self.amount_inr is None or not any(w in norm(self.quote) for w in _PERIOD_WORDS[self.period])):
+            raise ValueError("a benefit period needs an amount and must be stated in the quote")
+        return self
 
 
 class Criterion(_Strict):
